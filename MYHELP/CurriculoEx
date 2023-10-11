@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+    <title>Currículo</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="back">
+        <div class="primeiraDiv">
+            <img class="pinguinStyle" src="img/pinguinando.webp" alt=""><br>
+            <label class="primeiraLabel">Mano Penguas</label><br>
+            <label class="segundaLabel">Guia Turistico</label>
+            <label class="terceiraLabel"><b>Proficiency Skill</b></label>
+            <hr class="meuHr">
+            
+            <p>Photoshop</p>><br>
+            <p>Illustrator</p><br>
+            <p>InDesign</p><br>
+            <p>Dreamweaver</p><br>
+            <p>After Effects</p><br>
+
+            <br>
+
+            <label class="terceiraLabel"><b>Professional Skill</b></label>
+            <hr class="meuHr">
+            <p>JavaScript</p><br>
+            <p>Graphic Design</p><br>
+            <p>HTML</p><br>
+
+            <br>
+
+            <label class="terceiraLabel"><b>Personal Skill</b></label>
+            <hr class="meuHr">
+            <p>Creative</p><br>
+            <p>TeamWork</p><br>
+            <p>Communication</p><br>
+            <p>Leading</p><br>
+      
+
+        </div>
+
+        <div class="segundaDiv">
+            <label class="AboutMe">Sobre mim</label>
+            <hr class="hrSegundaDiv">
+            <label class="textin">Sou um pinguin muito responsa do club penguin, depois de conseguir ficar bastante</label>
+            <label class="textin">tempo na ilha, consegui a tag de guia turistico, estou disposto a arrumar um trabalho</label>
+            <label class="textin">em alguma empresa que eu possa mostrar minhas competências na área de trabalho.</label>
+        </div>
+    </body>
+</html>
