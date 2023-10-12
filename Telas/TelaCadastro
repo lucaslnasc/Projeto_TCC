@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleCadastro.css">
+    <link rel="stylesheet" href="/projetus/VAGACERTA/CSS/styleCadastro.css">
     <title>Tela de Cadastro</title>
 </head>
 <body>
@@ -11,6 +11,29 @@
         <div class="divCima">
             Vaga Certa
         </div>
+        
+        
     </header>
+    <form action="" method="post">
+        <div class="cad_items">
+            <input id="nome" type="text" name="Nome" required>
+        </div>
+
+        <div class="cad_items">
+            <input id="email" type="text" name="E-mail" required>
+        </div>
+
+        <div class="cad_items">
+            <input id="senha" type="password" name="Senha" required>
+        </div>
+
+        <div class="cad_items">
+            <select id="carro" name="Carro" required>
+        </div>
+
+        <div class="cad_items">
+            <input id="placa" type="text" name="Placa" required>
+        </div>
+    </form>
 </body>
 </html>
