@@ -1,25 +1,24 @@
  body{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Arial;
     background-color: #A4BAD3;
     color: white;
 }
 
- header{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #0D2A4A;
+.cimaHeader{
+    font-family: Arial;
     color: white;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-
+    background-color: #0D2A4A;
+    padding: 1.6%;
+    width: 100%;  
 }
 
-.divCima{
+.baixoHeader{
+    background-color: #43627F;
     display: flex;
-    align-items: center;
-    text-align: center;
-    font-size: 16px;
+    padding: 0.4%;
+    display: flex;
+    width: 100%;
 }
 
 .cad_items{
@@ -30,3 +29,20 @@
 .cad_items select {
     width: 12%;
 }
+
+label{
+    color: #0D2A4A;
+}
+
+i#burger{
+    color: white;
+    cursor: pointer;
+    font-size: 50px;
+}
+
+i#burger:hover{
+    color: rgb(209, 209, 209);
+}
+
+
+
