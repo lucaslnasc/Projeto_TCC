@@ -68,5 +68,25 @@
             }
         }
     </script>
+
+        <div class="DivDoLado">
+            <input type="date" name="nascimento" id="nascimento" placeholder="*Data de Nascimento" required>
+        </div>
+
+        <div class="DivDoLado">
+            <input type="number" name="cpf" id="cpf" placeholder="*CPF" required>
+        </div>
+
+        <div class="DivDoLado">
+            <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="*Confirmação Senha" required>
+        </div>
+
+        <div class="DivDoLado">
+            <input type="text" name="modeloVeiculo" id="modeloVeiculo" placeholder="Modelo do Veículo" required>
+        </div>
+
+        <div class="DivDoLado">
+            <input type="text" name="marcaVeiculo" id="marcaVeiculo" placeholder="Marca do Veículo" required>
+        </div>
 </body>
 </html>
