@@ -44,5 +44,8 @@ i#burger:hover{
     color: rgb(209, 209, 209);
 }
 
-
+.DivDoLado{
+    margin-left: 50%; 
+    width: 45%;
+}
 
