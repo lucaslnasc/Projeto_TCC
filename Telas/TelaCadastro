@@ -57,6 +57,26 @@
         <div class="cad_items">
             <input id="placa" type="text" name="Placa" placeholder="*Placa" required>
         </div>
+
+        <div class="cad_itemsLado">
+            <input type="date" name="nascimento" id="nascimento" placeholder="*Data de Nascimento" required>
+        </div>
+
+        <div class="cad_itemsLado">
+            <input type="number" name="cpf" id="cpf" placeholder="*CPF" required>
+        </div>
+
+        <div class="cad_itemsLado">
+            <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="*Confirmação Senha" required>
+        </div>
+
+        <div class="cad_itemsLado">
+            <input type="text" name="modeloVeiculo" id="modeloVeiculo" placeholder="Modelo do Veículo" required>
+        </div>
+
+        <div class="cad_itemsLado">
+            <input type="text" name="marcaVeiculo" id="marcaVeiculo" placeholder="Marca do Veículo" required>
+        </div>
     </form>
     <script>
         function clickMenu() {
@@ -69,24 +89,6 @@
         }
     </script>
 
-        <div class="DivDoLado">
-            <input type="date" name="nascimento" id="nascimento" placeholder="*Data de Nascimento" required>
-        </div>
-
-        <div class="DivDoLado">
-            <input type="number" name="cpf" id="cpf" placeholder="*CPF" required>
-        </div>
-
-        <div class="DivDoLado">
-            <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="*Confirmação Senha" required>
-        </div>
-
-        <div class="DivDoLado">
-            <input type="text" name="modeloVeiculo" id="modeloVeiculo" placeholder="Modelo do Veículo" required>
-        </div>
-
-        <div class="DivDoLado">
-            <input type="text" name="marcaVeiculo" id="marcaVeiculo" placeholder="Marca do Veículo" required>
-        </div>
+        
 </body>
 </html>
