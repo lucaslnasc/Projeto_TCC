@@ -44,8 +44,7 @@ i#burger:hover{
     color: rgb(209, 209, 209);
 }
 
-.DivDoLado{
-    margin-left: 50%; 
-    width: 45%;
+.cad_itemsLado{
+    margin-left: 70%; 
+    margin-top: -6.6%;
 }
-
