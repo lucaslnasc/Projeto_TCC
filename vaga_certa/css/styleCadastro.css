@@ -1,0 +1,52 @@
+ body{
+    display: inline;
+    font-family: Arial;
+    background-color: #A4BAD3;
+    color: white;
+    margin:0;
+}
+
+.cimaHeader{
+    font-family: Arial;
+    color: white;
+    display: flex;
+    background-color: #0D2A4A;
+    padding: 1.6%;
+    width: 100%;  
+}
+
+.baixoHeader{
+    background-color: #43627F;
+    display: flex;
+    padding: 0.4%;
+    display: flex;
+    width: 102.4%;
+}
+
+.cad_items{
+    margin-top: 4%;
+    margin-left: 4%;
+}
+
+.cad_items select {
+    width: 12%;
+}
+
+label{
+    color: #0D2A4A;
+}
+
+i#burger{
+    color: white;
+    cursor: pointer;
+    font-size: 50px;
+}
+
+i#burger:hover{
+    color: rgb(209, 209, 209);
+}
+
+.cad_itemsLado{
+    margin-left: 70%; 
+    margin-top: -6.6%;
+}
