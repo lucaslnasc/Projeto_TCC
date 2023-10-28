@@ -1,4 +1,10 @@
- body{
+*{
+    margin: 0;
+    
+}
+
+
+body{
     display: inline;
     font-family: Arial;
     background-color: #A4BAD3;
@@ -24,8 +30,8 @@
 }
 
 .cad_items{
-    margin-top: 4%;
-    margin-left: 4%;
+    margin-top: 5%;
+    margin-left: 25%;
 }
 
 .cad_items select {
@@ -47,6 +53,6 @@ i#burger:hover{
 }
 
 .cad_itemsLado{
-    margin-left: 70%; 
-    margin-top: -6.6%;
+    margin-left: 65%; 
+    margin-top: -6.7%;
 }
