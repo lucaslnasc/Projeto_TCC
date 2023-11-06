@@ -1,94 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styleCadastro.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styleCadastro.css" />
     <!--Link dos icons do google pra usar o menu :) -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
     <title>Tela de Cadastro</title>
-</head>
-<body>
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">-->
+  </head>
+  <body>
     <header>
-        <div class="cimaHeader">
-            <i id="burger" class="material-icons" onclick="clickMenu()">menu</i>
-            <menu id="itens">
-                <ul>
-                    <li><a href="#">Opção 1</a></li>
-                    <li><a href="#">Opção 2</a></li>
-                    <li><a href="#">Opção 3</a></li>
-                    <li><a href="#">Opção 4</a></li>
-                    <li><a href="#">Opção 5</a></li>
-                </ul>
-            </menu>
-        </div>
-        <div class="baixoHeader"></div>
-
+      <div id="headerCima">
+        <i id="burger" class="material-icons" onclick="clickMenu()">menu</i>
+        <menu id="itens">
+          <ul>
+            <li><a href="#">Opção 1</a></li>
+            <li><a href="#">Opção 2</a></li>
+            <li><a href="#">Opção 3</a></li>
+            <li><a href="#">Opção 4</a></li>
+            <li><a href="#">Opção 5</a></li>
+          </ul>
+        </menu>
+      </div>
+      <div id="headerBaixo">
+        <div id="rodape"></div>
+      </div>
     </header>
-
+    
     <form action="" method="post">
-        <div class="cad_items">
-            <input id="nome" type="text" name="Nome" placeholder="*Nome" required>
-        </div>
+      <h4>Campos Obrigatório</h4>
 
-        <div class="cad_items">
-            <input id="email" type="text" name="E-mail" placeholder="*E-mail" required>
-        </div>
+      <div class="input-box">
+        <label for="">Nome Completo</label> <br>
+        <input id="nome_user" type="text" name="nome" required />
+      </div>
 
-        <div class="cad_items">
-            <input id="senha" type="password" name="Senha" placeholder="*Senha" required>
-            <label for="">
-                <br>Sua senha deve conter:
-                <br>*Mínimo um número
-                <br>*Mínimo um caractere especial
-                <br>*Mínimo um 8 caracteres
-            </label>
-        </div>
+      <div class="input-box">
+        <label for="">Endereço de E-mail</label> <br>
+        <input type="text" name="" id="cpf">
+      </div>
 
-        <div class="cad_items">
-            <select id="carro" name="Carro" required>
-                <option value="" disabled selected>*Carro</option>
-                <option value="carro1">Carro 1</option>
-                <option value="carro2">Carro 2</option>
-                <option value="carro3">Carro 3</option>
-            </select>
-        </div>
+      <div class="input-box">
+        <label for="">Modelo de Veículo</label> <br>
+        <input type="text" name="" id="">
+      </div>
 
-        <div class="cad_items">
-            <input id="placa" type="text" name="Placa" placeholder="*Placa" required>
-        </div>
+      <div class="input-box">
+        <label for="">Senha</label> <br>
+        <input type="password" name="" id="">
+      </div>
+      
+      <div class="input-box">
+        <label for="">Placa do Veículo</label> <br>
+        <input type="text" name="" id="">
+      </div>
 
-        <div class="cad_itemsLado">
-            <input type="date" name="nascimento" id="nascimento" placeholder="*Data de Nascimento" required>
-        </div>
+      <input type="submit" value="Limpar">
 
-        <div class="cad_itemsLado">
-            <input type="number" name="cpf" id="cpf" placeholder="*CPF" required>
-        </div>
-
-        <div class="cad_itemsLado">
-            <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="*Confirmação Senha" required>
-        </div>
-
-        <div class="cad_itemsLado">
-            <input type="text" name="modeloVeiculo" id="modeloVeiculo" placeholder="Modelo do Veículo" required>
-        </div>
-
-        <div class="cad_itemsLado">
-            <input type="text" name="marcaVeiculo" id="marcaVeiculo" placeholder="Marca do Veículo" required>
-        </div>
+      <div class="input-left">
+        <label for="">CPF</label>
+        <input type="text" name="cpf" id="">
+      </div>
     </form>
-    <script>
-        function clickMenu() {
-            if(itens.style.display == 'block'){
-                itens.style.display = 'none';
-            }
-            else{
-                itens.style.display = 'block';
-            }
-        }
-    </script>
 
-        
-</body>
+    <script>
+      function clickMenu() {
+        if (itens.style.display == "block") {
+          itens.style.display = "none";
+        } else {
+          itens.style.display = "block";
+        }
+      }
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>-->
+  </body>
 </html>
