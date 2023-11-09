@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="shortcut icon" href="logologominimini-removebg-preview.png" type="image/x-icon">
     <link rel="stylesheet" href="cssCadastrar.css">
-    <title>cadastro</title>
+    <title>TELA CADASTRO</title>
 </head>
 <body>
 <header>
+
       <div id="headerCima">
+      <div class="logozada">
+            <a href="http://"><img src="LOGOFIMSEM-removebg-preview (1).png" alt=""></a>
+        </div>
         <i id="burger" class="material-icons" onclick="clickMenu()">menu</i>
         <menu id="itens">
           <ul>
@@ -22,9 +27,12 @@
           </ul>
         </menu>
       </div>
+     
       <div id="headerBaixo">
         <div id="rodape"></div>
       </div>
+
+
     </header>
      
 <form action="" method="post">
@@ -32,22 +40,22 @@
   <div class="row g-2">
     <div class="col-6">
     <div class="p-3 letras">Nome Completo</div>
-        <input type="text" class="form-control" aria-describedby="addon-wrapping" required>
+        <input type="text" class="form-control inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
     <div class="p-3 letras">CPF</div>
-        <input type="text" class="form-control" aria-describedby="addon-wrapping" required>
+        <input type="text" class="form-control inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
     <div class="p-3 letras">Endereço de E-mail</div>
-        <input type="email" class="form-control" aria-describedby="addon-wrapping" required>
+        <input type="email" class="form-control inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
     <div class="p-3 letras">Tipo de Veículo</div>
-    <select class="form-select">
+    <select class="form-select inputs">
         <option value="carro">Carro</option>
         <option value="moto">Moto</option>
     </select>
@@ -55,17 +63,17 @@
 
     <div class="col-6">
     <div class="p-3 letras">Modelo do Veículo</div>
-        <input type="text" class="form-control" aria-describedby="addon-wrapping" required>
+        <input type="text" class="form-control inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
     <div class="p-3 letras">Data de Nascimento</div>
-        <input type="date" class="form-control" aria-describedby="addon-wrapping" required>
+        <input type="date" class="form-control inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
     <div class="p-3 letras">Senha</div>
-        <input type="password" class="form-control" aria-describedby="addon-wrapping" required>
+        <input type="password" class="form-control inputs" aria-describedby="addon-wrapping" required>
     </div>
 
 
@@ -79,20 +87,20 @@
 
   <div class="col-6">
     <div class="p-3 letras">Placa do Veículo</div>
-        <input type="text" class="form-control" aria-describedby="addon-wrapping" required>
+        <input type="text" class="form-control inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
     <div class="p-3 letras">Telefone</div>
-        <input type="text" class="form-control" aria-describedby="addon-wrapping" required>
+        <input type="text" class="form-control inputs" aria-describedby="addon-wrapping" required>
     </div>
     
     <div class="col-6">
-    <input type="reset" value="Limpar" class="btn btn-warning">
+    <input type="reset" value="Limpar" class="btn btn-warning inputizinhos">
     </div>
 
     <div class="col-6">
-    <input type="submit" value="Cadastrar" class="btn btn-success">
+    <input type="submit" value="Cadastrar" class="btn btn-success inputizinhos">
     </div>
 
 
