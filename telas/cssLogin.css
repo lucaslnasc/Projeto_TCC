@@ -1,0 +1,16 @@
+#headerCima {
+    width: 931px;
+    height: 182px;
+    background: #0d2a4a;
+    padding: 1.6%;
+    width: 100%;
+    display: block;
+  }
+
+.logozada{
+    text-align: center;   
+}
+
+.tituloTest{
+    margin-top: 70px;
+}

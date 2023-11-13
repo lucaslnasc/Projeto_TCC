@@ -90,16 +90,9 @@
     <div class="col-6">
     <input type="submit" value="Cadastrar" class="btn btn-success inputizinhos">
     </div>
-    
-
-
-
-
-
     </form>
   </div>
   </div>
 </div>
 </body>
 </html>
-
