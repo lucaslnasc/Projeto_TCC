@@ -20,17 +20,6 @@ body {
     height: 18px;
   }
 
-  i#burger {
-    color: white;
-    cursor: pointer;
-    font-size: 50px;
-  }
-  
-  i#burger:hover {
-    color: rgb(209, 209, 209);
-  }
-
-
  .letras{
     color: black;
     font-family: Arial, Helvetica, sans-serif;
@@ -49,17 +38,33 @@ body {
 
   .inputs{
     width: 300px;
-    margin-left: 30%;
-    
+    box-shadow: inset 1.9px 1.9px 2.5px rgb(32, 32, 32);
+    border-radius: 3.4px;
+    border: none;
+    height: 30px;
   }
 
   .inputizinhos{
-    margin-top: 30%;
+    margin-top: 40px;
   }
 
   .logozada{
     position: absolute;
-    margin-left: 40%;
+    margin-right: 100px;
     width: 100%;
     margin-top: -40px;
   }
+
+  .letrasInputs{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+
+  .mnselect{
+    height: 40px;
+  }
+
+
