@@ -1,0 +1,37 @@
+.padrao {
+    display: inline;
+    font-family: Arial;
+    background-color: #a4bad3;
+    color: white;
+  }
+  
+  #headerCima {
+    width: 931px;
+    height: 92px;
+    background: #0d2a4a;
+    padding: 1.6%;
+    width: 100%;
+  }
+  
+#headerBaixo {
+    background-color: #43627f;
+    display: flex;
+    width: 100%;
+    height: 18px;
+  }
+  
+  .logozada{
+    position: absolute;
+    margin-right: 100px;
+    width: 100%;
+    margin-top: -40px;
+  }
+
+  .novoMenu{
+    margin-right: 500px;
+    width: 18%;
+    height: 100%;
+    background-color: #0d2a4a;
+    position:absolute;
+    color: white;
+  }

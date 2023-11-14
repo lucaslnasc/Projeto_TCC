@@ -20,6 +20,10 @@
       <div id="headerBaixo">
         <div id="rodape"></div>
       </div>
+
+      <label for="">
+
+      </label>
     </header>
      
 <form action="" method="post">
@@ -27,59 +31,59 @@
 <div class="container text-center">
   <div class="row g-2">
     <div class="col-6">
-    <div class="letrasInputs">Nome Completo</div>
+    <div class="letrasInputs nomecompleto">Nome Completo:</div>
         <input type="text" class="inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
-    <div class="letrasInputs">CPF</div>
+    <div class="letrasInputs cpf">CPF:</div>
         <input type="text" class="inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
-    <div class="letrasInputs">Endereço de E-mail</div>
+    <div class="letrasInputs email">Endereço de E-mail:</div>
         <input type="email" class="inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
-    <div class="letrasInputs">Tipo de Veículo</div>
-    <select class="inputs mnselect">
+    <div class="letrasInputs tpvc">Tipo de Veículo:</div>
+    <select class="mnselect">
         <option value="carro">Carro</option>
         <option value="moto">Moto</option>
     </select>
     </div>
 
     <div class="col-6">
-    <div class="letrasInputs">Modelo do Veículo</div>
+    <div class="letrasInputs modelvc">Modelo do Veículo:</div>
         <input type="text" class="inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
-    <div class="letrasInputs">Data de Nascimento</div>
+    <div class="letrasInputs dtnsc">Data de Nascimento:</div>
         <input type="date" class="inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
-    <div class="letrasInputs">Senha</div>
+    <div class="letrasInputs senha">Senha:</div>
         <input type="password" class="inputs" aria-describedby="addon-wrapping" required>
     </div>
 
 
   <div class="col-6">
     <br><label for="" class="primeiraFrase">Sua senha deve conter:</label><br>
-    <label for="" class="restoFrase">*Minímo um número</label><br>
-    <label for="" class="restoFrase">*Minímo de um caractere especial</label><br>
-    <label for="" class="restoFrase">*Minímo de 8 caracteres</label> 
+    <label for="" class="restoFrase prmR">*Minímo um número</label><br>
+    <label for="" class="restoFrase segundR">*Minímo de um caractere especial</label><br>
+    <label for="" class="restoFrase tercR">*Minímo de 8 caracteres</label> 
     </div>
 
 
   <div class="col-6">
-    <div class="letrasInputs">Placa do Veículo</div>
+    <div class="letrasInputs plcvc">Placa do Veículo:</div>
         <input type="text" class="inputs" aria-describedby="addon-wrapping" required>
     </div>
 
     <div class="col-6">
-    <div class="letrasInputs">Telefone</div>
+    <div class="letrasInputs tel">Telefone:</div>
         <input type="text" class="inputs" aria-describedby="addon-wrapping" required>
     </div>
     
