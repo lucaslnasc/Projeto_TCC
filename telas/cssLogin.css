@@ -29,7 +29,7 @@
 }
 
 .tituloConta{
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 25px;
 }
 
@@ -38,6 +38,7 @@
 }
 
 .linha {
+  border-left: solid #000;
   margin-top: 50px;
 }
 
@@ -47,10 +48,10 @@
 
 .linha-center {
   border-left: solid #000;
-  height: 30%;
+  height: 40%;
   left: 50%;
   position: absolute;
-  margin-top: -325px;
+  margin-top: -280px;
 }
 
 .func-icons{
@@ -59,7 +60,20 @@
     display: block;*/
 }
 
-input[type="submit"] {
+.span-img{
+  display: block;
+}
+
+.input-cadastrar{
+  display: block;
+  background-color: #0d2a4a;
+  color: #ffffff;
+  width: 125px;
+  margin-top: 60px;
+  margin-left: 38px;
+}
+
+.input-entrar {
   display: block;
   background-color: #0d2a4a;
   color: #ffffff;
