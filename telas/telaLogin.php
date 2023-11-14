@@ -20,30 +20,26 @@
         </div>
     </header>
     <div class="container row mx-auto">
+    <hr class="linha">
         <div class="area-login col-sm-12 col-md-6">
             <form action="" method="post">
-
-
-                <hr class="linha">
                 <h3 class="tituloLogin">Fazer Login</h3>
                 <label for="">E-mail</label>
                 <input type="email" name="email" aria-describedby="addon-wrapping" required>
                 <label for="">Senha</label>
                 <input type="password" aria-describedby="addon-wrapping" required>
                 <a class="link" href="">Esqueci Senha</a>
-                <input type="submit" value="Entrar">
-
+                <input type="submit" class="input-entrar" value="Entrar">
             </form>
 
-            <hr class="linha">
             <hr class="linha-center">
-            
+
         </div>
         <div class="area-cadastro">
             <h3 class="tituloConta">Criar uma Conta</h3>
             <p class="text-cadastro">Com uma conta você pode</p>
             <div class="func-icons row">
-                <span class="col-3"><img src="../img/Cartão.png" alt="Cartão de credito">
+                <span class="col-3 span-img"><img src="../img/Cartão.png" alt="Cartão de credito">
                     <p>Salvar <br>Cartões</p>
                 </span>
 
@@ -58,8 +54,11 @@
                 <span class="col-3"><img src="../img/Calendário.png" alt="Calendário">
                     <p>Histórico</p>
                 </span>
+
+                <input type="submit" class="input-cadastrar" value="Cadastrar">
             </div>
         </div>
+        <hr class="linha">
     </div>
 </body>
 
