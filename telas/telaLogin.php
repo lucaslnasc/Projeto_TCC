@@ -20,8 +20,8 @@
         </div>
     </header>
     <div class="container row mx-auto">
-    <hr class="linha">
-        <div class="area-login col-sm-12 col-md-6">
+        <hr class="linha">
+        <div class="area-login">
             <form action="" method="post">
                 <h3 class="tituloLogin">Fazer Login</h3>
                 <label for="">E-mail</label>
@@ -39,23 +39,25 @@
             <h3 class="tituloConta">Criar uma Conta</h3>
             <p class="text-cadastro">Com uma conta você pode</p>
             <div class="func-icons row">
-                <span class="col-3 span-img"><img src="../img/Cartão.png" alt="Cartão de credito">
+                <span class="col-2 span-img"><img src="../img/Cartão.png" alt="Cartão de credito">
                     <p>Salvar <br>Cartões</p>
                 </span>
 
-                <span class="col-3"><img src="../img/Carteira.png" alt="Carteira">
+                <span class="col-2 span-img"><img src="../img/Carteira.png" alt="Carteira">
                     <p>Pagamento <br>Rápido</p>
                 </span>
 
-                <span class="col-3"><img src="../img/Favoritos.png" alt="Favoritar">
+                <span class="col-2 span-img"><img src="../img/Favoritos.png" alt="Favoritar">
                     <p>Favoritar <br>Locais</p>
                 </span>
 
-                <span class="col-3"><img src="../img/Calendário.png" alt="Calendário">
+                <span class="col-2 span-img"><img src="../img/Calendário.png" alt="Calendário">
                     <p>Histórico</p>
                 </span>
 
-                <input type="submit" class="input-cadastrar" value="Cadastrar">
+                <p>
+                    <input type="submit" class=" input-cadastrar" value="Cadastrar">
+                </p>
             </div>
         </div>
         <hr class="linha">
