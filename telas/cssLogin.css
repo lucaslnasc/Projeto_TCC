@@ -1,9 +1,9 @@
-.area-login{
-    max-width: 50%;
+.area-login {
+  max-width: 50%;
 }
 
-.area-cadastro{
-    max-width: 50%;
+.area-cadastro {
+  max-width: 50%;
 }
 #headerCima {
   width: 931px;
@@ -28,9 +28,9 @@
   margin-top: 20px;
 }
 
-.tituloConta{
-    margin-top: 20px;
-    margin-left: 25px;
+.tituloConta {
+  margin-top: 20px;
+  margin-left: 25px;
 }
 
 .link {
@@ -42,35 +42,37 @@
   margin-top: 50px;
 }
 
-.text-cadastro{
-    margin-left: 25px;
+.text-cadastro {
+  margin-left: 25px;
 }
 
 .linha-center {
   border-left: solid #000;
-  height: 40%;
+  height: 30%;
   left: 50%;
   position: absolute;
   margin-top: -280px;
 }
 
-.func-icons{
-    text-align: center;
-   /*margin-left: 165px;
+.func-icons {
+  text-align: center;
+  margin-left: 20px;
+  margin-top: 10px;
+  /*margin-left: 165px;
     display: block;*/
 }
 
-.span-img{
+.span-img {
   display: block;
 }
 
-.input-cadastrar{
+.input-cadastrar {
   display: block;
   background-color: #0d2a4a;
   color: #ffffff;
-  width: 125px;
-  margin-top: 60px;
-  margin-left: 38px;
+  width: 120px;
+  margin-top: 70px;
+  margin-left: -5px;
 }
 
 .input-entrar {
@@ -89,4 +91,8 @@ input[type="password"] {
   border-radius: 3px;
   display: flex;
   width: 400px;
+}
+
+div span img {
+  height: 36px;
 }

@@ -14,6 +14,28 @@ CREATE TABLE cadastro(
     tipo_veiculo VARCHAR (15) NOT NULL
 );
 
+CREATE TABLE pagamento(
+	id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
+    tipo_cartao VARCHAR(50) NOT NULL,
+	numero_cartao CHAR (16) NOT NULL,
+    nome_cartao VARCHAR (50) NOT NULL,
+    vencimento INT (4) NOT NULL,
+    cvv INT (3) NOT NULL
+);
+
+CREATE TABLE vaga(
+	id_vaga INT PRIMARY KEY AUTO_INCREMENT,
+    nome_vaga VARCHAR (20),
+    tipo_vaga VARCHAR (50),
+	valor DECIMAL (9,2)
+);
+
+CREATE TABLE agendamento(
+	vaga VARCHAR(100) NOT NULL,
+    data_agen DATE NOT NULL,
+    horario DATETIME
+);
+
 CREATE TABLE veiculo(
 	cod CHAR(1) PRIMARY KEY,
     categoria_veiculo VARCHAR (15) NOT NULL
