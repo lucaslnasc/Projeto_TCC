@@ -11,6 +11,8 @@ body {
   background: #0d2a4a;
   padding: 1.6%;
   width: 100%;
+  z-index: 1;
+  position:relative;
 }
 
 #headerBaixo {
@@ -18,6 +20,8 @@ body {
   display: flex;
   width: 100%;
   height: 18px;
+  filter: drop-shadow(0px 7px 2px rgba(0, 0, 0, 0.25));
+  z-index: 0;
 }
 
 .letras{
@@ -125,3 +129,61 @@ input[type="date"]::placeholder {
 .tel{
   margin-right: 36%;
 }
+
+.fundinho{
+  background-color: white;
+  height: 600px;
+  width: 600px;
+  border-radius: 30px;
+  margin-left: 31%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+ .fundinho label{
+  color: black ;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  margin-left: 2%;
+ }
+
+ .fundinho hr{
+  border-color: black;
+  margin-top: -2px;
+  width:96%;
+  margin-left: 10px;
+  border-width: 3px;
+ }
+
+ .input-group {
+  font-size: 1.25rem;
+  position: relative;
+ }
+
+ .input{
+  all: unset;
+  color: #fefefe;
+  padding: 1rem;
+  border: 1px solid black;
+  transition: 150ms
+  cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .label{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  pointer-events: none;
+  transition: 150ms
+  cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .input focus{
+  border: 1px solid;
+ }
+
+ .input:is(:focus, :valid) ~ label {
+  transform:
+  translateY(-120%)
+  scale(0.7);
+  padding-inline: 0.3rem;
+ }
