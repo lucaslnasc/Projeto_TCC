@@ -51,8 +51,8 @@
                     <p>Favoritar <br>Locais</p>
                 </span>
 
-                <span class="col-2 span-img"><img src="../img/Calendário.png" alt="Calendário">
-                    <p>Histórico</p>
+                <span class="col-2 span-img-calendario"><img src="../img/Calendário.png" alt="Calendário">
+                    <p>Agendamento</p>
                 </span>
 
                 <p>
