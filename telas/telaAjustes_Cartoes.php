@@ -12,7 +12,7 @@
 
 <div id="headerCima">
 <div class="logozada">
-      <a href="http://"><img src="LOGOFIMSEM-removebg-preview (1).png" alt=""></a>
+      <a href="http://"><img src="../img/LOGOFIMSEM-removebg-preview (1).png" alt=""></a>
   </div>
 </div>
 <div id="headerMeio"></div>
