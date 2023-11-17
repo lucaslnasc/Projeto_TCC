@@ -46,6 +46,8 @@
         </div>
     </header>
 
+    <div class="meio">
+        <input type="search" name="pesquisa" id="">
+    </div>
 </body>
-
 </html>
