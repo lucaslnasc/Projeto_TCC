@@ -83,5 +83,18 @@ span a{
 }
 
 .inferiorLateral{
-  
+  margin-top: 330px;
+  text-align: left;
+}
+
+.inferiorLateral a{
+  text-decoration: none;
+  color: #FFFFFF;
+  padding-left: 20px;
+}
+
+.meio{
+  margin-top: 50px;
+  margin-left: 220px;
+  padding-left: 20px;
 }
