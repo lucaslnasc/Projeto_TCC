@@ -28,15 +28,40 @@
      
 <form action="" method="post">
   <div class="fundinho">
+  <div>
+    <label for="">Informações Pessoais</label>
+  </div>
+  <div class="inputBox cadNome">
+    <input type="text" required="required">
+    <span>Nome</span>
+  </div>
   <div class="inputBox">
-    <input class="cadNome" type="text" required="required">
-    <span class="cadNome">Nome</span>
+    <input type="text" required="required">
+    <span>CPF</span>
+  </div>
+  <div class="inputBox">
+    <input type="email" required="required">
+    <span>Endereço de E-mail</span>
+  </div>
+  <div class="inputBox">
+    <input type="date" required="required">
+    <span>Data de Nascimento</span>
+  </div>
+  <div class="inputBox">
+    <input type="text" required="required">
+    <span>Telefone</span>
+  </div>
+  <div class="inputBox">
+    <input type="password" required="required">
+    <span>Senha</span>
   </div>
   </div>
+
 </form>
 
   </div>
   </div>
 </div>
+
 </body>
 </html>
