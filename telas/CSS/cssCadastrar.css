@@ -1,0 +1,122 @@
+
+#headerCima {
+  width: 931px;
+  height: 92px;
+  background: #0d2a4a;
+  padding: 1.6%;
+  width: 100%;
+  z-index: 1;
+  position:relative;
+}
+
+#headerBaixo {
+  background-color: #43627f;
+  display: flex;
+  width: 100%;
+  height: 18px;
+  filter: drop-shadow(0px 7px 2px rgba(0, 0, 0, 0.25));
+  z-index: 0;
+}
+
+.letras{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.logozada{
+  position: absolute;
+  margin-right: 100px;
+  width: 100%;
+  margin-top: -40px;
+}
+
+
+.fundinho{
+  background-color: white;
+  height: 820px;
+  width: 780px;
+  border-radius: 30px;
+  margin-left: 27%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+ .fundinho label{
+  color: black ;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  margin-left: 2%;
+ }
+
+ .fundinho hr{
+  border-color: black;
+  margin-top: -2px;
+  width:96%;
+  padding-left: 10px;
+  border-width: 3px;
+ }
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+ }
+
+ body{
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #A4BAD3;
+ }
+
+ .inputBox{
+  position: relative;
+  width: 250px;
+ }
+
+ .inputBox input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  border-radius: 5px;
+  outline: none;
+  color:black;
+  font-size: 1em;
+  transition: 0.5s;
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.8);
+ }
+
+ .inputBox span{
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color:#9e9e9e;
+  text-transform: uppercase;
+  transition: 0.5s;
+ }
+
+ .inputBox input:valid ~ span,
+ .inputBox input:focus ~ span{
+  color:black;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.80em;
+  padding: 0.20px;
+  background: black;
+  letter-spacing: 0.2em;
+  background-color:#d1d1d1;
+ }
+
+ .inputBox input:valid, .inputBox input:focus{
+  border: 1px solid #0000;
+ }
+
+ .cadNome{
+    padding-top: 15vh;
+ }
+
