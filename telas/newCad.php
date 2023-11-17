@@ -31,32 +31,83 @@
   <div>
     <label for="">Informações Pessoais</label>
   </div>
-  <div class="inputBox cadNome">
+  <div class="inputBox nomeC">
     <input type="text" required="required">
-    <span>Nome</span>
+    <span>Nome Completo</span>
   </div>
-  <div class="inputBox">
-    <input type="text" required="required">
+  <div class="inputBox cpf">
+  <input type="text" id="RegraValida" value="" name="RegraValida" required="required" onkeydown="javascript: fMasc( this, mCPF );">   
     <span>CPF</span>
   </div>
-  <div class="inputBox">
+  <div class="inputBox eEmail">
     <input type="email" required="required">
     <span>Endereço de E-mail</span>
   </div>
-  <div class="inputBox">
-    <input type="date" required="required">
+  <div class="inputBox dtNasc">
+  <input onchange="validardataDeNascimento(this.value);" id="dataDeNascimento" type="date" required="required">
     <span>Data de Nascimento</span>
   </div>
-  <div class="inputBox">
+  <div class="inputBox tel">
     <input type="text" required="required">
     <span>Telefone</span>
   </div>
-  <div class="inputBox">
+  <div class="inputBox senha">
     <input type="password" required="required">
     <span>Senha</span>
   </div>
+  <div>
+    <label for="">Informações do Veículo</label>
+  </div>
   </div>
 
+  <script>
+    function ValidaCPF(){	
+	var RegraValida=document.getElementById("RegraValida").value; 
+	var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;	 
+	if (cpfValido.test(RegraValida) == true)	{ 
+	console.log("CPF Válido");	
+	} else	{	 
+	console.log("CPF Inválido");	
+	}
+    }
+
+  function fMasc(objeto,mascara) {
+obj=objeto
+masc=mascara
+setTimeout("fMascEx()",1)
+}
+
+  function fMascEx() {
+obj.value=masc(obj.value)
+}
+
+   function mCPF(cpf){
+cpf=cpf.replace(/\D/g,"")
+cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+return cpf
+}
+  </script>
+
+<script>
+        function validardataDeNascimento(data){
+
+            dataAtual= new Date();
+
+            data=new Date(data);
+
+            if (data<dataAtual){
+                console.log("Data Válida");
+                return true;
+            } else {
+                console.log("Data Inválida");
+                return false;
+            }
+
+
+        }
+    </script>
 </form>
 
   </div>

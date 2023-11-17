@@ -34,7 +34,7 @@
 
 .fundinho{
   background-color: white;
-  height: 820px;
+  height: 800px;
   width: 780px;
   border-radius: 30px;
   margin-left: 27%;
@@ -45,7 +45,8 @@
   color: black ;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 32px;
-  margin-left: 2%;
+  margin-left: 5%;
+  margin-top:20px;
  }
 
  .fundinho hr{
@@ -98,7 +99,7 @@
   font-size: 1em;
   color:#9e9e9e;
   text-transform: uppercase;
-  transition: 0.5s;
+  transition: 0.4s;
  }
 
  .inputBox input:valid ~ span,
@@ -108,7 +109,7 @@
   font-size: 0.80em;
   padding: 0.20px;
   background: black;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   background-color:#d1d1d1;
  }
 
@@ -116,7 +117,32 @@
   border: 1px solid #0000;
  }
 
- .cadNome{
-    padding-top: 15vh;
- }
+.nomeC{
+  margin-left: 70px;
+ margin-top:20px
+}
 
+.cpf {
+  margin-left: 450px;
+  margin-top:-48px
+}
+
+.eEmail{
+ margin-left: 70px;
+ margin-top:20px;
+}
+
+.dtNasc{
+ margin-left: 450px;
+  margin-top:-48px
+}
+
+.tel{
+margin-left: 70px;
+ margin-top:20px;
+}
+
+.senha{
+margin-left: 450px;
+  margin-top:-48px
+}
