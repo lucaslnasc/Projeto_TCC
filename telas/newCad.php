@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.png" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/cssCadastrar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>TELA CADASTRO</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
     <span>Nome Completo</span>
   </div>
   <div class="inputBox cpf">
-  <input type="text" id="RegraValida" value="" name="RegraValida" required="required" onkeydown="javascript: fMasc( this, mCPF );">   
+    <input type="text" required="required" id="cpf">
     <span>CPF</span>
   </div>
   <div class="inputBox eEmail">
@@ -44,7 +45,7 @@
     <span>Endereço de E-mail</span>
   </div>
   <div class="inputBox dtNasc">
-  <input onchange="validardataDeNascimento(this.value);" id="dataDeNascimento" type="date" required="required">
+  <input type="text" name="" id="date" required="required">
     <span>Data de Nascimento</span>
   </div>
   <div class="inputBox tel">
@@ -52,67 +53,37 @@
     <span>Telefone</span>
   </div>
   <div class="inputBox senha">
-    <input type="password" required="required">
+    <input type="password" required="required" id="senha">
     <span>Senha</span>
+    <i class="bi bi-eye-fill olho" id="btn-senha" onclick="mostrarSenha()"></i>
   </div>
   <div>
     <label for="">Informações do Veículo</label>
   </div>
   </div>
 
-  <script>
-    function ValidaCPF(){	
-	var RegraValida=document.getElementById("RegraValida").value; 
-	var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;	 
-	if (cpfValido.test(RegraValida) == true)	{ 
-	console.log("CPF Válido");	
-	} else	{	 
-	console.log("CPF Inválido");	
-	}
-    }
+<script type="text/javascript" src="jquery.mask.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#date').mask('00/00/0000');
+  })
+</script>
 
-  function fMasc(objeto,mascara) {
-obj=objeto
-masc=mascara
-setTimeout("fMascEx()",1)
-}
-
-  function fMascEx() {
-obj.value=masc(obj.value)
-}
-
-   function mCPF(cpf){
-cpf=cpf.replace(/\D/g,"")
-cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
-cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
-cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
-return cpf
-}
-  </script>
 
 <script>
-        function validardataDeNascimento(data){
+  function mostrarSenha(){
+    var inputPass = document.getElementById('senha')
+    var btnShowPass = document.getElementById('btn-senha')
 
-            dataAtual= new Date();
-
-            data=new Date(data);
-
-            if (data<dataAtual){
-                console.log("Data Válida");
-                return true;
-            } else {
-                console.log("Data Inválida");
-                return false;
-            }
-
-
-        }
-    </script>
+    if(inputPass.type === 'password'){
+      inputPass.setAttribute('type' , 'text')
+      btnShowPass.classList.replace('bi-eye-fill', 'bi-eye-slash-fill')
+    }else{
+      inputPass.setAttribute('type' , 'password')
+      btnShowPass.classList.replace('bi-eye-slash-fill', 'bi-eye-fill')
+    }
+  }
+</script>
 </form>
-
-  </div>
-  </div>
-</div>
-
 </body>
 </html>

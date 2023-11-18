@@ -106,11 +106,12 @@
  .inputBox input:focus ~ span{
   color:black;
   transform: translateX(10px) translateY(-7px);
-  font-size: 0.80em;
+  font-size: 0.75em;
   padding: 0.20px;
   background: black;
   letter-spacing: 0.1em;
   background-color:#d1d1d1;
+  border-radius: 1px;
  }
 
  .inputBox input:valid, .inputBox input:focus{
@@ -145,4 +146,12 @@ margin-left: 70px;
 .senha{
 margin-left: 450px;
   margin-top:-48px
+}
+
+.olho{
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  color: #696969;
 }
