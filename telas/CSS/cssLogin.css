@@ -96,3 +96,7 @@ input[type="password"] {
 div span img {
   height: 36px;
 }
+
+p a{
+  text-decoration: none;
+}
