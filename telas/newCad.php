@@ -58,10 +58,34 @@
     <i class="bi bi-eye-fill olho" id="btn-senha" onclick="mostrarSenha()"></i>
   </div>
   <div>
+
     <label for="">Informações do Veículo</label>
   </div>
+  <div class="inputBox nomeC">
+    <input type="text" required="required">
+    <span>Placa do Veículo</span>
+  </div>
+  <div class="inputBox cpf">
+    <input type="text" required="required" id="cpf">
+    <span>Tipo do Veículo</span>
+  </div>
+  <div class="inputBox eEmail">
+    <input type="email" required="required">
+    <span>Marca</span>
+  </div>
+  <div class="inputBox dtNasc">
+  <input type="text" name="" id="date" required="required">
+    <span>Modelo</span>
+  </div>
+  <div class="submit-container">
+    <input type="submit" value="Cadastrar">
+    <input type="reset" value="Limpar">
+</div>
+
   </div>
 
+
+<!-- SCRIPT MASK DO JQUERY -->
 <script type="text/javascript" src="jquery.mask.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -69,7 +93,7 @@
   })
 </script>
 
-
+<!-- SCRIPT DO OLHO SENHA -->
 <script>
   function mostrarSenha(){
     var inputPass = document.getElementById('senha')

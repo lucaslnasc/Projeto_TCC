@@ -34,7 +34,7 @@
 
 .fundinho{
   background-color: white;
-  height: 800px;
+  height: 600px;
   width: 780px;
   border-radius: 30px;
   margin-left: 27%;
@@ -83,7 +83,7 @@
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.25);
   background-color: #ffffff;
-  border-radius: 5px;
+  border-radius: 4px;
   outline: none;
   color:black;
   font-size: 1em;
@@ -154,4 +154,32 @@ margin-left: 450px;
   position: absolute;
   right: 5%;
   color: #696969;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.submit-container input[type="submit"] {
+  background-color: rgb(5, 192, 5);
+  color: white;
+  border-radius: 3px;
+  padding: 8px;
+  width: 140px;
+  border:none;
+  margin-right: 135px;
+  margin-top: 10px;
+}
+
+.submit-container input[type="reset"] {
+  background-color: rgb(255, 51, 0);
+  color: white;
+  border-radius: 3px;
+  padding: 8px;
+  width: 140px;
+  border:none;
+  margin-left: 135px;
 }
