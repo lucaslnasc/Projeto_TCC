@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.png" type="image/x-icon">
-    <link rel="stylesheet" href="cssLogin.css">
+    <link rel="stylesheet" href="./CSS/cssLogin.css">
 </head>
 
 <body>
@@ -56,7 +56,7 @@
                 </span>
 
                 <p>
-                    <input type="submit" class=" input-cadastrar" value="Cadastrar">
+                    <a href="newCad.php"><input type="submit" class=" input-cadastrar" value="Cadastrar"></a>
                 </p>
             </div>
         </div>
