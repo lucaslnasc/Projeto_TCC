@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./CSS/cssAjustes_Cartoes.css">
+    <link rel="stylesheet" href="./CSS/cssAddCartao.css">
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.png" type="image/x-icon">
     <title>Vaga Certa</title>
 </head>
@@ -47,27 +47,27 @@
             <div id="rodape"></div>
         </div>
     </header>
-
+</div>
     <div class="container">
 
 <div class="card-container">
 
     <div class="front">
         <div class="image">
-            <img src=".\img/chip.png" alt="">
-            <img src="img\visa.png" alt="">
+            <img src="chip.png" alt="">
+            <img src="visa.png" alt="">
         </div>
         <div class="card-number-box">################</div>
         <div class="flexbox">
             <div class="box">
-                <span>card holder</span>
-                <div class="card-holder-name">full name</div>
+                <span>  Titular do Cartão</span>
+                <div class="card-holder-name">nome completo</div>
             </div>
             <div class="box">
-                <span>expires</span>
+                <span>Expira</span>
                 <div class="expiration">
                     <span class="exp-month">mm</span>
-                    <span class="exp-year">yy</span>
+                    <span class="exp-year">aa</span>
                 </div>
             </div>
         </div>
@@ -86,18 +86,18 @@
 
 <form action="">
     <div class="inputBox">
-        <span>card number</span>
+        <span>número do cartão</span>
         <input type="text" maxlength="16" class="card-number-input">
     </div>
     <div class="inputBox">
-        <span>card holder</span>
+        <span>nome do titular</span>
         <input type="text" class="card-holder-input">
     </div>
     <div class="flexbox">
         <div class="inputBox">
-            <span>expiration mm</span>
+            <span>Expira mm</span>
             <select name="" id="" class="month-input">
-                <option value="month" selected disabled>month</option>
+                <option value="month" selected disabled>Mês</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
                 <option value="03">03</option>
@@ -113,12 +113,9 @@
             </select>
         </div>
         <div class="inputBox">
-            <span>expiration yy</span>
+            <span>Expira yy</span>
             <select name="" id="" class="year-input">
-                <option value="year" selected disabled>year</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
+                <option value="year" selected disabled>Ano</option>
                 <option value="2024">2024</option>
                 <option value="2025">2025</option>
                 <option value="2026">2026</option>
@@ -176,5 +173,5 @@ document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-inpu
 }
 
 </script>
-
+</div>
 </body>
