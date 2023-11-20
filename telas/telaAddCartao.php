@@ -67,7 +67,7 @@
                 <span>Validade</span>
                 <div class="expiration">
                     <span class="exp-month">##</span>
-                    <span class="exp-year">##</span>
+                    <span class="exp-year">####</span>
                 </div>
             </div>
         </div>
