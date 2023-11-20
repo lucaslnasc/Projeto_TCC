@@ -124,3 +124,26 @@
     text-decoration: none;
     text-transform: uppercase;
 }
+
+.botaoRemover i{
+  color: rgb(0, 0, 0);
+  margin-left: 355px;
+  position: fixed;
+  margin-top: 5px;
+  font-size: 31px;
+}
+
+.botRe .botaoRemover{
+  cursor: pointer;
+}
+
+.botaoRemover{
+  display: inline-block;
+}
+
+.botaoRemover :hover{
+  width: 200px;
+
+}
+
+

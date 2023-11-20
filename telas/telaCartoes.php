@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/cssCartao.css">
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>Vaga Certa</title>
 </head>
 
@@ -50,13 +51,21 @@
     </header>
 
 <div class="painelCartao">
+    <div class= "botRe">
+    <div class = "botaoRemover">
+        <i class="bi bi-three-dots-vertical"></i>
+        <button class="revbot">Remover</button>
+    </div>
+    </div>
+
     <br>
+
     <div class="infCartao">
-    <span>Número do Cartão</span><br>
-    <input type="text">
-    <p></p>
-    <span>Expira em:</span><br>
-    <input type="text" placeholder="00/0000">
+        <span>Número do Cartão</span><br>
+        <input type="text">
+            <p></p>
+        <span>Expira em:</span><br>
+        <input type="text" placeholder="00/0000">
     </div>
 </div>
 </body>
