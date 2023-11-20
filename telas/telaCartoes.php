@@ -42,7 +42,7 @@
                     <a href="telaLogin.php"><img src="../img/Import.png" alt="Sair icone">Sair</a>
                 </footer>
             </div>
-            
+
         </div>
         <div id="headerBaixo">
             <div id="rodape"></div>
@@ -50,7 +50,13 @@
     </header>
 
 <div class="painelCartao">
-    <span>Número do Cartão</span>
+    <br>
+    <div class="infCartao">
+    <span>Número do Cartão</span><br>
     <input type="text">
+    <p></p>
+    <span>Expira em:</span><br>
+    <input type="text" placeholder="00/0000">
+    </div>
 </div>
 </body>
