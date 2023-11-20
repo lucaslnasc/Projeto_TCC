@@ -172,6 +172,8 @@ margin-left: 450px;
   border:none;
   margin-right: 135px;
   margin-top: 10px;
+  cursor: pointer;
+  transition: .2s linear;
 }
 
 .submit-container input[type="reset"] {
@@ -182,4 +184,18 @@ margin-left: 450px;
   width: 140px;
   border:none;
   margin-left: 135px;
+  cursor: pointer;
+  transition: .2s linear;
+}
+
+.submit-container input[type="submit"]:hover{
+  letter-spacing: 2px;
+  opacity: .8;
+  background-color: green;
+}
+
+.submit-container input[type="reset"]:hover{
+  letter-spacing: 2px;
+  opacity: .8;
+  background-color: rgb(192, 45, 8);
 }

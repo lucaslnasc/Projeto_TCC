@@ -33,7 +33,7 @@
 
 .novoMenu {
   grid-column: 1;
-  position: fixed;
+  position: absolute;
   width: 217px;
   height: 100%;
   background: #d9d9d9;
@@ -63,12 +63,12 @@
 
 .container{
     min-height: 100vh;
-    background: #eee;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: column;
     padding-bottom: 60px;
+    margin-top: -30px;
 }
 
 .container form{
@@ -110,7 +110,7 @@
 
 .container form .submit-btn{
     width: 100%;
-    background:linear-gradient(45deg, blueviolet, deeppink);
+    background:linear-gradient(45deg, rgb(28, 42, 248), rgb(8, 11, 202));
     margin-top: 20px;
     padding: 10px;
     font-size: 20px;
@@ -137,7 +137,7 @@
     height: 100%;
     width: 100%;
     top: 0; left: 0;
-    background:linear-gradient(45deg, blueviolet, deeppink);
+    background:linear-gradient(45deg, rgb(28, 42, 248), rgb(8, 11, 202));
     border-radius: 5px;
     backface-visibility: hidden;
     box-shadow: 0 15px 25px rgba(0,0,0,.2);
@@ -181,7 +181,7 @@
     top:0; left: 0;
     height: 100%;
     width: 100%;
-    background:linear-gradient(45deg, blueviolet, deeppink);
+    background:linear-gradient(45deg, rgb(28, 42, 248), rgb(8, 11, 202));
     border-radius: 5px;
     padding: 20px 0;
     text-align: right;
