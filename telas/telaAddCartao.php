@@ -64,10 +64,10 @@
                 <div class="card-holder-name">nome completo</div>
             </div>
             <div class="box">
-                <span>Expira</span>
+                <span>Validade</span>
                 <div class="expiration">
-                    <span class="exp-month">mm</span>
-                    <span class="exp-year">aa</span>
+                    <span class="exp-month">##</span>
+                    <span class="exp-year">##</span>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
         <div class="box">
             <span>cvv</span>
             <div class="cvv-box"></div>
-            <img src="img\visa.png" alt="">
+            <img src="visa.png" alt="">
         </div>
     </div>
 
@@ -95,7 +95,7 @@
     </div>
     <div class="flexbox">
         <div class="inputBox">
-            <span>Expira mm</span>
+            <span>Validade Mês</span>
             <select name="" id="" class="month-input">
                 <option value="month" selected disabled>Mês</option>
                 <option value="01">01</option>
@@ -113,7 +113,7 @@
             </select>
         </div>
         <div class="inputBox">
-            <span>Expira yy</span>
+            <span>Validade Ano</span>
             <select name="" id="" class="year-input">
                 <option value="year" selected disabled>Ano</option>
                 <option value="2024">2024</option>
@@ -127,7 +127,7 @@
         </div>
         <div class="inputBox">
             <span>cvv</span>
-            <input type="text" maxlength="4" class="cvv-input">
+            <input type="text" maxlength="3" class="cvv-input">
         </div>
     </div>
     <input type="submit" value="submit" class="submit-btn">
