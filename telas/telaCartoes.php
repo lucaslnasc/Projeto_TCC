@@ -42,6 +42,7 @@
                     <a href="telaLogin.php"><img src="../img/Import.png" alt="Sair icone">Sair</a>
                 </footer>
             </div>
+            
         </div>
         <div id="headerBaixo">
             <div id="rodape"></div>
