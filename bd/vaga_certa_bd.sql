@@ -20,6 +20,7 @@ CREATE TABLE pagamento(
 	numero_cartao CHAR (16) NOT NULL,
     nome_cartao VARCHAR (50) NOT NULL,
     vencimento INT (4) NOT NULL,
+    preco_valor DECIMAL (9, 2),
     cvv INT (3) NOT NULL
 );
 
@@ -48,8 +49,15 @@ VALUES
 
 ALTER TABLE cadastro ADD CONSTRAINT	fk_veiculo FOREIGN KEY (tipo_veiculo) REFERENCES veiculo(cod);
 
+SELECT cod, categoria_veiculo 
+FROM veiculo
+INNER JOIN cadastro ON cadastro.tipo_veiculo = veiculo.cod;
+
 INSERT INTO cadastro(nome, email, cpf, senha, data_nasc, telefone, placa_veiculo, tipo_veiculo)
 VALUES
-('Lucas de Lima', 'lucaslnascimento090@gmail.com', '16868214790' ,'lucas2006', '2006-01-15' ,'27999943806', 'R8Z9OP5', 'C');
+('Lucas de Lima', 'lucaslnascimento090@gmail.com', '16868214790' ,'lucas2006', '2006-01-15' ,'27999943806', 'R8Z9OP5', 'C'),
+('Lucas de Lima', 'lucaslnascimento015@gmail.com', '16868214759' ,'lucas2006', '2006-01-15' ,'27999943806', 'R8Z9OP5', 'M');
 
 SELECT * FROM cadastro;
+
+DROP TABLE cadastro;

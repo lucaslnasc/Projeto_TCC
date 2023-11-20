@@ -33,7 +33,7 @@
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href="telaAjustes_Cartoes.php"><img src="../img/Credit_card.png"
+                    <li><a href="telaCartoes.php"><img src="../img/Credit_card.png"
                                 alt="Icone de Cartão">Cartões</a></li>
                 </ul>
                 <hr class="linha">
