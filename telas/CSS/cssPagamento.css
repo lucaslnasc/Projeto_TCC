@@ -134,11 +134,7 @@ input[type="Hora"] {
 
 input[type="radio"]{
   margin-left: 200px;
-  size: 50%px;
-}
-input[type="radio1"]{
-  margin-left: -100px;
-  size: 60%px;
+  
 }
 
 .efetuar-pagamento{
@@ -150,5 +146,29 @@ input[type="radio1"]{
   margin-top: 40px;
   margin-left: 70px;
   border-width: 0px;
-  border-radius: 10px;
+  border-radius: 5px;
+  transition: 2s;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border: 2px solid rgb(41, 216, 41);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.efetuar-pagamento:hover{
+  letter-spacing: 2px;
+  opacity: .8;
+  background-color: green;
+}
+
+form input[type="radio"] {
+  margin-right: 5px; /* Ajuste a margem conforme necessário */
+  width: 20px; /* Defina a largura dos botões de rádio conforme necessário */
+  height: 20px; /* Defina a altura dos botões de rádio conforme necessário */
+  vertical-align: middle; /* Alinhe verticalmente os botões de rádio */
+}
+
+form label.letra-fundinho {
+  display: inline-block;
+  vertical-align: middle;
 }
