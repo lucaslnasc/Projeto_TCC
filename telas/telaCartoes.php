@@ -22,21 +22,21 @@
             <div class="novoMenu">
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href=""><img src="../img/Subtract.png" alt="Icone de inicio">Inicio</a></li>
+                    <li><a href=""><i class="bi bi-house"></i>Inicio</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href=""><img src="../img/User_fill.png" alt="Icone de Perfil">Conta</a></li>
+                    <li><a href=""><i class="bi bi-person"></i>Conta</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href=""><img src="../img/Favorite.png" alt="Icone de Favorito">Favorito</a></li>
+                    <li><a><i class="bi bi-bookmark-heart"></i>Favoritos</a></li>
                 </ul>
                 <hr class="linha">
-                <div class="menuLateral">
+                <div class="menuLateral bCartao">
         <li onmouseover="mostrarBotaoAdicionarCartao()" onmouseout="esconderBotaoAdicionarCartao()">
             <a href="telaAjustes_Cartoes.php">
-                <img src="../img/Credit_card.png" alt="Icone de Cartão">Cartões
+            <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
             </a>
             <button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button>
         </li>
@@ -44,7 +44,7 @@
                 <hr class="linha">
 
                 <footer class="inferiorLateral">
-                    <a href="telaLogin.php"><img src="../img/Import.png" alt="Sair icone">Sair</a>
+                    <a href="telaLogin.php"><i class="bi bi-box-arrow-left"></i>Sair</a>
                 </footer>
             </div>
 
@@ -82,7 +82,6 @@
     </script>
 
 <script>
-        // Adicione este script ao seu HTML existente
         function mostrarBotaoAdicionarCartao() {
             const botaoAdicionar = document.querySelector('.botaoAdicionarCartao');
             botaoAdicionar.style.display = 'inline-block';
@@ -94,8 +93,7 @@
         }
 
         function adicionarCartao() {
-            // Lógica para adicionar um cartão
-            alert('Implemente a lógica para adicionar um cartão aqui.');
+            
         }
     </script>
 </body>
