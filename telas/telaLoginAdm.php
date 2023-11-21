@@ -15,7 +15,10 @@
             <div class="imagem">
                 <img src="../img/LOGOFIMSEM-removebg-preview (1).png" alt="">
             </div>
-            
+            <div class="layout">
+                <h3>Login Administrador</h3>
+                <hr class="linha">
+            </div>
         </div>
     </form>
 </body>
