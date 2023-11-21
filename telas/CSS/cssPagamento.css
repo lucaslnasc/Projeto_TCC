@@ -109,3 +109,46 @@ input[type="Hora"] {
   padding-left: 10px;
   border-width: 3px;
 }
+
+.area-agendamento{
+  max-width: 100%;
+}
+
+.letra-fundinho {
+  margin-top: 10px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  padding-left: 35px;
+  margin-top: 40px;
+}
+
+.letra-fundinho1 {
+  margin-top: 10px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  margin-left: 45px;
+  margin-top: 40px;
+}
+
+input[type="radio"]{
+  margin-left: 200px;
+  size: 50%px;
+}
+input[type="radio1"]{
+  margin-left: -100px;
+  size: 60%px;
+}
+
+.efetuar-pagamento{
+  background-color: #02f03d;
+  color: #ffffff;
+  font-size: 23px;
+  width: 350px;
+  height: 45px;
+  margin-top: 40px;
+  margin-left: 70px;
+  border-width: 0px;
+  border-radius: 10px;
+}
