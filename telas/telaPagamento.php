@@ -44,8 +44,25 @@
     <div class="container row mx-auto">
     <form action="" method="post">
     <div class="fundinho">
-    <label for="" class="letra">Informações Pessoais</label>
-    <input input type="radio" required="required">
+        <div>
+             <label for="" class="letra-fundinho">Cartão de Crédito</label>
+             <input input type="radio" required name="radio">
+             <hr class="linha">
+        </div>
+        <div>
+             <label for="" class="letra-fundinho">Cartão de Débito</label>
+             <input input type="radio" required name="radio">
+             <hr class="linha">
+        </div>
+        <div>
+             <label for="" class="letra-fundinho1">PIX</label>
+             <input input type="radio" required name="radio1">
+             <hr class="linha">
+        </div>
+        <div>
+             <input type="button" class="efetuar-pagamento" value="Efetuar Pagamento">
+        </div>
+    
     </div>
 
 </body>
