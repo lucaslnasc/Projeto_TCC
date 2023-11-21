@@ -28,6 +28,8 @@ HTML:
             <button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button>
         </li>
     </div>
+
+    
                 <hr class="linha">
 
                 <footer class="inferiorLateral">
