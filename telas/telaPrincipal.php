@@ -68,9 +68,9 @@
                 <h3><b>Wano</b></h3>
                 <p>Grand Line</p>
                 <p>Vagas disponiveis: </p>
-                <button class="fav-btn">
-                    <img src="../img/Favorite.png" alt="">
-                </button>
+                <input type="checkbox" id="heart-2"/>
+                <label for="heart-2">
+                </label>
             </a>
         </div>
         <div class="card" data-location="Sabaody">
@@ -78,9 +78,9 @@
                 <h3><b>Sabaody</b></h3>
                 <p>Grand Line</p>
                 <p>Vagas disponiveis: </p>
-                <button class="fav-btn">
-                    <img src="../img/Favorite.png" alt="">
-                </button>
+                <input type="checkbox" id="heart-3"/>
+                <label for="heart-3">
+                </label>
             </a>
         </div>
         <div class="card" data-location="Whole Cake">
@@ -88,9 +88,9 @@
                 <h3><b>Whole Cake</b></h3>
                 <p>Grand Line</p>
                 <p>Vagas disponiveis:</p>
-                <button class="fav-btn">
-                    <img src="../img/Favorite.png" alt="">
-                </button>
+                <input type="checkbox" id="heart-4"/>
+                <label for="heart-4">
+                </label>
             </a>
         </div>
         <div class="card" data-location="Alabasta">
@@ -98,9 +98,9 @@
                 <h3><b>Alabasta</b></h3>
                 <p>Grand Line</p>
                 <p>Vagas disponiveis:</p>
-                <button class="fav-btn">
-                    <img src="../img/Favorite.png" alt="">
-                </button>
+                <input type="checkbox" id="heart-5"/>
+                <label for="heart-5">
+                </label>
             </a>
         </div>
         <div class="card" data-location="Ohara">
@@ -108,9 +108,9 @@
                 <h3><b>Ohara</b></h3>
                 <p>West Blue</p>
                 <p>Vagas disponiveis:</p>
-                <button id="fav-btn" class="fav-btn">
-                    <img id="img" src="../img/Favorite.png" alt="">
-                </button>
+                <input type="checkbox" id="heart-6"/>
+                <label for="heart-6">
+                </label>
             </a>
         </div>
     </div>
