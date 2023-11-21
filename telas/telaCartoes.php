@@ -33,10 +33,14 @@
                     <li><a href=""><img src="../img/Favorite.png" alt="Icone de Favorito">Favorito</a></li>
                 </ul>
                 <hr class="linha">
-                <ul class="menuLateral">
-                    <li><a href="telaAjustes_Cartoes.php"><img src="../img/Credit_card.png"
-                                alt="Icone de Cartão">Cartões</a></li>
-                </ul>
+                <div class="menuLateral">
+        <li onmouseover="mostrarBotaoAdicionarCartao()" onmouseout="esconderBotaoAdicionarCartao()">
+            <a href="telaAjustes_Cartoes.php">
+                <img src="../img/Credit_card.png" alt="Icone de Cartão">Cartões
+            </a>
+            <button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button>
+        </li>
+    </div>
                 <hr class="linha">
 
                 <footer class="inferiorLateral">
@@ -50,22 +54,49 @@
         </div>
     </header>
 
-<div class="painelCartao">
-    <div class= "botRe">
-    <div class = "botaoRemover">
-        <i class="bi bi-three-dots-vertical"></i>
-        <button class="revbot">Remover</button>
-    </div>
-    </div>
+    <div class="painelCartao">
+        <nav class="nav">
+            <span class="icon"><i class="bi bi-three-dots-vertical"></i></span>
+            <ul>
+                <li><button class="revBt">Remover</button></li>
+            </ul>
+        </nav>
+        <br>
 
-    <br>
-
-    <div class="infCartao">
-        <span>Número do Cartão</span><br>
-        <input type="text">
+        <div class="infCartao">
+            <span>Número do Cartão</span><br>
+            <input type="text">
             <p></p>
-        <span>Expira em:</span><br>
-        <input type="text" placeholder="00/0000">
+            <span>Expira em:</span><br>
+            <input type="text" placeholder="00/0000">
+        </div>
     </div>
-</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icon = document.querySelector(".icon");
+            const nav = document.querySelector(".nav");
+
+            icon.addEventListener("click", () => nav.classList.toggle("active"));
+        });
+    </script>
+
+<script>
+        // Adicione este script ao seu HTML existente
+        function mostrarBotaoAdicionarCartao() {
+            const botaoAdicionar = document.querySelector('.botaoAdicionarCartao');
+            botaoAdicionar.style.display = 'inline-block';
+        }
+
+        function esconderBotaoAdicionarCartao() {
+            const botaoAdicionar = document.querySelector('.botaoAdicionarCartao');
+            botaoAdicionar.style.display = 'none';
+        }
+
+        function adicionarCartao() {
+            // Lógica para adicionar um cartão
+            alert('Implemente a lógica para adicionar um cartão aqui.');
+        }
+    </script>
 </body>
+</html>
