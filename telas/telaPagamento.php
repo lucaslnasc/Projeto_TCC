@@ -46,17 +46,17 @@
     <div class="fundinho">
         <div>
              <label for="" class="letra-fundinho">Cartão de Crédito</label>
-             <input input type="radio" required name="radio">
+             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
              <hr class="linha">
         </div>
         <div>
              <label for="" class="letra-fundinho">Cartão de Débito</label>
-             <input input type="radio" required name="radio">
+             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
              <hr class="linha">
         </div>
         <div>
              <label for="" class="letra-fundinho1">PIX</label>
-             <input input type="radio" required name="radio1">
+             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
              <hr class="linha">
         </div>
         <div>
