@@ -14,6 +14,8 @@
              <div class="logozada">
                   <a href="http://"><img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt=""></a>
              </div>
+
+             
          </div>
          <div id="headerBaixo">
              <div id="rodape"></div>
