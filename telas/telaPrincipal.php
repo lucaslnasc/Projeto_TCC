@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./CSS/cssPrincipal.css">
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.png" type="image/x-icon">
     <title>Vaga Certa</title>
@@ -21,26 +22,24 @@
             <div class="novoMenu">
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href=""><img src="../img/Subtract.png" alt="Icone de inicio">Inicio</a></li>
+                    <li><a href=""><i class="bi bi-house"></i>Inicio</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href=""><img src="../img/User_fill.png" alt="Icone de Perfil">Conta</a></li>
+                    <li><a href=""><i class="bi bi-person"></i>Conta</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href="telaFavorito.php"><img src="../img/Favorite.png" alt="Icone de Favorito">Favorito</a>
-                    </li>
+                    <li><a href=""><i class="bi bi-bookmark-heart"></i>Favoritos</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href="telaCartoes.php"><img src="../img/Credit_card.png" alt="Icone de Cartão">Cartões</a>
-                    </li>
+                    <li><a href="telaAjustes_Cartoes.php"><i class="bi bi-credit-card-2-front-fill"></i>Cartão</a></li>
                 </ul>
                 <hr class="linha">
 
                 <footer class="inferiorLateral">
-                    <a href="telaLogin.php"><img src="../img/Import.png" alt="Sair icone">Sair</a>
+                    <a href="telaLogin.php"><i class="bi bi-box-arrow-left"></i>Sair</a>
                 </footer>
             </div>
         </div>
@@ -58,7 +57,7 @@
                 <h3><b>Baratie</b></h3>
                 <p>East - Blue</p>
                 <p>Vagas disponiveis: </p>
-                <input type="checkbox" id="heart"/>
+                <input type="checkbox" id="heart" />
                 <label for="heart">
                 </label>
             </a>
@@ -68,7 +67,7 @@
                 <h3><b>Wano</b></h3>
                 <p>Grand Line</p>
                 <p>Vagas disponiveis: </p>
-                <input type="checkbox" id="heart-2"/>
+                <input type="checkbox" id="heart-2" />
                 <label for="heart-2">
                 </label>
             </a>
@@ -78,7 +77,7 @@
                 <h3><b>Sabaody</b></h3>
                 <p>Grand Line</p>
                 <p>Vagas disponiveis: </p>
-                <input type="checkbox" id="heart-3"/>
+                <input type="checkbox" id="heart-3" />
                 <label for="heart-3">
                 </label>
             </a>
@@ -88,7 +87,7 @@
                 <h3><b>Whole Cake</b></h3>
                 <p>Grand Line</p>
                 <p>Vagas disponiveis:</p>
-                <input type="checkbox" id="heart-4"/>
+                <input type="checkbox" id="heart-4" />
                 <label for="heart-4">
                 </label>
             </a>
@@ -98,7 +97,7 @@
                 <h3><b>Alabasta</b></h3>
                 <p>Grand Line</p>
                 <p>Vagas disponiveis:</p>
-                <input type="checkbox" id="heart-5"/>
+                <input type="checkbox" id="heart-5" />
                 <label for="heart-5">
                 </label>
             </a>
@@ -108,7 +107,7 @@
                 <h3><b>Ohara</b></h3>
                 <p>West Blue</p>
                 <p>Vagas disponiveis:</p>
-                <input type="checkbox" id="heart-6"/>
+                <input type="checkbox" id="heart-6" />
                 <label for="heart-6">
                 </label>
             </a>

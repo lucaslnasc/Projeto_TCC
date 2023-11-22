@@ -65,24 +65,60 @@ span a {
   text-align: left;
 }
 
-.menuLateral img {
-  margin-right: 15px;
-  color: #ffffff;
-}
-
 .meioCentral {
   background-color: #a4bad3;
   width: 100%;
 }
 
 .menuLateral a {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
   text-decoration: none;
   color: #ffffff;
+  font-size: 20px;
 }
 
 .inferiorLateral {
-  margin-top: 330px;
-  text-align: left;
+  margin-top: 210%;
+  margin-left: 35px;
+}
+
+.inferiorLateral a {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.inferiorLateral i {
+  font-size: 30px;
+  padding: 2%;
+}
+
+.menuLateral i {
+  font-size: 30px;
+  padding: 2%;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none;
+}
+
+.menuLateral {
+  position: relative;
 }
 
 .inferiorLateral a {
@@ -157,22 +193,6 @@ span a {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.fav-btn {
-  position: absolute;
-  top: 1px;
-  bottom: 10px;
-  right: 10px;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  background-color: #0d2a4a;
-}
-
-.fav-btn img {
-  width: 40px;
-  height: 40px;
-}
 
 input[type="checkbox"] {
   display: none;
