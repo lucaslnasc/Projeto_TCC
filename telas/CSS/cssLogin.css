@@ -91,6 +91,8 @@ input[type="password"] {
   border-radius: 3px;
   display: flex;
   width: 400px;
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.8);
+  position: relative;
 }
 
 div span img {
@@ -100,3 +102,12 @@ div span img {
 p a{
   text-decoration: none;
 }
+
+.olho{
+  font-size: 30px;
+  cursor: pointer;
+  position: relative;
+  right: 5%;
+  color: #696969;
+}
+

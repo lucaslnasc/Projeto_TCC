@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/cssAddCartao.css">
-    <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.svg" type="image/x-icon">
     <title>Vaga Certa</title>
 </head>
 
@@ -14,7 +14,7 @@
     <header>
         <div id="headerCima">
             <div class="logozada">
-                <a href="http://"><img src="../img/LOGOFIMSEM-removebg-preview (1).png" alt="Logo do sistema"></a>
+                <a href="http://"><img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt="Logo do sistema"></a>
             </div>
         </div>
         <div id="headerMeio">

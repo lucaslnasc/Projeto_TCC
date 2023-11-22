@@ -39,22 +39,25 @@
 }
 
 .linha-vertical {
-  border-left: solid #000;
-  height: 55%;
-  left: 50%;
-  position: absolute;
-  margin-top: -375px;
+ background-color: black;
+ height: 600px;
+ width: 2px;
+ margin-left: 950px;
+ margin-top: -370px ;
 }
 
 .linha {
-  color: black;
-  border-left: solid #000;
+  background-color: black;
   width: 600px;
+  height: 2px;
+  margin-top: 10px;
+  margin-left: -10px;
 }
 .letra-Descriocao {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 19px;
+  margin-top: 10px;
 }
 .input-voltar {
   display: block;
@@ -88,7 +91,7 @@ input[type="Hora"] {
   width: 500px;
   border-radius: 30px;
   margin-left: 55%;
-  margin-top: -310px;
+  margin-top: -530px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -129,6 +132,7 @@ input[type="Hora"] {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
   margin-left: 45px;
+  margin-right: 139px;
   margin-top: 40px;
 }
 
@@ -166,9 +170,23 @@ form input[type="radio"] {
   width: 20px; /* Defina a largura dos botões de rádio conforme necessário */
   height: 20px; /* Defina a altura dos botões de rádio conforme necessário */
   vertical-align: middle; /* Alinhe verticalmente os botões de rádio */
+  border: 1px solid #000;
 }
 
-form label.letra-fundinho {
-  display: inline-block;
-  vertical-align: middle;
+form label.letra-fundinho2 {
+
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  padding-left: 35px;
+  margin-top: 40px;
+  margin-right: -10px;
+  
 }
+.linha1 {
+  background-color: black;
+  width: 450px;
+  height: 2px;
+  margin-top: 10px;
+  margin-left: 20px;
+  }

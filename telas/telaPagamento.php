@@ -23,7 +23,7 @@
      <div class = "area-agendamento">
         <label class = "letra-agendamento" >Agendamento</label> 
        <label class = "letra-pagamento" >Formas de Pagamento</label>
-        <hr class= "linha">
+       <div class = "linha"></div>
          <div>
          <label class = "letra-Descriocao" >Descrição</label>
          </div>
@@ -39,26 +39,26 @@
      </form>
      </div>
 
-    <hr class= "linha-vertical">
+     <div class= "linha-vertical"></div>
     
     <div class="container row mx-auto">
     <form action="" method="post">
     <div class="fundinho">
         <div>
-             <label for="" class="letra-fundinho">Cartão de Crédito</label>
+             <label for="" class="letra-fundinho2">Cartão de Crédito</label>
              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-             <hr class="linha">
-        </div>
+        </div> 
+        <div class = "linha1"></div>
         <div>
              <label for="" class="letra-fundinho">Cartão de Débito</label>
              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-             <hr class="linha">
         </div>
+        <div class = "linha1"></div>
         <div>
              <label for="" class="letra-fundinho1">PIX</label>
              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-             <hr class="linha">
         </div>
+        <div class = "linha1"></div>
         <div>
              <input type="button" class="efetuar-pagamento" value="Efetuar Pagamento">
         </div>
