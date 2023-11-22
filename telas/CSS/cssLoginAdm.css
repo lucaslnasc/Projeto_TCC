@@ -16,20 +16,26 @@
 }
 
 .imagem img {
-  margin-left: 450px;
+  width: 42rem;
+  position: relative;
+  margin-left: 350px;
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
 .layout {
-  margin-bottom: -20px;
+  margin-bottom: -5px;
 }
 
-.row input {
+.inputs input {
   margin-bottom: 10px;
 }
 
-.row login {
+.inputs{
+  height: 150px;
+}
+
+.inputs login {
   margin-bottom: 20px;
   height: 90px;
 }
@@ -59,9 +65,9 @@
   font-size: 17px;
   width: 200px;
   height: 35px;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 70px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   border-width: 0px;
   border-radius: 5px;
   transition: 2s;
