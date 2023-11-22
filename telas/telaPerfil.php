@@ -55,9 +55,9 @@
     </header>
 
     <div class="fundo">
-        <span>BEM-VINDO #####</span><BR></BR>
-        <span>SUAS INFORMAÇÕES PESSOAIS</span>
-        <hr>
+        <span class="bv">BEM-VINDO #####</span><BR></BR>
+        <span class="inf">SUAS INFORMAÇÕES PESSOAIS</span>
+        <div class="linha1"></div>
         <div class="element">
             <div>
                 <span>ENDEREÇO DE E-MAIL</span><i class="bi bi-pencil-square"></i><br>
@@ -76,8 +76,8 @@
                 <input type="text" id="dtNasc">
             </div>
         </div>
-        <span>INFORMAÇÕES DO SEU VEÍCULO</span>
-        <hr>
+        <span class="inf">INFORMAÇÕES DO SEU VEÍCULO</span>
+        <div class="linha1"></div>
         <div class="element">
             <div>
                 <span>TIPO DE VEÍCULO</span><i class="bi bi-pencil-square"></i><br>
