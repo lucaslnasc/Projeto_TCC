@@ -41,6 +41,25 @@
     </form>
     <label class="letra-linha">Legenda</label>
     <div class="linha-legenda" ></div>
-    <div class = "quadrado-verde"></div>
+    <div class="legenda-container">
+    <div class="quadrado-verde"></div>
+    <span>Disponível</span>
+</div>
+
+<div class="legenda-container">
+    <div class="quadrado-cinza"></div>
+    <span class="txtAgend">Agendada</span>
+</div>
+
+<div class="legenda-container">
+    <div class="quadrado-vermelho"></div>
+    <span>Ocupada</span>
+</div>
+
+<div class="legenda-container">
+    <div class="quadrado-preferencial"></div>
+    <span>Preferencial</span>
+</div>
+
 </body>
 </html>
