@@ -1,3 +1,7 @@
+<?php
+  include('conexao.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,33 +31,33 @@
       </label>
     </header>
      
-<form action="" method="post">
+<form action="cadastrarUser.php" method="post">
   <div class="fundinho">
   <div>
     <label for="">Informações Pessoais</label>
   </div>
   <div class="inputBox nomeC">
-    <input type="text" required="required">
+    <input type="text" required="required" id="nome" name="nome">
     <span>Nome Completo</span>
   </div>
   <div class="inputBox cpf">
-    <input type="text" required="required" id="cpf">
+    <input type="text" required="required" id="cpf" name="cpf">
     <span>CPF</span>
   </div>
   <div class="inputBox eEmail">
-    <input type="email" required="required">
+    <input type="email" required="required" id="email" name="email">
     <span>Endereço de E-mail</span>
   </div>
   <div class="inputBox dtNasc">
-  <input type="text" name="" id="date" required="required">
+  <input type="text" name="data_nasc" required="required" id="data_nasc">
     <span>Data de Nascimento</span>
   </div>
   <div class="inputBox tel">
-    <input type="text" required="required">
+    <input type="text" required="required" id="telefone" name="telefone"> 
     <span>Telefone</span>
   </div>
   <div class="inputBox senha">
-    <input type="password" required="required" id="senha">
+    <input type="password" required="required" id="senha" name="senha">
     <span>Senha</span>
     <i class="bi bi-eye-fill olho" id="btn-senha" onclick="mostrarSenha()"></i>
   </div>
@@ -62,19 +66,19 @@
     <label for="">Informações do Veículo</label>
   </div>
   <div class="inputBox nomeC">
-    <input type="text" required="required">
+    <input type="text" required="required" id="placa_veiculo" name="placa_veiculo">
     <span>Placa do Veículo</span>
   </div>
   <div class="inputBox cpf">
-    <input type="text" required="required" id="cpf">
+    <input type="text" required="required" id="tipo_veiculo" name="tipo_veiculo">
     <span>Tipo do Veículo</span>
   </div>
   <div class="inputBox eEmail">
-    <input type="email" required="required">
+    <input type="text" required="required" id="marca_veiculo" name="marca_veiculo">
     <span>Marca</span>
   </div>
   <div class="inputBox dtNasc">
-  <input type="text" name="" id="date" required="required">
+  <input type="text" name="modelo_veiculo" id="modelo_veiculo" required="required">
     <span>Modelo</span>
   </div>
   <div class="submit-container">
@@ -84,13 +88,19 @@
 
   </div>
 
-
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <!-- SCRIPT MASK DO JQUERY -->
 <script type="text/javascript" src="jquery.mask.js"></script>
 <script type="text/javascript">
+
   $(document).ready(function(){
-    $('#date').mask('00/00/0000');
+    $('#data_nasc').mask('00/00/0000');
+    $('#cpf').mask('000.000.000-00');
+    $('#telefone').mask('(00) 0 0000-0000');
   })
+
+  
 </script>
 
 <!-- SCRIPT DO OLHO SENHA -->
