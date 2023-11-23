@@ -1,5 +1,12 @@
 <?php
-  include('conexao.php');
+include('conexao.php');
+
+$query = $dbh->prepare('SELECT * FROM veiculo');
+$query->execute();
+
+$veiculo = $query->fetchAll();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -70,9 +77,16 @@
     <span>Placa do Veículo</span>
   </div>
   <div class="inputBox cpf">
-    <input type="text" required="required" id="tipo_veiculo" name="tipo_veiculo">
+
+    <select name="tipo_veiculo" id="tipo_veiculo" required="required">
+    <?php
+      foreach ($veiculo as $linha) {
+        echo '<option value="' . $linha['categoria_veiculo'] . '">' . $linha['categoria_veiculo'] . '</option>';
+      }
+    ?>
+    </select>
     <span>Tipo do Veículo</span>
-  </div>
+</div>
   <div class="inputBox eEmail">
     <input type="text" required="required" id="marca_veiculo" name="marca_veiculo">
     <span>Marca</span>

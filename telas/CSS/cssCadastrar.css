@@ -199,3 +199,41 @@ margin-left: 450px;
   opacity: .8;
   background-color: rgb(192, 45, 8);
 }
+
+.inputBox select,
+.inputBox select:valid,
+.inputBox select:focus {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 4px;
+    outline: none;
+    color: black;
+    font-size: 1em;
+    transition: 0.5s;
+    box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.8);
+}
+
+.inputBox select span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: #9e9e9e;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.inputBox select:valid ~ span,
+.inputBox select:focus ~ span {
+    color: black;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.75em;
+    padding: 0.20px;
+    background: black;
+    letter-spacing: 0.1em;
+    background-color: #d1d1d1;
+    border-radius: 1px;
+}
