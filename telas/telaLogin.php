@@ -16,7 +16,7 @@
     <header>
         <div id="headerCima">
             <div class="logozada">
-                <img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt="Logo do sistema">
+              <img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt="Logo do sistema">
             </div>
         </div>
     </header>
