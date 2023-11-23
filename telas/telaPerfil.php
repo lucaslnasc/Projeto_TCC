@@ -54,53 +54,54 @@
         </div>
     </header>
 
-    <div class="fundo">
-        <span class="bv">BEM-VINDO #####</span><BR></BR>
-        <span class="inf">SUAS INFORMAÇÕES PESSOAIS</span>
+   
+      <div class="bv">Enaoseioqnaoseioqla@gmail.com</div><br>
+      <div class="bv1">Alterar senha</div><br>
+      <div></div>
+        <div class="inf">SUAS INFORMAÇÕES PESSOAIS</div>
         <div class="linha1"></div>
         <div class="element">
             <div>
-                <span>ENDEREÇO DE E-MAIL</span><i class="bi bi-pencil-square"></i><br>
-                <input type="text" name="" id="email">
+                <label Class="letraEsq">NOME</label><i class="bi bi-pencil-square"></i>
+                <input type="text" name="nome" id="nome">
             </div>
             <div>
-                <span>CPF</span><br>
-                <input type="text" id="cpf">
+            <label Class="letraDir">CPF</label><br>
+                <input type="text" name= "cpf" id="cpf">
+            </div>
+            <br>
+            <div>
+            <label Class="letraEsq">TELEFONE</label><i class="bi bi-pencil-square"></i><br>
+                <input type="text" name= "telefone" id="telefone">
             </div>
             <div>
-                <span>TELEFONE</span><i class="bi bi-pencil-square"></i><br>
-                <input type="text" id="telefone">
-            </div>
-            <div>
-                <span>DATA DE NASCIMENTO</span><br>
-                <input type="text" id="dtNasc">
+            <label Class="letraDir">DATA DE NASCIMENTO</label><br>
+                <input type="text" name= "dtNasc" id="dtNasc">
             </div>
         </div>
-        <span class="inf">INFORMAÇÕES DO SEU VEÍCULO</span>
+        <div class="inf">INFORMAÇÕES DO SEU VEÍCULO</div>
         <div class="linha1"></div>
         <div class="element">
             <div>
-                <span>TIPO DE VEÍCULO</span><i class="bi bi-pencil-square"></i><br>
-                <input type="text" name="" id="tVeiculo">
+            <label class="letraEsq">TIPO VEÍCULO</label><i class="bi bi-pencil-square"></i><br>
+                <input type="text" name= "tipoP" id="tipoP">
             </div>
             <div>
-                <span>PLACA</span><i class="bi bi-pencil-square"></i><br>
-                <input type="text" id="placa">
+            <label Class="letraDir">PLACA</label><i class="bi bi-pencil-square"></i><br>
+                <input type="text" name= "placa" id="placa">
+            </div>
+            <br>
+            <div>
+            <label Class="letraEsq2">MARCA</label><i class="bi bi-pencil-square"></i><br>
+                <input type="text" name= "marca" id="marca">
             </div>
             <div>
-                <span>MARCA</span><i class="bi bi-pencil-square"></i><br>
-                <input type="text" id="marca">
-            </div>
-            <div>
-                <span>MODELO</span><i class="bi bi-pencil-square"></i>  <br>
-                <input type="text" id="modelo">
+            <label Class="letraDir2">MODELO</label><i class="bi bi-pencil-square"></i><br>
+                <input type="text" name= "modelo" id="modelo">
             </div>
         </div>
-        <div class="button-group">
-            <button class="altS">ALTERAR SENHA</button>
-            <button class="salv">SALVAR</button>
-        </div>
-    </div>
+    
+  
 
     <script>
     function mostrarBotaoAdicionarCartao() {
