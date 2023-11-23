@@ -1,6 +1,6 @@
 <?php
 
-$dsn = 'mysql:dbname=estacionamento;hosto=127.0.0.1;port=3306';
+$dsn = 'mysql:dbname=estacionamento;hosto=127.0.0.1;port=3307';
 $user = 'root';
 $password = '';
 
