@@ -2,7 +2,7 @@ CREATE DATABASE estacionamento;
 
 USE estacionamento;
 
-CREATE TABLE cadastro(
+CREATE TABLE usuario(
 	id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR (100) NOT NULL,
     email VARCHAR (100) NOT NULL UNIQUE,
@@ -11,9 +11,11 @@ CREATE TABLE cadastro(
     data_nasc DATE NOT NULL,
     telefone VARCHAR (14) NOT NULL, 
     placa_veiculo VARCHAR (7) NOT NULL,
-    tipo_veiculo VARCHAR (15) NOT NULL
+    tipo_veiculo VARCHAR (15) NOT NULL,
+    marca_veiculo VARCHAR (30) NOT NULL,
+    modelo_veiculo VARCHAR (30) NOT NULL
 );
-
+select * from cadastro;
 CREATE TABLE pagamento(
 	id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
     tipo_cartao VARCHAR(50) NOT NULL,
@@ -47,17 +49,16 @@ VALUES
 ('C', 'Carro'),
 ('M', 'Moto');
 
-ALTER TABLE cadastro ADD CONSTRAINT	fk_veiculo FOREIGN KEY (tipo_veiculo) REFERENCES veiculo(cod);
+ALTER TABLE usuario ADD CONSTRAINT	fk_veiculo FOREIGN KEY (tipo_veiculo) REFERENCES veiculo(cod);
 
 SELECT cod, categoria_veiculo 
 FROM veiculo
-INNER JOIN cadastro ON cadastro.tipo_veiculo = veiculo.cod;
+INNER JOIN usuario ON usuario.tipo_veiculo = veiculo.cod;
 
-INSERT INTO cadastro(nome, email, cpf, senha, data_nasc, telefone, placa_veiculo, tipo_veiculo)
+INSERT INTO usuario(nome, email, cpf, senha, data_nasc, telefone, placa_veiculo, tipo_veiculo)
 VALUES
 ('Lucas de Lima', 'lucaslnascimento090@gmail.com', '16868214790' ,'lucas2006', '2006-01-15' ,'27999943806', 'R8Z9OP5', 'C'),
 ('Lucas de Lima', 'lucaslnascimento015@gmail.com', '16868214759' ,'lucas2006', '2006-01-15' ,'27999943806', 'R8Z9OP5', 'M');
 
-SELECT * FROM cadastro;
+select * from cadastro;
 
-DROP TABLE cadastro;

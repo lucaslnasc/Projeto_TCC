@@ -58,8 +58,6 @@
   text-align: center;
   margin-left: 20px;
   margin-top: 10px;
-  /*margin-left: 165px;
-    display: block;*/
 }
 
 .span-img {
@@ -71,8 +69,9 @@
   background-color: #0d2a4a;
   color: #ffffff;
   width: 120px;
-  margin-top: 70px;
-  margin-left: -5px;
+  margin-top: 30px;
+  margin-left: 4px;
+  transition: .2s linear;
 }
 
 .input-entrar {
@@ -81,18 +80,17 @@
   color: #ffffff;
   width: 125px;
   margin-top: 25px;
+  transition: .2s linear;
 }
 
-input[type="email"],
-input[type="password"] {
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  display: flex;
-  width: 400px;
-  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.8);
-  position: relative;
+.input-cadastrar :hover{
+  letter-spacing: 2px;
+  opacity: .8;
+}
+
+.input-entrar :hover{
+  letter-spacing: 2px;
+  opacity: .8;
 }
 
 div span img {
@@ -106,8 +104,58 @@ p a{
 .olho{
   font-size: 30px;
   cursor: pointer;
-  position: relative;
   right: 5%;
   color: #696969;
+  position: fixed;
+  margin-right: 58%;
+  margin-top: -45px;
 }
+
+.inputBox{
+  position: relative;
+  width: 250px;
+ }
+
+ .inputBox input{
+  width: calc(100% + 200px); 
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  border-radius: 4px;
+  outline: none;
+  color:black;
+  font-size: 1em;
+  transition: 0.5s;
+  margin-top: 10px;
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.8);
+ }
+
+ .inputBox span{
+  position: fixed;
+  left: 150px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color:#9e9e9e;
+  text-transform: uppercase;
+  transition: 0.4s;
+  margin-top: -48px;
+ }
+
+ .inputBox input:valid ~ span,
+ .inputBox input:focus ~ span{
+  color:black;
+  transform: translateX(0) translateY(-7px);
+  font-size: 0.75em;
+  padding: 0.20px;
+  background: black;
+  letter-spacing: 0.1em;
+  background-color:#d1d1d1;
+  border-radius: 1px;
+ }
+
+ .inputBox input:valid, .inputBox input:focus{
+  border: 1px solid #0000;
+ }
+
 

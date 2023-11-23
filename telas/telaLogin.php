@@ -23,13 +23,17 @@
     <div class="container row mx-auto">
         <hr class="linha">
         <div class="area-login">
-            <form action="" method="post">
+            <form action="telaPrincipal.php" method="post">
                 <h3 class="tituloLogin">Fazer Login</h3>
-                <label for="">E-mail</label>
-                <input type="email" name="email" aria-describedby="addon-wrapping" required>
-                <label for="">Senha</label>
-                <input type="password" aria-describedby="addon-wrapping" id="senha" required>
+                <div class="inputBox eEmail">
+                <input type="email" required="required" id="email" name="email">
+                <span>Endereço de E-mail</span>
+                </div>
+                <div class="inputBox senha">
+                <input type="password" required="required" id="senha" name="senha">
+                <span>Senha</span>
                 <i class="bi bi-eye-fill olho" id="btn-senha" onclick="mostrarSenha()"></i>
+                </div>
                 <a class="link" href="">Esqueci Senha</a>
                 <input type="submit" class="input-entrar" value="Entrar">
             </form>
@@ -65,7 +69,7 @@
         <hr class="linha">
     </div>
 
-    <!-- SCRIPT DO OLHO SENHA -->
+    
 <script>
   function mostrarSenha(){
     var inputPass = document.getElementById('senha')

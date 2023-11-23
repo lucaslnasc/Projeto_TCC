@@ -65,28 +65,41 @@ span a {
   text-align: left;
 }
 
-.menuLateral img {
-  margin-right: 15px;
-  color: #ffffff;
-}
-
 .meioCentral {
   background-color: #a4bad3;
   width: 100%;
 }
 
 .menuLateral a {
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border: none;
   text-decoration: none;
   color: #ffffff;
+  font-size: 20px;
 }
 
 .inferiorLateral {
-  margin-top: 330px;
-  text-align: left;
+  margin-top: 210%;
+  margin-left: 35px;
 }
 
 .inferiorLateral a {
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border: none;
   text-decoration: none;
   color: #ffffff;
-  padding-left: 20px;
+  font-size: 20px;
 }
+
+.inferiorLateral i{
+  font-size: 30px;
+  padding: 2%;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
