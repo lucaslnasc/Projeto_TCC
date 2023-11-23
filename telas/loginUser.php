@@ -2,8 +2,8 @@
 
     include('conexao.php');
 
-    if (isset($_POST['login'], $_POST['senha']) && $_POST['login'] != '' & $_POST['senha'] != '') {
-        $login = $_POST['login'];
+    if (isset($_POST['email'], $_POST['senha']) && $_POST['email'] != '' & $_POST['senha'] != '') {
+        $email = $_POST['email'];
         $senha = $_POST['senha'];
     }else{
         echo 'variavies não definidas';
@@ -12,18 +12,18 @@
 
     try{
 
-        $query = $dbh->prepare('SELECT login, senha FROM login WHERE login = :login AND senha = :senha');
+        $query = $dbh->prepare('SELECT email, senha FROM usuario WHERE email = :email AND senha = :senha');
 
         $query->execute(array(
-            ':login' => $login,
+            ':email' => $email,
             ':senha' => $senha
         ));
 
         $usuario = $query->fetch();
         print_r($usuario);
 
-        if(isset($usuario['login'])){
-            header('Location:cadastro.html');
+        if(isset($usuario['email'])){
+            header('Location:telaPrincipal.php');
         }else{
             echo 'Falha login!';
             die();
