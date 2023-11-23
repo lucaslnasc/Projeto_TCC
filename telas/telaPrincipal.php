@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./CSS/cssPrincipal.css">
-    <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.svg" type="image/x-icon">
     <title>Vaga Certa</title>
 </head>
 

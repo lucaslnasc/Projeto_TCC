@@ -47,8 +47,8 @@
                     <a href="telaLogin.php"><i class="bi bi-box-arrow-left"></i>Sair</a>
                 </footer>
             </div>
-
         </div>
+    </header>
         <div class="painelCartao">
             <nav class="nav">
                 <span class="icon"><i class="bi bi-three-dots-vertical"></i></span>
