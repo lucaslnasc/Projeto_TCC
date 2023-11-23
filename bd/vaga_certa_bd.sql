@@ -55,17 +55,14 @@ SELECT cod, categoria_veiculo
 FROM veiculo
 INNER JOIN usuario ON usuario.tipo_veiculo = veiculo.cod;
 
-INSERT INTO usuario(nome, email, cpf, senha, data_nasc, telefone, placa_veiculo, tipo_veiculo)
-VALUES
-('Lucas de Lima', 'lucaslnascimento090@gmail.com', '16868214790' ,'lucas2006', '2006-01-15' ,'27999943806', 'R8Z9OP5', 'C');
-
 CREATE TABLE administrador(
 id_adm INT primary key auto_increment,
 email VARCHAR (100) NOT NULL,
 senha VARCHAR (100) NOT NULL
 );
 
-INSERT INTO administrador(email, senha) VALUES ('adm@adm.com', '123adm');
+INSERT INTO administrador(email, senha) 
+VALUES ('adm@adm.com', '123adm');
 
 select * from administrador;
 
