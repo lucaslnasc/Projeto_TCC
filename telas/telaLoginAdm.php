@@ -11,7 +11,7 @@
 </head>
 
 <body class="padrao0">
-    <form action="">
+    <form action="loginADM.php" method="post">
         <div class="container">
             <div class="imagem">
                 <img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt="">
@@ -20,9 +20,9 @@
                 <h3>Login Administrador</h3>
                 <hr class="linha">
                 <div class="inputs">
-                    <input type="text" name="login" id="" placeholder="Login" required>
-                    <input type="password" name="senha" id="" placeholder="Senha" required>
-                    <input type="button" class="login" value="Entrar">
+                    <input type="email" name="email" id="email" placeholder="Login" required="required">
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required="required">
+                    <input type="submit" class="login" value="Entrar">
                 </div>
             </div>
         </div>
