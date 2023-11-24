@@ -11,7 +11,7 @@
 </head>
 
 <body class="padrao0">
-    <form action="loginADM.php" method="post">
+    <form action="../bd/loginADM.php" method="post">
         <div class="container">
             <div class="imagem">
                 <img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt="">

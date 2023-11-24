@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('../bd/conexao.php');
 
 $query = $dbh->prepare('SELECT * FROM veiculo');
 $query->execute();
@@ -38,7 +38,7 @@ $veiculo = $query->fetchAll();
       </label>
     </header>
      
-<form action="cadastrarUser.php" method="post">
+<form action="../bd/cadastrarUser.php" method="post">
   <div class="fundinho">
   <div>
     <label for="">Informações Pessoais</label>
