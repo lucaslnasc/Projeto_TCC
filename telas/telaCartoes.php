@@ -35,7 +35,7 @@
                 <hr class="linha">
                 <div class="menuLateral bCartao">
                     <li onmouseover="mostrarBotaoAdicionarCartao()" onmouseout="esconderBotaoAdicionarCartao()">
-                        <a href="telaAjustes_Cartoes.php">
+                        <a href="telaAddCartao.php">
                             <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
                         </a>
                         <button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button>

@@ -37,7 +37,7 @@
                 <hr class="linha">
                 <div class="menuLateral bCartao">
                     <li onmouseover="mostrarBotaoAdicionarCartao()" onmouseout="esconderBotaoAdicionarCartao()">
-                        <a href="telaCartoes.php">
+                        <a href="telaAddCartao.php">
                             <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
                         </a>
                         <a href="telaAddCartao.php"><button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button></a>
@@ -58,8 +58,8 @@
 
     <div class="front">
         <div class="image">
-            <img src="chip.png" alt="">
-            <img src="visa.png" alt="">
+            <img src="../img/chip.png" alt="">
+            <img src="../img/visa.png" alt="">
         </div>
         <div class="card-number-box">################</div>
         <div class="flexbox">
@@ -82,7 +82,7 @@
         <div class="box">
             <span>cvv</span>
             <div class="cvv-box"></div>
-            <img src="visa.png" alt="">
+            <img src="../img/visa.png" alt="">
         </div>
     </div>
 
