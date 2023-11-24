@@ -22,9 +22,17 @@
         <label class="letra-fundinho1">Esqueci minha senha</label>
       </div>
       <div>
-        <label class="letra-fundinho2"> Para redefinir sua senha, informe o e-mail cadastrado
-            na sua conta e lhe enviaremos um  </label>
-        
+        <label class="letra-fundinho2"> Para redefinir sua senha, informe o e-mail <br> cadastrado
+            na sua conta e lhe enviaremos uma <br> autorização para a troca de senha.  </label>
+      </div>
+      <div>
+        <input type="" class = "email" placeholder = "Email">
+      </div>
+      <div>
+        <input type="" class = "botao" value="ENVIAR"></input>
+      </div>
+      <div class = "divCancelar">
+        <label for=""><a href="">Cancelar</a></label>
       </div>
     </div>
 </body>
