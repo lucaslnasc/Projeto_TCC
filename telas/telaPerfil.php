@@ -54,15 +54,14 @@
         </div>
     </header>
 
-   
       <div class="bv">Enaoseioqnaoseioqla@gmail.com</div><br>
-      <div class="bv1">Alterar senha</div><br>
+      <div class="bv1"><a class="bv2" href="">Alterar senha</a></div>
       <div></div>
         <div class="inf">SUAS INFORMAÇÕES PESSOAIS</div>
-        <div class="linha1"></div>
+        <div class="linha1"></div> 
         <div class="element">
             <div>
-                <label Class="letraEsq">NOME</label><i class="bi bi-pencil-square"></i>
+            <label Class="letraEsq">NOME</label><i class="bi bi-pencil-square pp" ></i><br>
                 <input type="text" name="nome" id="nome">
             </div>
             <div>
@@ -71,7 +70,7 @@
             </div>
             <br>
             <div>
-            <label Class="letraEsq">TELEFONE</label><i class="bi bi-pencil-square"></i><br>
+           <label Class="letraEsq">TELEFONE</label> <i class="bi bi-pencil-square pp" ></i><br>
                 <input type="text" name= "telefone" id="telefone">
             </div>
             <div>
@@ -80,27 +79,28 @@
             </div>
         </div>
         <div class="inf">INFORMAÇÕES DO SEU VEÍCULO</div>
-        <div class="linha1"></div>
+     <div class="linha1"></div>
         <div class="element">
             <div>
-            <label class="letraEsq">TIPO VEÍCULO</label><i class="bi bi-pencil-square"></i><br>
+            <label class="letraEsq">TIPO VEÍCULO</label><i class="bi bi-pencil-square pp"></i><br>
                 <input type="text" name= "tipoP" id="tipoP">
             </div>
             <div>
-            <label Class="letraDir">PLACA</label><i class="bi bi-pencil-square"></i><br>
+            <label Class="letraDir">PLACA</label><i class="bi bi-pencil-square ppp"></i><br>
                 <input type="text" name= "placa" id="placa">
             </div>
             <br>
             <div>
-            <label Class="letraEsq2">MARCA</label><i class="bi bi-pencil-square"></i><br>
+            <label Class="letraEsq2">MARCA</label><i class="bi bi-pencil-square pp"></i><br>
                 <input type="text" name= "marca" id="marca">
             </div>
             <div>
-            <label Class="letraDir2">MODELO</label><i class="bi bi-pencil-square"></i><br>
+            <label Class="letraDir2">MODELO</label><i class="bi bi-pencil-square ppp"></i><br>
                 <input type="text" name= "modelo" id="modelo">
             </div>
+            <input type="submit" class="salvar" value="Salvar alterações">
         </div>
-    
+   
   
 
     <script>
@@ -119,3 +119,4 @@
     }
 </script>
 </body>
+</html>
