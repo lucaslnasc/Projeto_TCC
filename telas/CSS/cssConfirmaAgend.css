@@ -1,0 +1,213 @@
+.padrao0{
+    background-color: #0D2A4A;
+}
+
+.logozada{
+    position: fixed;
+    margin-right: 100px;
+    left: 39%;
+    top: 5%;
+}
+
+.fundo{
+    background-color: #43627F;
+    margin-left: 24.5%;
+    margin-top: 11%;
+    width: 800px;
+    height: 550px;
+    position: fixed;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+*{
+    text-transform: uppercase;
+    color: white;
+}
+
+#txtCima{
+    font-size: 3vh;
+    position: fixed;
+    margin-left: 5.6%;
+    margin-top: 0.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.linha {
+    background-color: white;
+    width: 90vh;
+    height: 2.6px;
+    margin-top: 50px;
+    margin-left: 50px;
+    position: fixed;
+  }
+  
+  .spanNome{
+    position: fixed;
+    font-size: 2.2vh;
+    margin-top: 5%;
+    margin-left: 3%;
+    font-weight: lighter;
+  }
+
+  .inputNome{
+  width: 19%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  outline: none;
+  color:black;
+  font-size: 1em;
+  position:fixed;
+  margin-top: 5%;
+  margin-left: 3%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 30px -12px inset, rgba(0, 0, 0, 0.3) 0px 12px 19px -18px inset;
+  }
+
+  .inputVaga{
+    width: 19%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    outline: none;
+    color:black;
+    font-size: 1em;
+    position:fixed;
+    margin-top: 5%;
+    margin-left: 27%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 30px -12px inset, rgba(0, 0, 0, 0.3) 0px 12px 19px -18px inset;
+  }
+
+  .spanVaga{
+    position: fixed;
+    font-size: 2.2vh;
+    margin-top: 3.5%;
+    margin-left: 27%;
+    font-weight: lighter;
+  }
+
+  .inputTel{
+    width: 19%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    outline: none;
+    color:black;
+    font-size: 1em;
+    position:fixed;
+    margin-top: 12%;
+    margin-left: 3%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 30px -12px inset, rgba(0, 0, 0, 0.3) 0px 12px 19px -18px inset;
+  }
+
+  .spanTel{
+    position: fixed;
+    font-size: 2.2vh;
+    margin-top: 10.5%;
+    margin-left: 3%;
+    font-weight: lighter;
+}
+
+  .spanData{
+    position: fixed;
+    font-size: 2.2vh;
+    margin-top: 10.5%;
+    margin-left: 27%;
+    font-weight: lighter;
+  }
+
+  .inputData{
+    width: 19%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    outline: none;
+    color:black;
+    font-size: 1em;
+    position:fixed;
+    margin-top: 12%;
+    margin-left: 27%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 30px -12px inset, rgba(0, 0, 0, 0.3) 0px 12px 19px -18px inset;
+  }
+
+  .spanPV{
+    position: fixed;
+    font-size: 2.2vh;
+    margin-top: 18%;
+    margin-left: 3%;
+    font-weight: lighter;
+  }
+
+  .inputPV{
+    width: 19%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    outline: none;
+    color:black;
+    font-size: 1em;
+    position:fixed;
+    margin-top: 19.5%;
+    margin-left: 3%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 30px -12px inset, rgba(0, 0, 0, 0.3) 0px 12px 19px -18px inset;
+  }
+
+  .spanHorario{
+    position: fixed;
+    font-size: 2.2vh;
+    margin-top: 18%;
+    margin-left: 27%;
+    font-weight: lighter;
+  }
+
+  .inputHorario{
+    width: 19%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    outline: none;
+    color:black;
+    font-size: 1em;
+    position:fixed;
+    margin-top: 19.5%;
+    margin-left: 27%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 30px -12px inset, rgba(0, 0, 0, 0.3) 0px 12px 19px -18px inset;
+  }
+
+  .btSair{
+    display: inline-flex;
+    background-color: #0d2a4a;
+    color: #ffffff;
+    width: 125px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    height: 7%;
+    position: fixed;
+    margin-top: 27%;
+    margin-left: 14%;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 1.8px;
+    align-items: center;
+    text-align: center;
+    padding: 0 43px;
+  }
+
+  .btQR{
+    display: inline-flex;
+    background-color: #0d2a4a;
+    color: #ffffff;
+    width: 125px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    height: 7%;
+    position: fixed;
+    margin-top: 27%;
+    margin-left: 27%;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 1.8px;
+    align-items: center;
+    text-align: center;
+  }
