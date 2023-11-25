@@ -67,9 +67,40 @@
     <label class="letra-vaga2">Andar:</label>
     <div class = "linha-Vagas"></div>
 
-    <!--<div class = "linha-Vagas"></div> -->
+ <div class = "grid-pai">
+    <div class="grid-container1">
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
     </div>
 
+    <div class="grid-container1">
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+    </div>
+ </div>
+
+ <div class = "grid-pai1">
+    <div class="grid-container1">
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+    </div>
+
+    <div class="grid-container1">
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+        <div class = "vagaLivre"></div>
+    </div>
+ </div>
+
+    <div class = "linha-Vagas"></div> 
+    </div>
 </div>
 
 </body>

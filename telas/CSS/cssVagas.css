@@ -177,12 +177,15 @@ font-size: 20px;
 }
 .campoVagas{
 background-color: transparent;
-border: 1px solid #000;
+/* border: 1px solid #000;*/
 display: block;
 width: 1050px;
-height: 700px;
+height: 650px;
 margin-left: 37%;
 margin-top: -35%;
+border-radius: 25px;
+ /*background-color: white;
+ box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;*/
 }
 
 .linha-Vagas{
@@ -205,4 +208,55 @@ color: black;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 25px;
 margin-left: 43.5%;
+}
+
+.vagaLivre{
+  width:85px ;
+  height: 110px;
+  background-color: rgb(21, 224, 21);
+  border: 1px solid #000;
+  margin-left: 25%;
+  margin-top: 5%;
+}
+.grid-container1 {
+  display: grid;
+  grid-template-columns:19% 19% 19% 19%;
+  padding: 18px;
+  margin-left: 3%;
+  column-gap: 0px;
+  column-gap: 0px;
+}
+.grid-pai {
+  display: grid;
+  grid-template-columns:auto auto ;
+  padding: 18px;
+  margin-left: 3%;
+  column-gap: 0px;
+  column-gap: 0px;
+}
+
+.grid-pai1 {
+  display: grid;
+  grid-template-columns:auto auto ;
+  padding: 18px;
+  margin-left: 3%;
+  column-gap: 0px;
+  column-gap: 0px;
+  margin-top: 12.9%;
+}
+.vagaOcupada{
+  width:75px ;
+  height: 100px;
+  background-color: red;
+  border: 1px solid #000;
+  margin-left: 25%;
+  margin-top: 5%;
+}
+.vagaAgendada{
+  width:75px ;
+  height: 100px;
+  background-color: rgb(145, 143, 143);
+  border: 1px solid #000;
+  margin-left: 25%;
+  margin-top: 5%;
 }

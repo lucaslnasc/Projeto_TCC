@@ -2,7 +2,7 @@
 
 include("../bd/conexao.php");
 
-$estacionamento = '';
+$estacionamento = 'Baratie';
 if (isset($_POST['estacionamento'])) {
     $estacionamento = $_POST['estacionamento'];
 }
@@ -71,74 +71,28 @@ $local = $query->fetchAll();
         <div class="search">
             <form action="" method="post">
                 <input type="text" id="pesquisar" name="estacionamento" placeholder="Pesquisa">
-                <button type="button" class="btn btn-primary">
-                    <i class="bi bi-search"></i>
-                </button>
+
+                <input type="submit" class="btn btn-primary">
+                <i class="bi bi-search"></i>
+                </input>
             </form>
         </div>
-        <div class="card" data-location="Baratie">
-            <a href="">
+        <div class="grid-container">
                 <?php
                 foreach ($local as $l) {
-                echo "".$l[""]."".$l[""];
+                    echo '<div class="grid-card">';
+                    echo '<a href="">';
+                    echo '<h3>' . '<br>' . $l['nome_estacionamento'] . '</b>' . '</h3>';
+                    echo '<p>' . $l['localizacao'] . '</p>';
+                    echo '<p>' . 'Vagas Disponiveis: ' . $l['vagas_disponiveis'] . '</p>';
+                    echo '<input type="checkbox" id="heart" />';
+                    echo '<label for="heart"></label>';
+                    echo '</a>';
+                    echo '</div>';
+                    echo '</div';
                 }
                 ?>
-                <p>East - Blue</p>
-                <p>Vagas disponiveis: </p>
-                <input type="checkbox" id="heart" />
-                <label for="heart">
-                </label>
-            </a>
-        </div>
-        <div class="card" data-location="Wano">
-            <a href="">
-                <h3><b>Wano</b></h3>
-                <p>Grand Line</p>
-                <p>Vagas disponiveis: </p>
-                <input type="checkbox" id="heart-2" />
-                <label for="heart-2">
-                </label>
-            </a>
-        </div>
-        <div class="card" data-location="Sabaody">
-            <a href="">
-                <h3><b>Sabaody</b></h3>
-                <p>Grand Line</p>
-                <p>Vagas disponiveis: </p>
-                <input type="checkbox" id="heart-3" />
-                <label for="heart-3">
-                </label>
-            </a>
-        </div>
-        <div class="card" data-location="Whole Cake">
-            <a href="">
-                <h3><b>Whole Cake</b></h3>
-                <p>Grand Line</p>
-                <p>Vagas disponiveis:</p>
-                <input type="checkbox" id="heart-4" />
-                <label for="heart-4">
-                </label>
-            </a>
-        </div>
-        <div class="card" data-location="Alabasta">
-            <a href="">
-                <h3><b>Alabasta</b></h3>
-                <p>Grand Line</p>
-                <p>Vagas disponiveis:</p>
-                <input type="checkbox" id="heart-5" />
-                <label for="heart-5">
-                </label>
-            </a>
-        </div>
-        <div class="card" data-location="Ohara">
-            <a href="">
-                <h3><b>Ohara</b></h3>
-                <p>West Blue</p>
-                <p>Vagas disponiveis:</p>
-                <input type="checkbox" id="heart-6" />
-                <label for="heart-6">
-                </label>
-            </a>
+            </div>
         </div>
     </div>
 

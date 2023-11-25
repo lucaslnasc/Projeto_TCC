@@ -146,39 +146,40 @@ span a {
   height: 35px;
 }
 
-.locais {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.grid-card{
+  background-color: #0d2a4a;
+  border-radius: 15px;
 }
 
-.card {
+.grid-container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 40%;
+  width: 30%;
   border-radius: 15px;
   padding: 20px;
   margin: 10px;
-  display: inline-block;
+  display: grid;
   background-color: #0d2a4a;
+  flex-wrap: wrap;
+  gap: 10px;
+  grid-template-columns: 80% 80% 75% 50%;
 }
 
-.card label {
+.grid-container label {
   display: flex;
   position: absolute;
 }
 
-.card h3 {
+.grid-container h3 {
   margin-bottom: 10px;
   color: #fff;
-
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-.card p {
+.grid-container p {
   color: #fff;
   font-size: 16px;
   font-style: normal;
@@ -186,12 +187,12 @@ span a {
   line-height: normal;
 }
 
-.card a {
+.grid-container a {
   text-decoration: none;
   color: #ffffff;
 }
 
-.card:hover {
+.grid-container:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -210,8 +211,8 @@ input[type="checkbox"] + label {
 
 input[type="checkbox"] + label:before {
   content: url(../../img/Favorite.png);
-  top: -100px;
-  left: -8px;
+  top: -110px;
+  left: -160px;
   border: 1px solid transparent;
   padding: 10px;
   border-radius: 3px;
@@ -229,8 +230,8 @@ input[type="checkbox"]:checked + label:after {
   content: url(../../img/Favorite_fill.png);
   font-size: 18px;
   position: absolute;
-  top: -87px;
-  left: 3px;
+  top: -95px;
+  left: -150px;
   transition: 0.5s ease;
 }
 /*                       */
