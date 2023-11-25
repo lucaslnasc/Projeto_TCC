@@ -1,0 +1,71 @@
+#define echo 9
+#define trig 8
+#include <Ethernet.h>
+
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+byte ip[] = { 10, 0, 0, 2 };
+byte server[] = { 10, 0, 0, 1 };
+
+EthernetClient client;
+
+void setup()
+{
+  Ethernet.begin(mac, ip);
+  Serial.begin(9600);
+
+  delay(1000);
+
+  Serial.println("connecting...");
+
+  if (client.connect(server, 80)) {
+    Serial.println("connected");
+    client.println("GET /TCC/vagas.php?q=arduino HTTP/1.0");
+    client.println();
+  } else {
+    Serial.println("connection failed");
+  }
+}
+
+void loop()
+{
+  if (client.available()) {
+    char c = client.read();
+    Serial.print(c);
+  }
+
+  if (!client.connected()) {
+    Serial.println();
+    Serial.println("disconnecting.");
+    client.stop();
+    for(;;)
+      ;
+  }
+}
+
+
+//post(192.168.10.5/?ocupado = true"variavel"));
+
+
+
+
+ /*
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trig, LOW);
+
+  tempo = pulseIn(echo, HIGH);
+
+  distancia = tempo/58;
+
+  Serial.println(distancia);
+  delay(2000);
+  
+  if(distancia <= 5){
+    ocupado = true;
+    }else{
+      ocupado = false;
+    }
+
+    if(ocupado!=ocupado){
+      ultOcupado = ocupado;
+    }*/ 
