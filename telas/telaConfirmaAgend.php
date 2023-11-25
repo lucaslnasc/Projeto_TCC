@@ -16,6 +16,8 @@
         imagepng($image, $file);
         imagedestroy($image);
 
+
+        
         echo "<p>";
         echo "Imagem gerada com sucesso!<br>";
         echo "<a> href='{$file}' target='_blank'>Clique aqui para visualizar seu qr code";
