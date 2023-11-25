@@ -23,7 +23,7 @@
     <div class="container row mx-auto">
         <hr class="linha">
         <div class="area-login">
-            <form action="../bd/loginUser.php" method="post">
+            <form action="../bd/validarLogin.php" method="post">
                 <h3 class="tituloLogin">Fazer Login</h3>
                 <div class="inputBox eEmail">
                 <input type="email" required="required" id="email" name="email">

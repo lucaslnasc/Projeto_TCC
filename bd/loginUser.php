@@ -23,7 +23,7 @@
         print_r($usuario);
 
         if(isset($usuario['email'])){
-            header('Location:telaPrincipal.php');
+            header('Location:telas\telaPrincipal.php');
         }else{
             echo 'Falha login!';
             die();
