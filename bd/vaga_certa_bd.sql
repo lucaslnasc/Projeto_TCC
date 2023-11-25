@@ -35,7 +35,10 @@ CREATE TABLE estacionamento(
 
 INSERT INTO estacionamento(nome_estacionamento, localizacao, vagas_disponiveis)
 VALUES
-('Baratie', 'East - Blue', 23);
+('Baratie', 'East - Blue', 23),
+('Wano', 'Grand - Line', 30);
+
+SELECT * FROM estacionamento;
 
 CREATE TABLE vaga(
 	id_vaga INT PRIMARY KEY AUTO_INCREMENT,
