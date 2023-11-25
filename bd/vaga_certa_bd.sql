@@ -1,6 +1,6 @@
-CREATE DATABASE estacionamento;
+CREATE DATABASE vaga_certa;
 
-USE estacionamento;
+USE vaga_certa;
 
 CREATE TABLE usuario(
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -25,6 +25,17 @@ CREATE TABLE pagamento(
     preco_valor DECIMAL (9, 2),
     cvv INT (3) NOT NULL
 );
+
+CREATE TABLE estacionamento(
+	id_estacionamento INT PRIMARY KEY AUTO_INCREMENT,
+    nome_estacionamento VARCHAR (50),
+    localizacao VARCHAR (50),
+    vagas_disponiveis INT (3)
+);
+
+INSERT INTO estacionamento(nome_estacionamento, localizacao, vagas_disponiveis)
+VALUES
+('Baratie', 'East - Blue', 23);
 
 CREATE TABLE vaga(
 	id_vaga INT PRIMARY KEY AUTO_INCREMENT,
@@ -66,4 +77,4 @@ VALUES ('adm@adm.com', '123adm');
 
 select * from administrador;
 
-select * from usuario;
+select * from estacionamento;
