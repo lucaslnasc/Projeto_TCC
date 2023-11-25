@@ -1,162 +1,208 @@
-    #headerCima {
-        width: 931px;
-        height: 92px;
-        background: #0d2a4a;
-        padding: 1.6%;
-        width: 100%;
-        z-index: 1;
-        position: relative;
-      }
-      
-      #headerBaixo {
-        background-color: #43627f;
-        display: flex;
-        width: 100%;
-        height: 18px;
-        filter: drop-shadow(0px 7px 2px rgba(0, 0, 0, 0.25));
-        z-index: 0;
-      }
-      
-      .logozada {
-        position: absolute;
-        margin-right: 100px;
-        width: 100%;
-        margin-top: -40px;
-      }
-      
-      .padrao0 {
-        display: inline;
-        font-family: Arial;
-        background-color: #a4bad3;
-        color: white;
-      }
+#headerCima {
+  width: 931px;
+  height: 92px;
+  background: #0d2a4a;
+  padding: 1.6%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
 
-      .fundo {
-      background-color: #0d2a4a;
-      height: 450px;
-      width: 550px;
-      margin-top: 120px;
-      margin-left: 100px;
-      border-radius: 15px;
-    }
-    .letra-Nome{
-        margin-top: 20px;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 45px;
-        margin-left: 8%;
-      }
+#headerBaixo {
+  background-color: #43627f;
+  display: flex;
+  width: 100%;
+  height: 18px;
+  filter: drop-shadow(0px 7px 2px rgba(0, 0, 0, 0.25));
+  z-index: 0;
+}
 
-      .letra-lugar{
-        margin-top: -5px;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 25px;
-        margin-left: 8%;
-      }
+.logozada {
+  position: absolute;
+  margin-right: 100px;
+  width: 100%;
+  margin-top: -40px;
+}
 
-      .letra-descricao{
-        margin-top: 23px;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 23px;
-        margin-left: 8%;
-        max-width: 80%;
-      }
+.padrao0 {
+  display: inline;
+  font-family: Arial;
+  background-color: #a4bad3;
+  color: white;
+}
 
-      .linha-fundo{
-        background-color: white;
-        width: 80%;
-        height: 2px;
-        max-width: 80%;
-        margin-top: 150px;
-        margin-left: 8%;
-      }
+.fundo {
+background-color: #0d2a4a;
+height: 450px;
+width: 550px;
+margin-top: 120px;
+margin-left: 100px;
+border-radius: 15px;
+}
+.letra-Nome{
+  margin-top: 20px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  margin-left: 8%;
+}
 
-      .preco{
-        margin-top: 15px;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 25px;
-        margin-left: 25%;
-      }
+.letra-lugar{
+  margin-top: -5px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  margin-left: 8%;
+}
 
-      .letra-linha{
-        margin-top: 40px;
-        color: black;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 30px;
-        margin-left: 6.5%;
-      }
+.letra-descricao{
+  margin-top: 23px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 23px;
+  margin-left: 8%;
+  max-width: 80%;
+}
 
-      .linha-legenda{
-        background-color: black;
-        width: 530px;
-        height: 2px;
-        margin-left: 6%;
-      }
+.linha-fundo{
+  background-color: white;
+  width: 80%;
+  height: 2px;
+  max-width: 80%;
+  margin-top: 150px;
+  margin-left: 8%;
+}
 
-      .quadrado-verde{
-        background-color: rgb(21, 224, 21);
-        height: 30px;
-        width: 30px;
-        border: 1px solid #000;
-        margin-left: 70px;
-        margin-top:20px
-      }
+.preco{
+  margin-top: 15px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  margin-left: 25%;
+}
 
-      .legenda-container {
-        display: flex;
-        align-items: center;
-    }
+.letra-linha{
+  margin-top: 40px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  margin-left: 6.5%;
+}
 
-    .legenda-container span {
-        margin-left: 8px;
-        margin-top: 17px;
-        font-weight: 200;
-        font-size: 20px;
-        color: black;
-        font-family: Arial, Helvetica, sans-serif;
-    }
+.linha-legenda{
+  background-color: black;
+  width: 530px;
+  height: 2px;
+  margin-left: 6%;
+}
 
-    .quadrado-cinza{
-      background-color: rgb(100, 100, 100);
-      height: 30px;
-      width: 30px;
-      border: 1px solid #000;
-      margin-left: 20%;
-      margin-top: -4%;
-    }
+.quadrado-verde{
+  display:block;
+  background-color: rgb(21, 224, 21);
+  height: 30px;
+  width: 30px;
+  border: 1px solid #000;
+  margin-left: 7%;
+  margin-top:20px
+}
+
+.legenda-container {
+  display: flex;
+  align-items: center;
+}
+
+.legenda-container span {
+  margin-left: 8px;
+  margin-top: 17px;
+  font-weight: 200;
+  font-size: 20px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.quadrado-cinza{
+background-color: rgb(145, 143, 143);
+height: 30px;
+ width: 30px;
+border: 1px solid #000;
+margin-left: 20%;
+margin-top: -30px;
+}
 
 
-    .quadrado-vermelho{
-      background-color: red;
-      height: 30px;
-      width: 30px;
-      border: 1px solid #000;
-      margin-left: 70px;
-     margin-top:20px
-    }
+.quadrado-vermelho{
+display: block;
+background-color: red;
+height: 30px;
+width: 30px;
+border: 1px solid #000;
+margin-left: 7%;
+margin-top:20px;
+}
 
-    .quadrado-preferencial{
-      background-color: transparent;
-      height: 30px;
-      width: 30px;
-      border: 1px solid #000;
-      margin-left: 450px;
-      margin-top:-48px
-    }
+.quadrado-preferencial{
+display: block;
+background-color: transparent;
+height: 30px;
+width: 30px;
+border: 1px solid #000;
+margin-left: 20%;
+margin-top: -32px;
+}
 
-    .txtAgend{
-      margin-top: -4px;
-    }
+.ocupada{
+margin-left: 0.4%;
+margin-top: 22px;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+}
 
-    .nomeC{
-      margin-left: 70px;
-     margin-top:20px
-    }
-    
-    .cpf {
-      margin-left: 450px;
-      margin-top:-48px
-    }
+.agendada{
+display: block;
+margin-left: 0.4%;
+margin-top: -35px;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+}
+
+.pref{
+display: block;
+margin-left: 0.4%;
+margin-top: -32px;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+}
+.campoVagas{
+background-color: transparent;
+border: 1px solid #000;
+display: block;
+width: 1050px;
+height: 700px;
+margin-left: 37%;
+margin-top: -35%;
+}
+
+.linha-Vagas{
+background-color: black;
+width: 90%;
+height: 2px;
+margin-left: 6%;
+}
+
+.letra-vaga{
+margin-top: 20px;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 25px;
+margin-left: 6.5%;
+}
+.letra-vaga2{
+margin-top: 20px;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 25px;
+margin-left: 43.5%;
+}

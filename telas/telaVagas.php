@@ -42,23 +42,34 @@
     <label class="letra-linha">Legenda</label>
     <div class="linha-legenda" ></div>
     <div class="legenda-container">
-    <div class="quadrado-verde"></div>
+    <div class="quadrado-verde" name = "quadrado-verde"></div>
     <span>Disponível</span>
 </div>
 
 <div class="legenda-container">
     <div class="quadrado-cinza"></div>
-    <span class="txtAgend">Agendada</span>
+    <label class="agendada">Agendada</label>
 </div>
 
 <div class="legenda-container">
     <div class="quadrado-vermelho"></div>
-    <span>Ocupada</span>
+    <label class = "ocupada">Ocupada</label>
 </div>
 
 <div class="legenda-container">
     <div class="quadrado-preferencial"></div>
-    <span>Preferencial</span>
+    <label class ="pref" >Preferencial</label>
+</div>
+
+<div class = "campoVagas"> 
+    <div>
+    <label class="letra-vaga">Escolha sua vaga</label>
+    <label class="letra-vaga2">Andar:</label>
+    <div class = "linha-Vagas"></div>
+
+    <!--<div class = "linha-Vagas"></div> -->
+    </div>
+
 </div>
 
 </body>
