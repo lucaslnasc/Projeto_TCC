@@ -1,3 +1,20 @@
+<?php
+
+include("../bd/conexao.php");
+
+$estacionamento = '';
+if (isset($_POST['estacionamento'])) {
+    $estacionamento = $_POST['estacionamento'];
+}
+
+$query = $dbh->prepare("SELECT * FROM estacionamento WHERE nome_estacionamento LIKE :estacionamento;");
+$query->execute(
+    array(
+        ':estacionamento' => "%$estacionamento%"
+    )
+);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -50,7 +67,12 @@
 
     <div class="meio">
         <div class="search">
-            <input type="text" id="searchInput" placeholder="Pesquisa">
+            <form action="" method="post">
+                <input type="text" id="pesquisar" name="estacionamento" placeholder="Pesquisa">
+                <button type="button" class="btn btn-primary">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
         </div>
         <div class="card" data-location="Baratie">
             <a href="">
