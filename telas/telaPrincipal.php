@@ -13,6 +13,8 @@ $query->execute(
         ':estacionamento' => "%$estacionamento%"
     )
 );
+
+$local = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +78,11 @@ $query->execute(
         </div>
         <div class="card" data-location="Baratie">
             <a href="">
-                <h3><b>Baratie</b></h3>
+                <?php
+                foreach ($local as $l) {
+                echo "".$l[""]."".$l[""];
+                }
+                ?>
                 <p>East - Blue</p>
                 <p>Vagas disponiveis: </p>
                 <input type="checkbox" id="heart" />
