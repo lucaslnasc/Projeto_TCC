@@ -1,3 +1,28 @@
+<?php
+    include('qrcode.php');
+
+    if (isset($_POST['qr'])) {
+        $text = $_POST['qr'];
+        $name = md5(time()) . ".png";
+
+        $file = "files/{$name}";
+        $options = array(
+            'w' => 500,
+            'h' => 500
+        );
+
+        $generator = new QRCode($text, $options);
+        $image = $generator->render_image();
+        imagepng($image, $file);
+        imagedestroy($image);
+
+        echo "<p>";
+        echo "Imagem gerada com sucesso!<br>";
+        echo "<a> href='{$file}' target='_blank'>Clique aqui para visualizar seu qr code";
+        echo "</p>";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,25 +38,25 @@
         <div class="logozada">
             <a href="http://"><img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt=""></a>
         </div>
-
-        <div class="fundo">
+    <form action="">
+        <div class="fundo" method="POST">
             <label id="txtCima">seu agendamento foi realizado com sucesso!</label>
             <div class="linha"></div>
             <span class="spanNome">Nome Completo</span><br>
-            <input class="inputNome" type="text" required="required" placeholder="Nome completo">
+            <input class="inputNome" type="text"  placeholder="Nome completo">
             <span class="spanVaga">Vaga</span>
-            <input class="inputVaga" type="text" required="required" placeholder="Vaga">
+            <input class="inputVaga" type="text" placeholder="Vaga">
             <span class="spanTel">Telefone</span>
-            <input class="inputTel" type="text" required="required" placeholder="Telefone">
+            <input class="inputTel" type="text" placeholder="Telefone">
             <span class="spanData">Data</span>
-            <input type="text" class="inputData" required="required" placeholder="Data">
+            <input type="text" class="inputData"  placeholder="Data">
             <span class="spanPV">placa do veículo</span>
-            <input type="text" class="inputPV" required="required" placeholder="placa do veículo">
+            <input type="text" class="inputPV"  placeholder="placa do veículo">
             <span class="spanHorario">Horário</span>
-            <input type="text" class="inputHorario" required="required" placeholder="Horário">
+            <input type="text" class="inputHorario"  placeholder="Horário">
             <button class="btSair">sair</button>
-            <button class="btQR">gerar qr code</button>
+            <button class="btQR" name="qr" id="qr" type="submit">gerar qr code</button>
         </div>
-
+    </form>
 </body>
 </html>
