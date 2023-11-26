@@ -2,7 +2,7 @@
 
 include("../bd/conexao.php");
 
-$estacionamento = 'Baratie';
+$estacionamento = '';
 if (isset($_POST['estacionamento'])) {
     $estacionamento = $_POST['estacionamento'];
 }
@@ -70,33 +70,25 @@ $local = $query->fetchAll();
     <div class="meio">
         <div class="search">
             <form action="" method="post">
-                <input type="text" id="pesquisar" name="estacionamento" placeholder="Pesquisa">
-
-                <input type="submit" class="btn btn-primary">
-                <i class="bi bi-search"></i>
-                </input>
+                <input type="text" class="search-input" id="pesquisar" name="estacionamento" placeholder="Pesquisa">
+                <input type="submit" class="primary" value="Pesquisar"></input>
             </form>
         </div>
         <div class="grid-container">
-                <?php
-                foreach ($local as $l) {
-                    echo '<div class="grid-card">';
-                    echo '<a href="">';
-                    echo '<h3>' . '<br>' . $l['nome_estacionamento'] . '</b>' . '</h3>';
-                    echo '<p>' . $l['localizacao'] . '</p>';
-                    echo '<p>' . 'Vagas Disponiveis: ' . $l['vagas_disponiveis'] . '</p>';
-                    echo '<input type="checkbox" id="heart" />';
-                    echo '<label for="heart"></label>';
-                    echo '</a>';
-                    echo '</div>';
-                    echo '</div';
-                }
-                ?>
-            </div>
+            <?php
+            foreach ($local as $l) {
+                echo '<div class="grid-card">';
+                echo '<a href="">';
+                echo '<h3>' . '<br>' . $l['nome_estacionamento'] . '</b>' . '</h3>';
+                echo '<p>' . $l['localizacao'] . '</p>';
+                echo '<p>' . 'Vagas Disponiveis: ' . $l['vagas_disponiveis'] . '</p>';
+                echo '<input type="checkbox" id="heart" />';
+                echo '<label for="heart"></label>';
+                echo '</a>';
+                echo '</div>';
+            }
+            ?>
         </div>
     </div>
-
-    <!-- Função para curtir / não está funcionando ainda !-->
 </body>
-
 </html>
