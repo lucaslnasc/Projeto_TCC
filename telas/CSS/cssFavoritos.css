@@ -103,3 +103,71 @@ span a {
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+.icon {
+  color: black;
+  font-size: 30px;
+  margin-left: 355px;
+  position: fixed;
+  cursor: pointer;
+}
+
+.revBt {
+  display: none;
+  margin-left: 350px;
+}
+
+.nav.active .revBt {
+  display: block;
+}
+
+.nav{
+position: fixed;
+}
+
+.revBt{
+border: none;
+height: 50px;
+width: 100px;
+border-radius: 3px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.botaoAdicionarCartao {
+display: none;
+position: absolute;
+top: -2px;
+left: 150px; 
+background-color: #0d2a4a;
+color: white;
+padding: 5px 15px;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+border: 2px solid #ffffff;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.menuLateral:hover .botaoAdicionarCartao {
+display: inline-block;
+}
+
+.menuLateral i{
+  font-size: 30px;
+  padding: 2%;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none;
+}
+
+.bCartao{
+margin-left: 15%;
+}
+.menuLateral {
+position: relative;
+}
