@@ -34,7 +34,7 @@
                 <span>Senha</span>
                 <i class="bi bi-eye-fill olho" id="btn-senha" onclick="mostrarSenha()"></i>
                 </div>
-                <a class="link" href="">Esqueci Senha</a>
+                <a class="link" href="telaEmail.php">Esqueci Senha</a>
                 <input type="submit" class="input-entrar" value="Entrar">
             </form>
 

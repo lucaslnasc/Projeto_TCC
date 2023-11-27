@@ -41,19 +41,19 @@ $local = $query->fetchAll();
             <div class="novoMenu">
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href=""><i class="bi bi-house"></i>Inicio</a></li>
+                    <li><a href="telaPrincipal.php"><i class="bi bi-house"></i>Inicio</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href=""><i class="bi bi-person"></i>Conta</a></li>
+                    <li><a href="telaPerfil.php"><i class="bi bi-person"></i>Conta</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href=""><i class="bi bi-bookmark-heart"></i>Favoritos</a></li>
+                    <li><a href="telaFavorito.php"><i class="bi bi-bookmark-heart"></i>Favoritos</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href="telaAjustes_Cartoes.php"><i class="bi bi-credit-card-2-front-fill"></i>Cartão</a></li>
+                    <li><a href="telaCartoes.php"><i class="bi bi-credit-card-2-front-fill"></i>Cartão</a></li>
                 </ul>
                 <hr class="linha">
 

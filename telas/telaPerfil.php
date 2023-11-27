@@ -22,15 +22,15 @@
             <div class="novoMenu">
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href=""><i class="bi bi-house"></i>Inicio</a></li>
+                    <li><a href="telaPrincipal.php"><i class="bi bi-house"></i>Inicio</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href=""><i class="bi bi-person"></i>Conta</a></li>
+                    <li><a href="telaPerfil.php"><i class="bi bi-person"></i>Conta</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a><i class="bi bi-bookmark-heart"></i>Favoritos</a></li>
+                    <li><a href="telaFavorito.php"><i class="bi bi-bookmark-heart"></i>Favoritos</a></li>
                 </ul>
                 <hr class="linha">
                 <div class="menuLateral bCartao">
@@ -38,7 +38,7 @@
             <a href="telaCartoes.php">
             <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
             </a>
-            <button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button>
+            <button class="botaoAdicionarCartao" onclick="adicionarCartao()"><a href="telaAddCartao.php">Adicionar Cartão</a></button>
         </li>
     </div>
                 <hr class="linha">
