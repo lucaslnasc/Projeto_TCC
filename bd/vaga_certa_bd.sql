@@ -34,10 +34,12 @@ CREATE TABLE estacionamento(
 );
 
 CREATE TABLE estacionamento_cliente(
-	id_cliente INT PRIMARY KEY AUTO_INCREMENT,
-    id_estacionamento INT PRIMARY KEY AUTO_INCREMENT,
+	id_cliente INT NOT NULL,
+    id_estacionamento INT NOT NULL,
     save BOOLEAN
 );
+ALTER TABLE estacionamento_cliente ADD CONSTRAINT fk_cliente FOREIGN KEY (id_cliente) REFERENCES usuario (id_usuario);
+ALTER TABLE estacionamento_cliente ADD CONSTRAINT fk_estacionamento FOREIGN KEY (id_estacionamento) REFERENCES estacionamento (id_local);
 
 INSERT INTO estacionamento(nome_estacionamento, localizacao, vagas_disponiveis)
 VALUES
