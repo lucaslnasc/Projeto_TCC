@@ -1,5 +1,4 @@
 <?php
-
     include('conexao.php');
 
     if (isset($_POST['email'], $_POST['senha']) && $_POST['email'] != '' & $_POST['senha'] != '') {
