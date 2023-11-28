@@ -1,3 +1,8 @@
+<?php
+    include('../bd/protected.php')
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -46,12 +51,13 @@
                 <hr class="linha">
 
                 <footer class="inferiorLateral">
-                    <a href="telaLogin.php"><i class="bi bi-box-arrow-left"></i>Sair</a>
+                    <a href="../bd/logout.php"><i class="bi bi-box-arrow-left"></i>Sair</a>
                 </footer>
             </div>
         </div>
     </header>
 </div>
+
     <div class="container">
 
 <div class="card-container">
@@ -87,20 +93,21 @@
     </div>
 
 </div>
-
-<form action="">
+<form action="../bd\cadastrarCartao.php" method="post">
+  
+    try{
     <div class="inputBox">
         <span>número do cartão</span>
-        <input type="text" maxlength="16" class="card-number-input">
+        <input type="text" maxlength="16" class="card-number-input" id="nmr_cartao" name="nmr_cartao">
     </div>
     <div class="inputBox">
         <span>nome do titular</span>
-        <input type="text" class="card-holder-input">
+        <input type="text" class="card-holder-input" id="nome_titular" name="nome_titular">
     </div>
     <div class="flexbox">
         <div class="inputBox">
             <span>Validade Mês</span>
-            <select name="" id="" class="month-input">
+            <select name="validade_mes" id="validade_mes" class="month-input">
                 <option value="month" selected disabled>Mês</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -118,7 +125,7 @@
         </div>
         <div class="inputBox">
             <span>Validade Ano</span>
-            <select name="" id="" class="year-input">
+            <select name="validade_ano" id="validade_ano" class="year-input">
                 <option value="year" selected disabled>Ano</option>
                 <option value="2024">2024</option>
                 <option value="2025">2025</option>
@@ -131,17 +138,22 @@
         </div>
         <div class="inputBox">
             <span>cvv</span>
-            <input type="text" maxlength="3" class="cvv-input">
+            <input type="text" maxlength="3" class="cvv-input" id="cvv" name="cvv">
         </div>
     </div>
     <input type="submit" value="submit" class="submit-btn">
+
+
+    <div id="popup-container" class="popup-container">
+    <div class="popup">
+        <p>Cartão cadastrado com sucesso!</p>
+        <button onclick="fecharPopup()">OK</button>
+    </div>
+</div>
+
 </form>
 
 </div>    
-
-
-
-
 
 
 <script>
@@ -186,5 +198,6 @@ document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-inpu
                 icon.addEventListener("click", () => nav.classList.toggle("active"));
             });
 </script>
+
 </div>
 </body>

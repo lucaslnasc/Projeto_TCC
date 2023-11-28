@@ -1,8 +1,3 @@
-<?php
-include('../bd/conexao.php');
-
-$veiculo = $query->fetchAll();
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -35,7 +30,7 @@ $veiculo = $query->fetchAll();
         <input type="" class = "email" placeholder = "Email">
       </div>
       <div>
-        <input type="" class = "botao" value="ENVIAR"></input>
+        <input type="submit" class = "botao" value="ENVIAR"></input>
       </div>
       <div class = "divCancelar">
         <label for=""><a href="telaLogin.php">Cancelar</a></label>
