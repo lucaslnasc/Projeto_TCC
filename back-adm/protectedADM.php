@@ -66,7 +66,7 @@
                 </div>
 
                 <div>
-                    <a href="../telas/telaLogin.php"><input type="submit" class="botao" value="Entrar"></a>
+                    <a href="../telas/telaLoginAdm.php"><input type="submit" class="botao" value="Entrar"></a>
                 </div>
               </div>';
 

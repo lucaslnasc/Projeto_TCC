@@ -1,3 +1,6 @@
+<?php
+  include('../bd/protected.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

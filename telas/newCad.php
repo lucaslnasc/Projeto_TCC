@@ -41,43 +41,50 @@ $veiculo = $query->fetchAll();
 <form action="../bd/cadastrarUser.php" method="post">
   <div class="fundinho">
   <div>
-    <label for="">Informações Pessoais</label>
+    <label for="">INFORMAÇÕES PESSOAIS</label>
   </div>
   <div class="inputBox nomeC">
-    <input type="text" required="required" id="nome" name="nome">
     <span>Nome Completo</span>
+    <input type="text" required="required" id="nome" name="nome">
+    
   </div>
   <div class="inputBox cpf">
-    <input type="text" required="required" id="cpf" name="cpf">
     <span>CPF</span>
+    <input type="text" required="required" id="cpf" name="cpf">
+    
   </div>
   <div class="inputBox eEmail">
-    <input type="email" required="required" id="email" name="email">
     <span>Endereço de E-mail</span>
+    <input type="email" required="required" id="email" name="email">
+    
   </div>
   <div class="inputBox dtNasc">
-  <input type="text" name="data_nasc" required="required" id="data_nasc">
-    <span>Data de Nascimento</span>
+      <span>Data de Nascimento</span>
+      <input type="text" name="data_nasc" required="required" id="data_nasc">
+
   </div>
   <div class="inputBox tel">
-    <input type="text" required="required" id="telefone" name="telefone"> 
     <span>Telefone</span>
+    <input type="text" required="required" id="telefone" name="telefone"> 
+    
   </div>
   <div class="inputBox senha">
-    <input type="password" required="required" id="senha" name="senha">
-    <span>Senha</span>
+     <span>Senha</span>
+     <input type="password" required="required" id="senha" name="senha">
+   
     <i class="bi bi-eye-fill olho" id="btn-senha" onclick="mostrarSenha()"></i>
   </div>
   <div>
 
-    <label for="">Informações do Veículo</label>
+    <label for="">INFORMAÇÕES DO VEÍCULO</label>
   </div>
   <div class="inputBox nomeC">
-    <input type="text" required="required" id="placa_veiculo" name="placa_veiculo">
     <span>Placa do Veículo</span>
+    <input type="text" required="required" id="placa_veiculo" name="placa_veiculo">
+    
   </div>
   <div class="inputBox cpf">
-
+  <span>Tipo do Veículo</span>
     <select name="tipo_veiculo" id="tipo_veiculo" required="required">
     <?php
       foreach ($veiculo as $linha) {
@@ -85,15 +92,17 @@ $veiculo = $query->fetchAll();
       }
     ?>
     </select>
-    <span>Tipo do Veículo</span>
+    
 </div>
   <div class="inputBox eEmail">
-    <input type="text" required="required" id="marca_veiculo" name="marca_veiculo">
     <span>Marca</span>
+    <input type="text" required="required" id="marca_veiculo" name="marca_veiculo">
+    
   </div>
   <div class="inputBox dtNasc">
+  <span>Modelo</span>
   <input type="text" name="modelo_veiculo" id="modelo_veiculo" required="required">
-    <span>Modelo</span>
+    
   </div>
   <div class="submit-container">
     <input type="submit" value="Cadastrar">

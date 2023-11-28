@@ -35,8 +35,8 @@
       <div class= "espacin"></div>
 
       <div class ="divzada">
-        <input type="password" class = "email" placeholder = "Repetir senha" id="senha" >
-        <i class="bi bi-eye-fill" id="btn-senha" onclick="mostrarSenha()"></i>
+        <input type="password" class = "email" placeholder = "Repetir senha" id="senha-repetir" >
+        <i class="bi bi-eye-fill" id="btn-senha1" onclick="mostrarSenha1()"></i>
       </div>
       <div>
         <input type="submit" class = "botao" value="REDEFINIR"></input>
@@ -49,6 +49,19 @@
   function mostrarSenha(){
     var inputPass = document.getElementById('senha')
     var btnShowPass = document.getElementById('btn-senha')
+
+    if(inputPass.type === 'password'){
+      inputPass.setAttribute('type' , 'text')
+      btnShowPass.classList.replace('bi-eye-fill', 'bi-eye-slash-fill')
+    }else{
+      inputPass.setAttribute('type' , 'password')
+      btnShowPass.classList.replace('bi-eye-slash-fill', 'bi-eye-fill')
+    }
+  }
+
+  function mostrarSenha1(){
+    var inputPass = document.getElementById('senha-repetir')
+    var btnShowPass = document.getElementById('btn-senha1')
 
     if(inputPass.type === 'password'){
       inputPass.setAttribute('type' , 'text')
