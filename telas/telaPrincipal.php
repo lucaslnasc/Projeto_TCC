@@ -34,7 +34,7 @@ $local = $query->fetchAll();
     <header>
         <div id="headerCima">
             <div class="logozada">
-                <a href="http://"><img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt=""></a>
+                <img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt="">
             </div>
         </div>
         <div id="headerMeio">
@@ -76,16 +76,18 @@ $local = $query->fetchAll();
         </div>
         <div class="grid-container">
             <?php
+            $cont = 0;
             foreach ($local as $l) {
                 echo '<div class="grid-card">';
                 echo '<a href="">';
                 echo '<h3>' . '<br>' . $l['nome_estacionamento'] . '</b>' . '</h3>';
                 echo '<p>' . $l['localizacao'] . '</p>';
                 echo '<p>' . 'Vagas Disponiveis: ' . $l['vagas_disponiveis'] . '</p>';
-                echo '<input type="checkbox" id="heart" />';
-                echo '<label for="heart"></label>';
+                echo '<input type="checkbox" id="heart'.$cont.'" />';
+                echo '<label for="heart'.$cont.'"></label>';
                 echo '</a>';
                 echo '</div>';
+                $cont++;
             }
             ?>
         </div>

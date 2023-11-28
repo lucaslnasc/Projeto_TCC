@@ -1,0 +1,32 @@
+<?php
+// Your MySQL database credentials
+$servername = "localhost";
+$username = "your_username";
+$password = "your_password";
+$dbname = "your_database";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get checkbox value from POST data
+$auto_save = isset($_POST['auto_save']) ? 1 : 0;
+
+// Insert or update the record in the 'save_table'
+$sql = "INSERT INTO usuario () VALUES (?) 
+        ON DUPLICATE KEY UPDATE auto_save = ?";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ii", $auto_save, $auto_save);
+$stmt->execute();
+
+// Close the statement and connection
+$stmt->close();
+$conn->close();
+
+echo "Record saved successfully";
+?>
