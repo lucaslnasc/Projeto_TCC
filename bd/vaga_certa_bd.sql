@@ -3,7 +3,7 @@ CREATE DATABASE vaga_certa;
 USE vaga_certa;
 
 CREATE TABLE usuario(
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	id_usuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR (100) NOT NULL,
     email VARCHAR (100) NOT NULL UNIQUE,
     cpf CHAR (14) NOT NULL UNIQUE,
@@ -27,16 +27,23 @@ CREATE TABLE pagamento(
 );
 
 CREATE TABLE estacionamento(
-	id_estacionamento INT PRIMARY KEY AUTO_INCREMENT,
+	id_local INT PRIMARY KEY AUTO_INCREMENT,
     nome_estacionamento VARCHAR (50),
     localizacao VARCHAR (50),
     vagas_disponiveis INT (3)
 );
 
+CREATE TABLE estacionamento_cliente(
+	id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    id_estacionamento INT PRIMARY KEY AUTO_INCREMENT,
+    save BOOLEAN
+);
+
 INSERT INTO estacionamento(nome_estacionamento, localizacao, vagas_disponiveis)
 VALUES
 ('Baratie', 'East - Blue', 23),
-('Wano', 'Grand - Line', 30);
+('Wano', 'Grand - Line', 30),
+('Tech Vitoria', 'Vitoria', 50);
 
 SELECT * FROM estacionamento;
 

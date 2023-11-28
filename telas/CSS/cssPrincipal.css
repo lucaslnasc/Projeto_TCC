@@ -162,6 +162,8 @@ span a {
 
 .grid-container{
   display: grid;
+  width: 700px;
+  height: 220px;
   grid-template-columns: auto auto;
   padding: 18px;
   column-gap: 3px;
@@ -224,7 +226,7 @@ input[type="checkbox"] + label {
 input[type="checkbox"] + label:before {
   content: url(../../img/Favorite.png);
   top: -110px;
-  left: 50px;
+  left: -80px;
   border: 1px solid transparent;
   padding: 10px;
   border-radius: 3px;
@@ -243,7 +245,7 @@ input[type="checkbox"]:checked + label:after {
   font-size: 18px;
   position: absolute;
   top: -95px;
-  left: 60px;
+  left: -70px;
   transition: 0.5s ease;
 }
 /*                       */
