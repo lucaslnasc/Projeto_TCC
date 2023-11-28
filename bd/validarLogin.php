@@ -35,7 +35,7 @@
                 } 
                 $_SESSION['id'] = $resultado['id'];
                 $_SESSION['email'] =$resultado['email'];
-                header('Location: ../telas\telaPrincipal.php');
+                header('Location: ../telas/telaPrincipal.php');
             }
 
         }catch(Exception $e){
