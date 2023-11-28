@@ -1,4 +1,6 @@
 <?php
+    include('../bd/protected.php');
+
     include('qrcode.php');
 
     if (isset($_POST['qr'])) {
@@ -40,7 +42,7 @@
         <div class="logozada">
             <a href="http://"><img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt=""></a>
         </div>
-    <form action="">
+    <form action="" method="post">
         <div class="fundo" method="POST">
             <label id="txtCima">seu agendamento foi realizado com sucesso!</label>
             <div class="linha"></div>
