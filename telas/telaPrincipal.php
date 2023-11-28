@@ -1,5 +1,7 @@
 <?php
 
+include('../bd/protected.php');
+
 include("../bd/conexao.php");
 
 $estacionamento = '';

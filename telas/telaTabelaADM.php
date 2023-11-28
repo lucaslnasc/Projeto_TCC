@@ -1,3 +1,7 @@
+<?php
+    include('../back-adm/protectedADM.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
