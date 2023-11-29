@@ -93,7 +93,7 @@
     </div>
 
 </div>
-<form action="../bd\cadastrarCartao.php" method="post">
+<form action="../bd/cadastrarCartao.php" method="post">
   
     try{
     <div class="inputBox">
