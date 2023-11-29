@@ -41,13 +41,18 @@ CREATE TABLE estacionamento_cliente(
 ALTER TABLE estacionamento_cliente ADD CONSTRAINT fk_cliente FOREIGN KEY (id_cliente) REFERENCES usuario (id_usuario);
 ALTER TABLE estacionamento_cliente ADD CONSTRAINT fk_estacionamento FOREIGN KEY (id_estacionamento) REFERENCES estacionamento (id_local);
 
+SELECT id_cliente, id_estacionamento
+FROM estacionamento_cliente
+INNER JOIN usuario ON usuario.id_usuario = estacionamento_cliente.id_cliente 
+INNER JOIN estacionamento ON estacionamento.id_local = estacionamento_cliente.id_estacionamento;
+
 INSERT INTO estacionamento(nome_estacionamento, localizacao, vagas_disponiveis)
 VALUES
 ('Baratie', 'East - Blue', 23),
 ('Wano', 'Grand - Line', 30),
 ('Tech Vitoria', 'Vitoria', 50);
 
-SELECT * FROM estacionamento;
+SELECT * FROM usuario;
 
 CREATE TABLE vaga(
 	id_vaga INT PRIMARY KEY AUTO_INCREMENT,
