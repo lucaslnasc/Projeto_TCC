@@ -1,55 +1,52 @@
-#define echo 9
-#define trig 8
+#define echo 8
+#define trig 7
 #include <Ethernet.h>
+#define led 6
+
+unsigned long tempo;
+double distancia;
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 byte ip[] = { 10, 0, 0, 2 };
 byte server[] = { 10, 0, 0, 1 };
+String ocupado = "false";
+boolean ultOcupado = false;
 
 EthernetClient client;
 
 void setup()
 {
+  pinMode (trig, OUTPUT);
+  pinMode (echo, INPUT);
+  digitalWrite (trig, LOW);
+  pinMode (led, OUTPUT);
   Ethernet.begin(mac, ip);
   Serial.begin(9600);
+}
 
+void conectarServidor(String valor){
   delay(1000);
-
   Serial.println("connecting...");
-
   if (client.connect(server, 80)) {
     Serial.println("connected");
-    client.println("GET /TCC/vagas.php?q=arduino HTTP/1.0");
+    client.print("GET /TCC/vagas.php?q=arduino&ocupado="+valor);
+    client.println(" HTTP/1.0");
     client.println();
+    
   } else {
     Serial.println("connection failed");
   }
 }
-
 void loop()
 {
-  if (client.available()) {
-    char c = client.read();
-    Serial.print(c);
-  }
-
-  if (!client.connected()) {
-    Serial.println();
-    Serial.println("disconnecting.");
-    client.stop();
-    for(;;)
-      ;
-  }
-}
-
-
-//post(192.168.10.5/?ocupado = true"variavel"));
-
-
-
-
- /*
   digitalWrite(trig, HIGH);
+  while(client.available())
+    {
+      char c = client.read();
+      Serial.print(c);
+    }
+  conectarServidor(ocupado);
+  
   delayMicroseconds(10);
   digitalWrite(trig, LOW);
 
@@ -58,14 +55,18 @@ void loop()
   distancia = tempo/58;
 
   Serial.println(distancia);
-  delay(2000);
+  delay(1000);
+
   
-  if(distancia <= 5){
-    ocupado = true;
+  if(distancia <= 10.0){
+    ocupado = "true";
+    digitalWrite(led, HIGH);
     }else{
-      ocupado = false;
+     ocupado = "false";
+      digitalWrite(led, LOW);
     }
 
     if(ocupado!=ocupado){
       ultOcupado = ocupado;
-    }*/ 
+    }
+}
