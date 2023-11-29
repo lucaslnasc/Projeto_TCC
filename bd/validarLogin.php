@@ -14,7 +14,7 @@
         try{
       
             
-            $query = $dbh->prepare("SELECT id, email, senha FROM usuario WHERE email = :email AND senha = :senha");
+            $query = $dbh->prepare("SELECT id_usuario, email, senha FROM usuario WHERE email = :email AND senha = :senha");
             $query->execute(array(
                 ':email' => $email,
                 ':senha' => $senha

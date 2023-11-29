@@ -1,6 +1,10 @@
 <?php
-  include('../bd/protected.php');
+//include('../bd/protected.php');
+
+include('../bd/conexao.php');
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -31,8 +35,6 @@
                     <ul class="menuLateral">
                         <li><a href="telaPrincipal.php"><i class="bi bi-house"></i>Inicio</a></li>
                     </ul>
-
-
                     <hr class="linha">
                     <ul class="menuLateral">
                         <li><a href="telaPerfil.php"><i class="bi bi-person"></i>Conta</a></li>
@@ -55,6 +57,9 @@
                     <footer class="inferiorLateral">
                         <a href="telaLogin.php"><i class="bi bi-box-arrow-left"></i>Sair</a>
                     </footer>
+                </div>
+                <div id="headerBaixo">
+                    <div id="rodape"></div>
                 </div>
             </div>
         </header>

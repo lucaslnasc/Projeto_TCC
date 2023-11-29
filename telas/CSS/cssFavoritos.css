@@ -1,3 +1,11 @@
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none;
+}
+
 .padrao0 {
   display: inline;
   font-family: Arial;
@@ -157,13 +165,6 @@ display: inline-block;
   padding: 2%;
 }
 
-*{
-  font-family: 'Poppins', sans-serif;
-  margin:0; padding:0;
-  box-sizing: border-box;
-  outline: none; border: none;
-  text-decoration: none;
-}
 
 .bCartao{
 margin-left: 15%;
@@ -216,6 +217,7 @@ position: relative;
   margin: 10px;
   background-color: #0d2a4a;
   border-radius: 15px;
+  margin-left: 230px;
 }
 
 .grid-card label {

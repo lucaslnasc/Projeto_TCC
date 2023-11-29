@@ -1,6 +1,6 @@
 <?php
 
-include('../bd/protected.php');
+//include('../bd/protected.php');
 
 include("../bd/conexao.php");
 
@@ -8,6 +8,7 @@ $estacionamento = '';
 if (isset($_POST['estacionamento'])) {
     $estacionamento = $_POST['estacionamento'];
 }
+$sessaoteste = 5;
 
 $query = $dbh->prepare("SELECT * FROM estacionamento WHERE nome_estacionamento LIKE :estacionamento;");
 $query->execute(
@@ -85,7 +86,7 @@ $local = $query->fetchAll();
                 echo '<h3>' . '<br>' . $l['nome_estacionamento'] . '</b>' . '</h3>';
                 echo '<p>' . $l['localizacao'] . '</p>';
                 echo '<p>' . 'Vagas Disponiveis: ' . $l['vagas_disponiveis'] . '</p>';
-                echo '<input type="checkbox" id="heart'.$cont.'" />';
+                echo '<input onchange="favoritar('.$l['id_local'].','.$sessaoteste.')" type="checkbox" id="heart'.$cont.'" />';
                 echo '<label for="heart'.$cont.'"></label>';
                 echo '</a>';
                 echo '</div>';
@@ -94,5 +95,10 @@ $local = $query->fetchAll();
             ?>
         </div>
     </div>
+    <script>
+        function favoritar(local,sessao){
+            alert(local+'|'+sessao);
+        }
+    </script>
 </body>
 </html>
