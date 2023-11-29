@@ -132,7 +132,7 @@ p a{
 
  .inputBox span{
   position: fixed;
-  left: 150px;
+  left: 300px;
   padding: 10px;
   pointer-events: none;
   font-size: 1em;

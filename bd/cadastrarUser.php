@@ -30,5 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':modelo_veiculo' => $modelo_veiculo
     ));
     
+    header('Location:../telas/telaLogin.php');
 }
 ?>

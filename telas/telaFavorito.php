@@ -1,5 +1,5 @@
 <?php
-//include('../bd/protected.php');
+('../bd/protected.php');
 
 include('../bd/conexao.php');
 

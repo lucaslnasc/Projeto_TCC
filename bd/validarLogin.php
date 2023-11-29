@@ -33,8 +33,8 @@
                 if(!isset($_SESSION)){
                     session_start();
                 } 
-                $_SESSION['id'] = $resultado['id'];
-                $_SESSION['email'] =$resultado['email'];
+                $_SESSION['id_usuario'] = $resultado['id_usuario'];
+                $_SESSION['email'] = $resultado['email'];
                 header('Location: ../telas/telaPrincipal.php');
             }
 
