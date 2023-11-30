@@ -62,7 +62,7 @@
  }
 
  .inputBox input{
-  width: 100%;    
+  width: 200%;    
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.25);
   background-color: #ffffff;
@@ -84,40 +84,41 @@
  } 
 
 .nomeC{
-  margin-left: 70px;
+margin-left: 10%;
  margin-top:20px
 }
 
 .cpf {
-  margin-left: 450px;
-  margin-top:-48px
+  margin-left: 50%;
+  margin-top:-70px
 }
 
 .eEmail{
- margin-left: 70px;
- margin-top:20px;
+margin-left: 10%;
+ margin-top:20px
 }
 
 .dtNasc{
- margin-left: 450px;
-  margin-top:-48px
+  margin-left: 50%;
+  margin-top:-70px;
 }
 
 .tel{
-margin-left: 70px;
- margin-top:20px;
+margin-left: 10%;
+ margin-top:20px
 }
 
 .senha{
-margin-left: 450px;
-  margin-top:-48px
+  margin-left: 50%;
+  margin-top:-70px;
 }
 
 .olho{
   font-size: 30px;
   cursor: pointer;
-  position: absolute;
-  right: 5%;
+  position: fixed;
+  margin-left: 25%;
+  margin-top: -45px;
   color: #696969;
 }
 
@@ -133,24 +134,29 @@ margin-left: 450px;
   color: white;
   border-radius: 3px;
   padding: 8px;
-  width: 140px;
+  width: 170px;
   border:none;
-  margin-right: 135px;
-  margin-top: 10px;
+  margin-right: 115px;
+  margin-top: 12%;
+  position: fixed;
   cursor: pointer;
   transition: .2s linear;
 }
+
+
 
 .submit-container input[type="reset"] {
   background-color: rgb(255, 51, 0);
   color: white;
   border-radius: 3px;
   padding: 8px;
-  width: 140px;
+  width: 170px;
   border:none;
   margin-left: 135px;
+  margin-top: 12%;
   cursor: pointer;
   transition: .2s linear;
+  position: fixed;
 }
 
 .submit-container input[type="submit"]:hover{
@@ -168,7 +174,7 @@ margin-left: 450px;
 .inputBox select,
 .inputBox select:valid,
 .inputBox select:focus {
-    width: 100%;
+    width: 200%;
     padding: 13px;
     border: 1px solid rgba(0, 0, 0, 0.25);
     background-color: #ffffff;
