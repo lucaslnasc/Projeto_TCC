@@ -84,32 +84,32 @@
  } 
 
 .nomeC{
-margin-left: 10%;
- margin-top:20px
+margin-left: 14%;
+ margin-top:10px
 }
 
 .cpf {
-  margin-left: 50%;
+  margin-left: 54%;
   margin-top:-70px
 }
 
 .eEmail{
-margin-left: 10%;
+margin-left: 14%;
  margin-top:20px
 }
 
 .dtNasc{
-  margin-left: 50%;
+  margin-left: 54%;
   margin-top:-70px;
 }
 
 .tel{
-margin-left: 10%;
+margin-left: 14%;
  margin-top:20px
 }
 
 .senha{
-  margin-left: 50%;
+  margin-left: 54%;
   margin-top:-70px;
 }
 
@@ -117,7 +117,7 @@ margin-left: 10%;
   font-size: 30px;
   cursor: pointer;
   position: fixed;
-  margin-left: 24.70%;
+  margin-left: 29%;
   margin-top: -45px;
   color: #696969;
 }
@@ -136,8 +136,8 @@ margin-left: 10%;
   padding: 8px;
   width: 170px;
   border:none;
-  margin-right: 600px;
-  margin-top: 12%;
+  margin-right: 15.7%;
+  margin-top: 2%;
   position: fixed;
   cursor: pointer;
   transition: .2s linear;
@@ -152,8 +152,8 @@ margin-left: 10%;
   padding: 8px;
   width: 170px;
   border:none;
-  margin-left: 135px;
-  margin-top: 12%;
+  margin-left: 18.4%;
+  margin-top: 2%;
   cursor: pointer;
   transition: .2s linear;
   position: fixed;
