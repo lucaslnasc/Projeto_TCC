@@ -1,6 +1,6 @@
 <?php
 
-('../bd/protected.php');
+include('../bd/protected.php');
 
 include("../bd/conexao.php");
 
@@ -61,7 +61,7 @@ $local = $query->fetchAll();
                 <hr class="linha">
 
                 <footer class="inferiorLateral">
-                    <a href="telaLogin.php"><i class="bi bi-box-arrow-left"></i>Sair</a>
+                    <a href="../bd/logout.php"><i class="bi bi-box-arrow-left"></i>Sair</a>
                 </footer>
             </div>
         </div>

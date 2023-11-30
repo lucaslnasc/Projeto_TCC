@@ -55,6 +55,10 @@
                 </footer>
             </div>
         </div>
+        </div>
+        <div id="headerBaixo">
+            <div id="rodape"></div>
+        </div>
     </header>
 </div>
 

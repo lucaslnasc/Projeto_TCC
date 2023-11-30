@@ -1,9 +1,10 @@
 <?php
-    include('../back-adm/protectedADM.php')
-?>
+include('../back-adm/protectedADM.php')
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,14 @@
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.svg" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/cssTabelaAdm.css">
 </head>
+
 <body class="padrao0">
     <header>
         <div id="headerCima">
             <div class="logozada">
                 <img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt="Logo do sistema">
                 <ul>
-                    <button><a href="">Sair</a></button>
+                    <button><a href="telaLoginAdm.php">Sair</a></button>
                 </ul>
             </div>
         </div>
@@ -35,11 +37,12 @@
                             <th>Modelo</th>
                             <th>Data</th>
                             <th>Horário</th>
-                            </tr>
-                        </thead>
+                        </tr>
+                    </thead>
                 </table>
             </div>
         </article>
     </div>
 </body>
+
 </html>
