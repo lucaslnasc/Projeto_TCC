@@ -15,6 +15,5 @@
     <title>Teste Vaga Certa</title>
 </head>
 <body>
-    
 </body>
 </html>
