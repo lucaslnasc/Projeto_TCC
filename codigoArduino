@@ -1,7 +1,9 @@
-#define echo 8
-#define trig 7
+#define echo 7
+#define trig 8
 #include <Ethernet.h>
 #define led 6
+#define musga 9
+#define ledGreen 13
 
 unsigned long tempo;
 double distancia;
@@ -9,8 +11,8 @@ double distancia;
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 byte ip[] = { 10, 0, 0, 2 };
 byte server[] = { 10, 0, 0, 1 };
-String ocupado = "false";
-boolean ultOcupado = false;
+String ocupado = "";
+String ultOcupado = "false";
 
 EthernetClient client;
 
@@ -22,6 +24,7 @@ void setup()
   pinMode (led, OUTPUT);
   Ethernet.begin(mac, ip);
   Serial.begin(9600);
+  pinMode (ledGreen, OUTPUT);
 }
 
 void conectarServidor(String valor){
@@ -29,7 +32,7 @@ void conectarServidor(String valor){
   Serial.println("connecting...");
   if (client.connect(server, 80)) {
     Serial.println("connected");
-    client.print("GET /TCC/vagas.php?q=arduino&ocupado="+valor);
+    client.print("GET /TCC/vagas.php?vaga=1&ocupado="+valor);
     client.println(" HTTP/1.0");
     client.println();
     
@@ -37,15 +40,20 @@ void conectarServidor(String valor){
     Serial.println("connection failed");
   }
 }
-void loop()
-{
-  digitalWrite(trig, HIGH);
+
+void exibirResultado(){
   while(client.available())
     {
       char c = client.read();
       Serial.print(c);
     }
-  conectarServidor(ocupado);
+}
+
+void loop()
+{
+  digitalWrite(trig, HIGH);
+  exibirResultado();
+ // conectarServidor(ocupado);
   
   delayMicroseconds(10);
   digitalWrite(trig, LOW);
@@ -59,14 +67,22 @@ void loop()
 
   
   if(distancia <= 10.0){
-    ocupado = "true";
+    ultOcupado = "true";
     digitalWrite(led, HIGH);
+    tone(musga, 493.53, 233);
+    digitalWrite(ledGreen , LOW);
     }else{
-     ocupado = "false";
+     ultOcupado = "false";
       digitalWrite(led, LOW);
+      digitalWrite(ledGreen, HIGH);
+      delay(5000);
     }
 
-    if(ocupado!=ocupado){
-      ultOcupado = ocupado;
+    if(ocupado!=ultOcupado){
+      ocupado = ultOcupado;
+      conectarServidor(ocupado);      
     }
+    
+    //exibirResultado();
 }
+
