@@ -55,7 +55,6 @@
                 </footer>
             </div>
         </div>
-        </div>
         <div id="headerBaixo">
             <div id="rodape"></div>
         </div>
@@ -98,8 +97,7 @@
 
 </div>
 <form action="../bd/cadastrarCartao.php" method="post">
-  
-    try{
+
     <div class="inputBox">
         <span>número do cartão</span>
         <input type="text" maxlength="16" class="card-number-input" id="nmr_cartao" name="nmr_cartao">
@@ -145,15 +143,8 @@
             <input type="text" maxlength="3" class="cvv-input" id="cvv" name="cvv">
         </div>
     </div>
-    <input type="submit" value="submit" class="submit-btn">
+    <input type="submit" value="Cadastrar" class="submit-btn">
 
-
-    <div id="popup-container" class="popup-container">
-    <div class="popup">
-        <p>Cartão cadastrado com sucesso!</p>
-        <button onclick="fecharPopup()">OK</button>
-    </div>
-</div>
 
 </form>
 
