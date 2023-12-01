@@ -1,5 +1,19 @@
 <?php
-    include('../bd/protected.php');
+include('../bd/protected.php');
+
+include('../bd/conexao.php');
+
+
+$query = $dbh->prepare("SELECT * FROM cartao");
+$query->execute();
+
+$info = $query->fetchAll();
+
+$query = $dbh->prepare("SELECT id_cartao FROM cartao");
+$query->execute();
+
+$cartao = $query->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +56,8 @@
                         <a href="telaAddCartao.php">
                             <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
                         </a>
-                        <button class="botaoAdicionarCartao" onclick="adicionarCartao()"><a href="telaAddCartao.php">Adicionar Cartão</a></button>
+                        <button class="botaoAdicionarCartao" onclick="adicionarCartao()"><a
+                                href="telaAddCartao.php">Adicionar Cartão</a></button>
                     </li>
                 </div>
                 <hr class="linha">
@@ -53,32 +68,43 @@
             </div>
         </div>
     </header>
-        <div class="painelCartao">
-            <nav class="nav">
-                <span class="icon"><i class="bi bi-three-dots-vertical"></i></span>
-                <ul>
-                    <li><button class="revBt">Remover</button></li>
-                </ul>
-            </nav>
-            <br>
+    <div class="painelCartao">
+        <nav class="nav">
+            <span class="icon"><i class="bi bi-three-dots-vertical"></i></span>
+            <ul>
+                <li>
+                    <?php 
+                    foreach ($cartao as $card){
+                    echo '<button class="revBt"><a href="../bd/removerCartao.php?id_cartao='.$card['id_cartao'].'">Remover</a>';
+                    }
+                    ?>
+                </li>
+            </ul>
+        </nav>
+        <br>
 
-            <div class="infCartao">
-                <span>Número do Cartão</span><br>
-                <input type="text">
-                <p></p>
-                <span>Expira em:</span><br>
-                <input type="text" placeholder="00/0000">
-            </div>
-        </div>
+        <?php
+        foreach ($info as $infor) {
+        echo '<div class="infCartao">';
+        echo '<span>' . 'Número do Cartão' . '</span>'.'<br>';
+        echo '<label for = "" ' . '<span>' . $infor['numero_cartao'] . '</span>' . '</label>';
+        echo '<p>'.'</p>';
+        echo '<span>' . 'Expira em:' . '</span>' . '<br>';
+        echo '<label for = "" ' . '<span>' . $infor['validade_mes'] . '/' .$infor['validade_ano']. '</span>';
+        echo '</div>';
+        }
+        ?>
+    </div>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const icon = document.querySelector(".icon");
-                const nav = document.querySelector(".nav");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icon = document.querySelector(".icon");
+            const nav = document.querySelector(".nav");
 
-                icon.addEventListener("click", () => nav.classList.toggle("active"));
-            });
-        </script>
+            icon.addEventListener("click", () => nav.classList.toggle("active"));
+        });
+    </script>
 
 </body>
+
 </html>
