@@ -127,6 +127,10 @@
     width: 300px;
 }
 
+.infCartao label{
+  color: black;
+}
+
 .icon {
     color: black;
     font-size: 30px;
@@ -138,6 +142,11 @@
 .revBt {
     display: none;
     margin-left: 350px;
+}
+
+.revBt a {
+  text-decoration: none;
+  color: black;
 }
 
 .nav.active .revBt {
