@@ -15,7 +15,7 @@ CREATE TABLE usuario(
     marca_veiculo VARCHAR (30) NOT NULL,
     modelo_veiculo VARCHAR (30) NOT NULL
 );
-
+	 
 CREATE TABLE pagamento(
 	id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
     tipo_cartao VARCHAR(50) NOT NULL,
@@ -34,25 +34,16 @@ CREATE TABLE estacionamento(
 );
 
 CREATE TABLE estacionamento_cliente(
-	id_cliente INT NOT NULL,
-    id_estacionamento INT NOT NULL,
+	id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    id_estacionamento INT PRIMARY KEY AUTO_INCREMENT,
     save BOOLEAN
 );
-ALTER TABLE estacionamento_cliente ADD CONSTRAINT fk_cliente FOREIGN KEY (id_cliente) REFERENCES usuario (id_usuario);
-ALTER TABLE estacionamento_cliente ADD CONSTRAINT fk_estacionamento FOREIGN KEY (id_estacionamento) REFERENCES estacionamento (id_local);
-
-SELECT id_cliente, id_estacionamento
-FROM estacionamento_cliente
-INNER JOIN usuario ON usuario.id_usuario = estacionamento_cliente.id_cliente 
-INNER JOIN estacionamento ON estacionamento.id_local = estacionamento_cliente.id_estacionamento;
 
 INSERT INTO estacionamento(nome_estacionamento, localizacao, vagas_disponiveis)
 VALUES
 ('Baratie', 'East - Blue', 23),
 ('Wano', 'Grand - Line', 30),
 ('Tech Vitoria', 'Vitoria', 50);
-
-SELECT * FROM usuario;
 
 CREATE TABLE vaga(
 	id_vaga INT PRIMARY KEY AUTO_INCREMENT,
@@ -61,6 +52,8 @@ CREATE TABLE vaga(
 	valor DECIMAL (9,2)
 );
 
+INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
+SELECT * FROM vaga;
 CREATE TABLE agendamento(
 	vaga VARCHAR(100) NOT NULL,
     data_agen DATE NOT NULL,
@@ -95,3 +88,5 @@ VALUES ('adm@adm.com', '123adm');
 select * from administrador;
 
 select * from estacionamento;
+
+select * from usuario;
