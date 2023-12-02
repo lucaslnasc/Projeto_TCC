@@ -63,8 +63,6 @@ CREATE TABLE vaga(
 INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
 SELECT * FROM vaga;
 
-INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
-SELECT * FROM vaga;
 CREATE TABLE agendamento(
 	vaga VARCHAR(100) NOT NULL,
     data_agen DATE NOT NULL,

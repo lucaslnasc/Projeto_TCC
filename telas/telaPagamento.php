@@ -1,5 +1,5 @@
 <?php
-  include('../bd/protected.php');
+//  include('../bd/protected.php');
 ?>
 
 <!DOCTYPE html>
@@ -50,19 +50,23 @@
     <div class="container row mx-auto">
         <form action="" method="post">
             <div class="fundinho">
-                <div>
-                    <label for="" class="letra-fundinho2">Cartão de Crédito</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                 <div>
+                    <label for="" class="letra-fundinho3">Cartões</label>
                 </div>
                 <div class="linha1"></div>
                 <div>
-                    <label for="" class="letra-fundinho">Cartão de Débito</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <label for="" class="letra-fundinho1">Cartão: XXXX9032</label>
+                    <input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                 </div>
-                <div class="linha1"></div>
+            
                 <div>
-                    <label for="" class="letra-fundinho1">PIX</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                    <label for="" class="letra-fundinho">Cartão: XXXX5467</label>
+                    <input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                </div>
+            
+                <div>
+                    <label for="" class="letra-fundinho">Cartão: XXXX1234</label>
+                    <input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault3">
                 </div>
                 <div class="linha1"></div>
                 <div>

@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:dbname=vaga_certa;host=127.0.0.1;port=3307';
+/*$dsn = 'mysql:dbname=vaga_certa;host=127.0.0.1;port=3307';
 $user = 'root';
 $password = '';
 
@@ -8,9 +8,9 @@ try {
 } catch (PDOException $e) {
     echo 'erro de conexão';
 }
-?>
+*/?>
 <?php
-  function verifica_dados($dbh) {
+ /* function verifica_dados($dbh) {
     if (isset($_POST['env']) && $_POST['env'] == "form") {
         $email = $_POST['email'];
         $sql = $dbh->prepare("SELECT * FROM teste_senha WHERE email = ?");
@@ -38,7 +38,7 @@ try {
     function enviar_email($dbh, $email){
       echo $email;
     }
-?>
+*/?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -73,7 +73,7 @@ try {
       <div>
         <input type="submit" class = "botao" value="ENVIAR"></input>
         <input type="hidden" name="env" value="form">
-        <?php echo verifica_dados($dbh);?>
+        <?php //echo verifica_dados($dbh);?>
       </div>
       <div class = "divCancelar">
         <label for=""><a href="telaLogin.php">Cancelar</a></label>
