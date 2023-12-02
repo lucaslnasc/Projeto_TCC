@@ -118,7 +118,6 @@ input[type="Hora"] {
 }
 
 .letra-fundinho {
-  margin-top: 10px;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
@@ -127,17 +126,23 @@ input[type="Hora"] {
 }
 
 .letra-fundinho1 {
-  margin-top: 10px;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
-  margin-left: 45px;
-  margin-right: 139px;
-  margin-top: 40px;
+  padding-left: 35px;
+  margin-top: 16px;
+}
+
+.letra-fundinho3 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 27px;
+  padding-left: 35px;
+  margin-top: 12px;
 }
 
 input[type="radio"]{
-  margin-left: 200px;
+  margin-left: 170px;
   
 }
 
@@ -171,6 +176,7 @@ form input[type="radio"] {
   height: 20px; /* Defina a altura dos botões de rádio conforme necessário */
   vertical-align: middle; /* Alinhe verticalmente os botões de rádio */
   border: 1px solid #000;
+  margin-top: -20px;
 }
 
 form label.letra-fundinho2 {
@@ -187,6 +193,6 @@ form label.letra-fundinho2 {
   background-color: black;
   width: 450px;
   height: 2px;
-  margin-top: 10px;
+  margin-top: 4px;
   margin-left: 20px;
   }
