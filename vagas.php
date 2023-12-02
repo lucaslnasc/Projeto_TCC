@@ -2,8 +2,6 @@
     print_r($_GET);
     $id_vaga = $_GET['vaga'];
     $ocupado = $_GET['ocupado'];
-    echo '<br>';
-    echo 'ARDUINO <br>';
     print_r($ocupado);
 ?>
 

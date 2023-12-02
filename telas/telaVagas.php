@@ -1,5 +1,11 @@
 <?php
-  include('../bd/protected.php');
+    include('../bd/conexao.php');
+    include('../bd/protected.php');
+    $query = $dbh->prepare('SELECT * FROM vaga');
+    $query->execute();
+
+    $vagas = $query->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -43,6 +49,7 @@
             </div>
         </div>
     </form>
+
     <label class="letra-linha">Legenda</label>
     <div class="linha-legenda" ></div>
     <div class="legenda-container">
@@ -73,10 +80,12 @@
 
  <div class = "grid-pai">
     <div class="grid-container1">
-        <div class = "vagaLivre"></div>
-        <div class = "vagaLivre"></div>
-        <div class = "vagaLivre"></div>
-        <div class = "vagaLivre"></div>
+    <?php foreach ($vagas as $vaga): ?>
+            <div class="vagaLivre" data-numero="<?php echo $vaga['id_vaga']; ?>"></div>
+        <?php endforeach; ?>
+        <div class = "vagaLivre" data-numero="2"></div>
+        <div class = "vagaLivre" data-numero="3"></div>
+        <div class = "vagaLivre" data-numero="4"></div>
     </div>
 
     <div class="grid-container1">
@@ -106,6 +115,17 @@
     <div class = "linha-Vagas"></div> 
     </div>
 </div>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var vagas = document.querySelectorAll('.vagaLivre');
+            vagas.forEach(function (vaga) {
+                vaga.addEventListener('click', function () {
+                    var numeroVaga = this.dataset.numero;
+                    window.location.href = '../telas/telaPagamento.php';
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
