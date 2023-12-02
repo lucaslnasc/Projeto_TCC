@@ -41,7 +41,7 @@
             <a href="telaCartoes.php">
             <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
             </a>
-            <button class="botaoAdicionarCartao" onclick="adicionarCartao()"><a href="telaAddCartao.php">Adicionar Cartão</a></button>
+            <a href="telaAddCartao.php"><button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button></a>
         </li>
     </div>
                 <hr class="linha">
