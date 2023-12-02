@@ -53,11 +53,11 @@ $cartao = $query->fetchAll();
                 <hr class="linha">
                 <div class="menuLateral bCartao">
                     <li onmouseover="mostrarBotaoAdicionarCartao()" onmouseout="esconderBotaoAdicionarCartao()">
-                        <a href="telaAddCartao.php">
+                        <a href="">
                             <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
                         </a>
-                        <button class="botaoAdicionarCartao" onclick="adicionarCartao()"><a
-                                href="telaAddCartao.php">Adicionar Cartão</a></button>
+                        <a href="telaAddCartao.php"><button class="botaoAdicionarCartao"
+                                onclick="adicionarCartao()">Adicionar Cartão</button></a>
                     </li>
                 </div>
                 <hr class="linha">
@@ -67,31 +67,32 @@ $cartao = $query->fetchAll();
                 </footer>
             </div>
         </div>
+        <div id="headerBaixo">
+            <div id="rodape"></div>
+        </div>
     </header>
-    <div class="painelCartao">
-        <nav class="nav">
-            <span class="icon"><i class="bi bi-three-dots-vertical"></i></span>
-            <ul>
-                <li>
-                    <?php 
-                    foreach ($cartao as $card){
-                    echo '<button class="revBt"><a href="../bd/removerCartao.php?id_cartao='.$card['id_cartao'].'">Remover</a>';
-                    }
-                    ?>
-                </li>
-            </ul>
-        </nav>
-        <br>
-
+    <div class="grid-container">
         <?php
         foreach ($info as $infor) {
-        echo '<div class="infCartao">';
-        echo '<span>' . 'Número do Cartão' . '</span>'.'<br>';
-        echo '<label for = "" ' . '<span>' . $infor['numero_cartao'] . '</span>' . '</label>';
-        echo '<p>'.'</p>';
-        echo '<span>' . 'Expira em:' . '</span>' . '<br>';
-        echo '<label for = "" ' . '<span>' . $infor['validade_mes'] . '/' .$infor['validade_ano']. '</span>';
-        echo '</div>';
+            echo '<div class = "card" >';
+            echo '<nav class ="nav">';
+            echo '<span class="icon"><i class="bi bi-three-dots-vertical"></i></span>';
+            echo '<ul>';
+            echo '<li>';
+            echo '<button class="revBt"><a href="../bd/removerCartao.php?id_cartao=' . $infor['id_cartao'] . '">Remover</a></button>';
+            echo '</li>';
+            echo '</ul>';
+            echo '</nav>';
+            echo '<br>';
+
+            echo '<div class="infCartao">';
+            echo '<span>' . 'Número do Cartão' . '</span>' . '<br>';
+            echo '<label for = "" ' . '<span>' . $infor['numero_cartao'] . '</span>' . '</label>';
+            echo '<p>' . '</p>';
+            echo '<span>' . 'Expira em:' . '</span>' . '<br>';
+            echo '<label for = "" ' . '<span>' . $infor['validade_mes'] . '/' . $infor['validade_ano'] . '</span>';
+            echo '</div>';
+            echo '</div>';
         }
         ?>
     </div>
