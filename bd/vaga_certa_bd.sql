@@ -18,13 +18,20 @@ CREATE TABLE usuario(
 	 
 CREATE TABLE pagamento(
 	id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
-    tipo_cartao VARCHAR(50) NOT NULL,
-	numero_cartao CHAR (16) NOT NULL,
-    nome_cartao VARCHAR (50) NOT NULL,
-    vencimento INT (4) NOT NULL,
-    preco_valor DECIMAL (9, 2),
-    cvv INT (3) NOT NULL
+    id_card_pagamento INT,
+	preco_valor decimal(9,2)
 );
+
+CREATE TABLE cartao(
+	id_cartao INT PRIMARY KEY AUTO_INCREMENT,
+	numero_cartao CHAR(20),
+	nome_cartao varchar(50), 
+	validade_mes varchar(2), 
+	validade_ano varchar(4), 
+	cvv int(3)
+);
+
+ALTER TABLE pagamento ADD CONSTRAINT fk_id_card FOREIGN KEY (id_card_pagamento) REFERENCES cartao (id_cartao);
 
 CREATE TABLE estacionamento(
 	id_local INT PRIMARY KEY AUTO_INCREMENT,
@@ -63,6 +70,9 @@ CREATE TABLE vaga(
 INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
 SELECT * FROM vaga;
 
+INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
+SELECT * FROM vaga;
+
 CREATE TABLE agendamento(
 	vaga VARCHAR(100) NOT NULL,
     data_agen DATE NOT NULL,
@@ -97,5 +107,3 @@ VALUES ('adm@adm.com', '123adm');
 select * from administrador;
 
 select * from estacionamento;
-
-select * from usuario;	
