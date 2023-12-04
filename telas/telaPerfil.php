@@ -1,5 +1,14 @@
 <?php
-  include('../bd/protected.php');
+
+include('../bd/conexao.php');
+
+include('../bd/protected.php');
+
+$query = $dbh->prepare("SELECT * FROM usuario");
+$query->execute();
+
+$dados = $query->fetchAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,13 +46,13 @@
                 </ul>
                 <hr class="linha">
                 <div class="menuLateral bCartao">
-        <li onmouseover="mostrarBotaoAdicionarCartao()" onmouseout="esconderBotaoAdicionarCartao()">
-            <a href="telaCartoes.php">
-            <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
-            </a>
-            <a href="telaAddCartao.php"><button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button></a>
-        </li>
-    </div>
+                    <li onmouseover="mostrarBotaoAdicionarCartao()" onmouseout="esconderBotaoAdicionarCartao()">
+                        <a href="telaCartoes.php">
+                            <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
+                        </a>
+                        <a href="telaAddCartao.php"><button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button></a>
+                    </li>
+                </div>
                 <hr class="linha">
 
                 <footer class="inferiorLateral">
@@ -56,70 +65,101 @@
             <div id="rodape"></div>
         </div>
     </header>
+    <?php
+    foreach ($dados as $email) {
+        echo '<div class="bv">' . $email['email'] . '</div>';
+    }
+    ?>
+    <br>
 
-      <div class="bv">Enaoseioqnaoseioqla@gmail.com</div><br>
-      <div class="bv1"><a class="bv2" href="">Alterar senha</a></div>
-      <div></div>
-        <div class="inf">SUAS INFORMAÇÕES PESSOAIS</div>
-        <div class="linha1"></div> 
-        <div class="element">
-            <div>
-            <label Class="letraEsq">NOME</label><i class="bi bi-pencil-square pp" ></i><br>
-                <input type="text" name="nome" id="nome">
-            </div>
-            <div>
+    <div class="bv1"><a class="bv2" href="telaTrocaSenha.php">Alterar senha</a></div>
+    <div></div>
+    <div class="inf">SUAS INFORMAÇÕES PESSOAIS</div>
+    <div class="linha1"></div>
+    <div class="element">
+        <div>
+            <label Class="letraEsq">NOME</label><i class="bi bi-pencil-square pp"></i><br>
+            <?php foreach ($dados as $nome) {
+                echo '<input type="text" name="nome" id="nome" value="' . $nome['nome'] . '">';
+            }
+            ?>
+        </div>
+        <div>
             <label Class="letraDir">CPF</label><br>
-                <input type="text" name= "cpf" id="cpf">
-            </div>
-            <br>
-            <div>
-           <label Class="letraEsq">TELEFONE</label> <i class="bi bi-pencil-square pp" ></i><br>
-                <input type="text" name= "telefone" id="telefone">
-            </div>
-            <div>
+            <?php foreach ($dados as $cpf){
+                echo '<input type=text" name="cpf"  disabled id="cpf" value="' . $cpf['cpf'] . '">';
+            }
+            ?>
+        </div>
+        <br>
+        <div>
+            <label Class="letraEsq">TELEFONE</label> <i class="bi bi-pencil-square pp"></i><br>
+            <?php foreach ($dados as $tel){
+                echo '<input type=text name=telefone id="telefone" value="' . $tel['telefone'] . '">';
+            }
+            ?>
+        </div>
+        <div>
             <label Class="letraDir">DATA DE NASCIMENTO</label><br>
-                <input type="text" name= "dtNasc" id="dtNasc">
-            </div>
+            <?php foreach ($dados as $data){
+                echo '<input type=text name="dtNasc" disabled id="dtNasc" value="' . $data['data_nasc'] . '">';
+            }
+
+            ?>
         </div>
-        <div class="inf">INFORMAÇÕES DO SEU VEÍCULO</div>
-     <div class="linha1"></div>
-        <div class="element">
-            <div>
+    </div>
+    <div class="inf">INFORMAÇÕES DO SEU VEÍCULO</div>
+    <div class="linha1"></div>
+    <div class="element">
+        <div>
             <label class="letraEsq">TIPO VEÍCULO</label><i class="bi bi-pencil-square pp"></i><br>
-                <input type="text" name= "tipoP" id="tipoP">
-            </div>
-            <div>
-            <label Class="letraDir">PLACA</label><i class="bi bi-pencil-square ppp"></i><br>
-                <input type="text" name= "placa" id="placa">
-            </div>
-            <br>
-            <div>
-            <label Class="letraEsq2">MARCA</label><i class="bi bi-pencil-square pp"></i><br>
-                <input type="text" name= "marca" id="marca">
-            </div>
-            <div>
-            <label Class="letraDir2">MODELO</label><i class="bi bi-pencil-square ppp"></i><br>
-                <input type="text" name= "modelo" id="modelo">
-            </div>
-            <input type="submit" class="salvar" value="Salvar alterações">
+            <?php foreach ($dados as $veiculo){
+                echo '<input type="text" name="tipoP" id="tipoP" value="' . $veiculo['tipo_veiculo'] . '">';
+            }
+            ?>
         </div>
-   
-  
+        <div>
+            <label Class="letraDir">PLACA</label><i class="bi bi-pencil-square ppp"></i><br>
+            <?php foreach ($dados as $placa){
+                echo '<input type="text" name ="placa" id="placa" value="' . $placa['placa_veiculo'] . '">';
+            }
+            ?>
+        </div>
+        <br>
+        <div>
+            <label Class="letraEsq2">MARCA</label><i class="bi bi-pencil-square pp"></i><br>
+            <?php foreach ($dados as $marca){
+                echo '<input type="text" name="marca" id="marca" value="' . $marca['marca_veiculo'] . '">';
+            }
+            ?>
+        </div>
+        <div>
+            <label Class="letraDir2">MODELO</label><i class="bi bi-pencil-square ppp"></i><br>
+            <?php foreach ($dados as $modelo){
+                echo '<input type="text" name="modelo" id="modelo" value="' . $modelo['modelo_veiculo'] . '">';
+            }
+            ?>
+        </div>
+        <input type="submit" class="salvar" value="Salvar alterações">
+    </div>
+
+
 
     <script>
-    function mostrarBotaoAdicionarCartao() {
-        const botaoAdicionar = document.querySelector('.botaoAdicionarCartao');
-        botaoAdicionar.style.display = 'inline-block';
-    }
+        function mostrarBotaoAdicionarCartao() {
+            const botaoAdicionar = document.querySelector('.botaoAdicionarCartao');
+            botaoAdicionar.style.display = 'inline-block';
+        }
 
-    function esconderBotaoAdicionarCartao() {
-        const botaoAdicionar = document.querySelector('.botaoAdicionarCartao');
-        botaoAdicionar.style.display = 'none';
-    }
+        function esconderBotaoAdicionarCartao() {
+            const botaoAdicionar = document.querySelector('.botaoAdicionarCartao');
+            botaoAdicionar.style.display = 'none';
+        }
 
-    function adicionarCartao() {
-        
-    }
-</script>
+        function adicionarCartao() {
+
+        }
+    </script>
 </body>
+
 </html>
