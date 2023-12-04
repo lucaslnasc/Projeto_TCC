@@ -1,12 +1,15 @@
 <?php
-/* include('../bd/conexao.php');
+ include('../bd/conexao.php');
 
 $query = $dbh->prepare('SELECT * FROM veiculo');
 $query->execute();
 
 $veiculo = $query->fetchAll();
 
-*/
+$teste = $dbh->prepare('SELECT sexo FROM usuario');
+$teste->execute();
+
+$sexoS = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -36,30 +39,31 @@ $veiculo = $query->fetchAll();
         <div class = "espacamento">
             <label class="letrao">Informações Pessoais</label>
         </div>
+        <form action="../bd/cadastrarUser.php" method="post">
         <div class="">
             <label class="tipos">Nome Completo</label><br>
-            <input class="grande" ></input>
+            <input class="grande" required="required" name="nome" id="nome"></input>
         </div>  
         <div class="">
             <label class="tipos">Endereço de Email</label><br>
-            <input class="grande"></input>
+            <input class="grande" type="email" required="required" name="email" id="email"></input>
         </div>  
         <div class="">
             <label class="tipos">Telefone</label><br>
-            <input class="pequeno"></input>
+            <input class="pequeno" id="telefone" required="required" name="telefone"></input>
         </div>  
         <div class = "ajuste">
             <label class="tipos1">Data Nasimento</label><br>
-            <input class="pequeno1"></input>
+            <input class="pequeno1" id="data_nasc" required="required" name="data_nasc"></input>
         </div>
         <div class="">
             <label class="tipos">Senha</label><br>
-            <input class="pequeno" type="password"  id="senha"></input>
+            <input class="pequeno" type="password"  id="senha" required="required" name="senha"></input>
             <i class="bi bi-eye-fill olho1" id="btn-senha" onclick="mostrarSenha()"></i>
         </div>  
         <div class = "ajuste">
             <label class="tipos1">Repetir senha</label><br>
-            <input class="pequeno1"  type="password" id="senha-repeti"></input>
+            <input class="pequeno1"  type="password" id="senha-repeti" required="required" name="conf_senha"></input>
             <i class="bi bi-eye-fill olho2" id="btn-senha1" onclick="mostrarSenha1()"></i>
         </div>
         <div class = "espacamento">
@@ -67,44 +71,48 @@ $veiculo = $query->fetchAll();
         </div>
         <div class="">
             <label class="tipos">Placa</label><br>
-            <input class="pequeno"></input>
+            <input class="pequeno" required="required" name="placa_veiculo"></input>
         </div>  
         <div class = "ajuste">
             <label class="tipos1">Marca</label><br>
-            <input class="pequeno1"></input>
+            <input class="pequeno1" required="required" name="marca_veiculo"></input>
         </div>
         <div class="">
             <label class="tipos">Tipo</label><br>
-            <input class="pequeno"></input>
+            <select name="tipo_veiculo" id="" class="pequeno">
+              <option value="">Carro</option>
+              <option value="">Moto</option>
+            </select>
         </div>  
         <div class = "ajuste">
             <label class="tipos1">Modelo</label><br>
-            <input class="pequeno1"></input>
+            <input class="pequeno1" required="required" name="modelo_veiculo"></input>
         </div>
 
         <div class = "espaaco">
         <div class = "outroLado">
         <div class="">
-            <label class="tipos2">Tipo</label><br>
-            <input class="pequeno2"></input>
+            <label class="tipos2">Sexo</label><br>
+            <select name="sexo" id="" class="pequeno2">
+            <option value="">Masculino</option>
+            <option value="">Feminino</option>
+          </select>
         </div>  
         <div class="miniespaco">
             <label class="tipos3">CPF</label><br>
-            <input class="pequeno2"></input>
+            <input class="pequeno2" id="cpf" required="required" name="cpf"></input>
         </div >  
-            <div class="espaco2"> 
-                <input type="submit" class = "limapar" value = "Limpar">
-            </div>
             <div class="espaco3"> 
-                <input type="submit" class = "limapar" value = "Limpar">
+                <input type="reset" class = "limapar" value = "Limpar">
             </div>
             <div class= "espaco5">
-            <input type="submit" class = "cadastrar" value = "cadastrar">
+            <input type="submit" class = "cadastrar" value = "Cadastrar">
             </div>
         </div>
         </div>
         </div>
     </div>
+    </form>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <!-- SCRIPT MASK DO JQUERY -->

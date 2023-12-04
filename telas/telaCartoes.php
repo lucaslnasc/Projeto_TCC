@@ -56,8 +56,7 @@ $cartao = $query->fetchAll();
                         <a href="">
                             <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
                         </a>
-                        <a href="telaAddCartao.php"><button class="botaoAdicionarCartao"
-                                onclick="adicionarCartao()">Adicionar Cartão</button></a>
+                        <a href="telaAddCartao.php"><button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button></a>
                     </li>
                 </div>
                 <hr class="linha">
@@ -79,7 +78,9 @@ $cartao = $query->fetchAll();
             echo '<span class="icon"><i class="bi bi-three-dots-vertical"></i></span>';
             echo '<ul>';
             echo '<li>';
-            echo '<button class="revBt"><a href="../bd/removerCartao.php?id_cartao=' . $infor['id_cartao'] . '">Remover</a></button>';
+            echo '<button class="revBt">
+            <a href="../bd/removerCartao.php?id_cartao=' . $infor['id_cartao'] . '">Remover</a>
+            </button>';
             echo '</li>';
             echo '</ul>';
             echo '</nav>';
@@ -97,14 +98,17 @@ $cartao = $query->fetchAll();
         ?>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const icon = document.querySelector(".icon");
-            const nav = document.querySelector(".nav");
-
-            icon.addEventListener("click", () => nav.classList.toggle("active"));
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const icons = document.querySelectorAll(".icon");
+        icons.forEach(icon => {
+            icon.addEventListener("click", () => {
+                const nav = icon.closest('.card').querySelector('.nav'); // Encontra a navegação correspondente ao ícone clicado
+                nav.classList.toggle("active");
+            });
         });
-    </script>
+    });
+</script>
 
 </body>
 
