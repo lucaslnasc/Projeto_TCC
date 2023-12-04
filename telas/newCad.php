@@ -16,7 +16,7 @@ $veiculo = $query->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./CSS/cssCadastro.css">
+    <link rel="stylesheet" href="./CSS/cssCadastrar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>Vaga Certa</title>
 </head>
@@ -85,11 +85,11 @@ $veiculo = $query->fetchAll();
         <div class = "espaaco">
         <div class = "outroLado">
         <div class="">
-            <label class="tipos">Tipo</label><br>
+            <label class="tipos2">Tipo</label><br>
             <input class="pequeno2"></input>
         </div>  
         <div class="miniespaco">
-            <label class="tipos">CPF</label><br>
+            <label class="tipos3">CPF</label><br>
             <input class="pequeno2"></input>
         </div >  
             <div class="espaco2"> 

@@ -14,6 +14,7 @@
 .espaaco{
   margin-left: 8%;
 }
+
 .fundinho{
   position: fixed;
   background-color: #43627f;
@@ -48,6 +49,19 @@
   margin-left: 6%;
 }
 
+.tipos2{
+  font-size: 17px;
+  color: #ffffff;
+  margin-top: 45px;
+  margin-left: 6%;
+}
+
+.tipos3{
+  font-size: 17px;
+  color: #ffffff;
+  margin-top: 20px;
+  margin-left: 6%;
+}
 
 body{
   justify-content: center;
@@ -124,7 +138,7 @@ body{
 }
 
 .espaco2{
-  margin-top: 165px;
+  margin-top: 140px;
   margin-left: 6%;
 
 }
