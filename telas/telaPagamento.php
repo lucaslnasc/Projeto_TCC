@@ -2,13 +2,13 @@
   include('../bd/conexao.php');
   include('../bd/protected.php');
 
-  $nome_vaga = ""; // Inicialize a variável para evitar o aviso de "Undefined variable"
+  $nome_vaga = ""; 
 
   if (isset($_GET['id'])) {
       $idVaga = $_GET['id'];
       echo "ID da Vaga: " . $idVaga;
   
-      $query = $dbh->prepare('SELECT nome_vaga FROM vaga WHERE id = :id');
+      $query = $dbh->prepare('SELECT nome_vaga FROM vaga WHERE id_vaga = :id');
       $query->bindParam(':id', $idVaga, PDO::PARAM_INT);
       $query->execute();
   
@@ -20,8 +20,6 @@
           $nome_vaga = "Vaga não encontrada";
       }
   }
-
-
 
 ?>
 
