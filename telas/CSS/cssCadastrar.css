@@ -149,6 +149,7 @@ body{
   width: 150px;
   height: 45px;
   border-radius: 10px;
+  margin-top: 33.4%;
 }
 
 .cadastrar{
@@ -183,4 +184,8 @@ body{
   right: 48.4%;
   color: black;
   margin-top: 4px;
+}
+
+input:focus {
+ border-radius: 14px;
 }

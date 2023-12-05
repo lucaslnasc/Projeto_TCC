@@ -1,10 +1,10 @@
 <?php
-    include('../bd/conexao.php');
+   include('../bd/conexao.php');
     include('../bd/protected.php');
-    $query = $dbh->prepare('SELECT id_vaga FROM vaga');
+   $query = $dbh->prepare('SELECT id_vaga FROM vaga');
     $query->execute();
 
-    $vaga = $query->fetchAll();
+    $vagas = $query->fetchAll();
 
 ?>
 
@@ -80,21 +80,21 @@
 
  <div class = "grid-pai">
     <div class="grid-container1">
-    <?php foreach ($vaga as $vagas) {
-        echo '<div class="vagaLivre" data-numero= ' . $vagas['id_vaga'] . '/<div>';
-        echo '<div class="vagaLivre" data-numero= ' . $vagas['id_vaga'] . '/<div>';
-        echo '<div class="vagaLivre" data-numero= ' . $vagas['id_vaga'] . '/<div>';
-        echo '<div class="vagaLivre" data-numero= ' . $vagas['id_vaga'] . '/<div>';
+    <?php foreach ($vagas as $vaga) {
+        echo '<div class="vagaLivre" data-numero="' . $vaga['id_vaga'] . '"></div>';
+        /*echo '<div class="vagaLivre" data-numero=" ' . $vagas['id_vaga'] . '"</div>';
+        echo '<div class="vagaLivre" data-numero=" ' . $vagas['id_vaga'] . '"</div>';
+        echo '<div class="vagaLivre" data-numero=" ' . $vagas['id_vaga'] . '"</div>';*/
     }
     ?>
     </div>
-
-    <div class="grid-container1">
+<!--
+        <div class="grid-container1">
         <div class = "vagaLivre"></div>
         <div class = "vagaLivre"></div>
         <div class = "vagaLivre"></div>
         <div class = "vagaLivre"></div>
-    </div>
+    </div>-->
  </div>
 
  <div class = "grid-pai1">
