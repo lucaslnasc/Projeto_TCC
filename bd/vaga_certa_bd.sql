@@ -66,7 +66,8 @@ CREATE TABLE vaga(
 	id_vaga INT PRIMARY KEY AUTO_INCREMENT,
     nome_vaga VARCHAR (20),
     tipo_vaga VARCHAR (50),
-	valor DECIMAL (9,2)
+	valor DECIMAL (9,2),
+    ocupado BOOLEAN
 );
 
 INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
@@ -90,12 +91,6 @@ VALUES
 ('C', 'Carro'),
 ('M', 'Moto');
 
-ALTER TABLE usuario ADD CONSTRAINT	fk_tipo_veiculo FOREIGN KEY (tipo_veiculo) REFERENCES veiculo (cod);
-
-SELECT cod, categoria_veiculo 
-FROM veiculo
-INNER JOIN usuario ON usuario.tipo_veiculo = veiculo.cod;
-
 CREATE TABLE administrador(
 id_adm INT primary key auto_increment,
 email VARCHAR (100) NOT NULL,
@@ -105,3 +100,17 @@ senha VARCHAR (100) NOT NULL
 INSERT INTO administrador(email, senha) 
 VALUES ('adm@adm.com', '123adm');
 
+CREATE TABLE relatorio_vagas( 
+id_relatorio_vagas INT PRIMARY KEY AUTO_INCREMENT, 
+id_vaga INT, 
+id_veiculo CHAR(1), 
+placa_veiculo VARCHAR(20), 
+modelo_veiculo VARCHAR(50), 
+data_agendamento DATE, 
+hora_agendamento TIME 
+);
+
+select * from usuario;
+
+ALTER TABLE relatorio_vagas ADD CONSTRAINT fk_id_vaga FOREIGN KEY (id_vaga) REFERENCES vaga (id_vaga); 
+ALTER TABLE relatorio_vagas ADD CONSTRAINT fk_id_veiculo FOREIGN KEY (id_veiculo) REFERENCES veiculo (cod);

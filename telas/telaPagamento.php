@@ -1,6 +1,6 @@
 <?php
   include('../bd/conexao.php');
-  include('../bd/protected.php');
+
 
   $nome_vaga = ""; 
 
@@ -16,17 +16,14 @@
       if ($vaga) {
           $nome_vaga = $vaga['nome_vaga'];
       } else {
-          $nome_vaga = "Vaga não encontrada";
+          echo 'alert("Vaga Não Encontrada");';
       }
   }
-<<<<<<< HEAD
     
   $query = $dbh->prepare('SELECT numero_cartao FROM cartao');
   $query->execute();
   $cartoes = $query->fetchAll();
 
-=======
->>>>>>> 50bb0a07a0d281dd1fd1928a7e5423bb63228a5f
 
 ?>
 
@@ -64,12 +61,18 @@
         </div>
         <form action="" method="post">
             <label for="" class="letra">Vaga</label>
-            <input type="Vaga" name="Vaga" value="<?php echo $nome_vaga; ?>" aria-describedby="addon-wrapping" required>
+            <input type="Vaga" name="Vaga" value="<?php echo $nome_vaga; ?>" aria-describedby="addon-wrapping" readonly required>
             <label for="" class="letra">Data</label>
-            <input type="Data" aria-describedby="addon-wrapping" required>
-            <label for="" class="letra">Hora</label>
+            <input type="text" aria-describedby="addon-wrapping" id="data" name="data" required="required" oninput="validarData()">
+            <span id="mensagemErro" style="color: red;"></span>
+            <label for="" class="letra">Horário</label>
+            <label for="" class="deLabel">De:</label>
             <input type="Hora" aria-describedby="addon-wrapping" required>
-            <input type="submit" class="input-voltar" value="Voltar">
+            <label for="" class="ateLabel">Até:</label>
+            <input type="HoraAte" aria-describedby="addon-wrapping" required>
+            <label for="" class="precoFinal">Preço Final: xxxxxx</label>
+            <a href="telaVagas.php"><input type="button" class="input-voltar" value="Voltar"></a>
+
         </form>
     </div>
 
@@ -83,36 +86,46 @@
                 </div>
                 <div class="linha1"></div>
                 <?php
-                foreach($cartoes as $cartao){
-                    $numeroCartao = $cartao['numero_cartao'];
-                    $ultimosDigitos = substr($numeroCartao, -4);
-                    echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
-                    echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
-                }
-                ?>
-            
-                <div class="linha1"></div>
-                <div>
-                    <input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">
-                </div>
-                
-            </div>
+        if (empty($cartoes)) {
+            echo '<label for="" class="labelNenhum">Nenhum Cartão Cadastrado</label>';
+            echo '<a href="telaAddCartao.php"><button type="button" class="btCadCard">Cadastrar Cartão</button></a>';
+        } else {
+            foreach ($cartoes as $cartao) {
+                $numeroCartao = $cartao['numero_cartao'];
+                $ultimosDigitos = substr($numeroCartao, -4);
+                echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
+                echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
+                echo '<input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">';
+                echo '<div class="linha1"></div>';
+            }
+        }
+        ?>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-<!-- SCRIPT MASK DO JQUERY -->
-<script type="text/javascript" src="jquery.mask.js"></script>
+
 <script type="text/javascript">
-
   $(document).ready(function(){
-    $('#cartaoX').mask('Cartão: XXXX');
-    $('#data')
+    $('#data').mask('00/00/0000');
+  });
 
-  })
+  function validarData() {
+    var inputData = $('#data').val();
+    var dataAtual = new Date();
+    var dataInserida = new Date(inputData);
 
-  
+    if (dataInserida < dataAtual) {
+      $('#mensagemErro').text('Data Inválida');
+      return false;
+    } else {
+      $('#mensagemErro').text('');
+      return true;
+    }
+  }
+
 </script>
-        </form>
+
+</form>
 </body>
 
 </html>

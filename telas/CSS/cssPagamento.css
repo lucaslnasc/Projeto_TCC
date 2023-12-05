@@ -66,6 +66,11 @@
   width: 125px;
   margin-top: 15px;
 }
+
+a{
+  text-decoration: none;
+}
+
 .letra {
   margin-top: 10px;
   color: black;
@@ -73,16 +78,35 @@
   font-size: 19px;
 }
 input[type="Vaga"],
-input[type="Data"],
+input[id="data"],
 input[type="Hora"] {
   padding: 7px;
   margin-bottom: 5px;
   border: 1px solid #ddd;
   border-radius: 3px;
   display: flex;
-  width: 450px;
+  width: 500px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+input[type="Hora"]{
+  width: 15% !important;
+  margin-left: 3%;
+}
+
+input[type="HoraAte"]{
+  width: 10% !important;
+  margin-left: 16%;
+  margin-top: -2.4%;
+  position: fixed;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    margin-bottom: 5px;
+    padding: 7px;
+    border-radius: 3px;
+    display: flex;
+    border: 1px solid #ddd;
 }
 
 .fundinho {
@@ -196,3 +220,62 @@ form label.letra-fundinho2 {
   margin-top: 4px;
   margin-left: 20px;
   }
+  
+
+  .labelNenhum{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-left: 35px;
+    margin-top: 16px;
+    font-weight: bold;
+    margin-left: 3%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .btCadCard {
+    background-color: orange;
+    color: #fff;
+    font-size: 23px;
+    width: 350px;
+    height: 45px;
+    margin-top: 43%;
+    margin-left: 70px;
+    border-width: 0px;
+    border-radius: 5px;
+    transition: 2s;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.btCadCard:hover {
+    background-color:rgb(168, 112, 9);
+}
+
+.deLabel{
+  margin-top: 0.5%;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  position: fixed;
+  margin-right: 5%;
+  display: flex;
+}
+
+.ateLabel{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  position: fixed;
+  margin-left: 14%;
+  margin-top: -2%;
+}
+
+.precoFinal{
+  margin-top: 10px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;  
+}

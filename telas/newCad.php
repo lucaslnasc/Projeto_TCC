@@ -1,7 +1,7 @@
 <?php
  include('../bd/conexao.php');
 
-$query = $dbh->prepare('SELECT categoria_veiculo FROM veiculo');
+$query = $dbh->prepare('SELECT * FROM veiculo');
 $query->execute();
 
 $veiculo = $query->fetchAll();
@@ -9,7 +9,7 @@ $veiculo = $query->fetchAll();
 $teste = $dbh->prepare('SELECT sexo FROM usuario');
 $teste->execute();
 
-$sexoS = $query->fetchAll();
+$sexoS = $teste->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +82,7 @@ $sexoS = $query->fetchAll();
             <select name="tipo_veiculo" id="" class="pequeno">
             <?php
               foreach($veiculo as $linha){
-                
+                echo '<option value ="' . $linha['cod'] . '">' . $linha['categoria_veiculo'] . '</option>';
               }
             ?>
 
