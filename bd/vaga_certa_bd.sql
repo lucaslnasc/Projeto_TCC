@@ -7,15 +7,17 @@ CREATE TABLE usuario(
     nome VARCHAR (100) NOT NULL,
     email VARCHAR (100) NOT NULL UNIQUE,
     cpf CHAR (14) NOT NULL UNIQUE,
-    senha VARCHAR (20) NOT NULL,
+    senha VARCHAR (255) NOT NULL,
     data_nasc VARCHAR(10) NOT NULL,
     telefone VARCHAR (16) NOT NULL, 
     placa_veiculo VARCHAR (7) NOT NULL,
     tipo_veiculo CHAR (1) NOT NULL,
     marca_veiculo VARCHAR (30) NOT NULL,
-    modelo_veiculo VARCHAR (30) NOT NULL
+    modelo_veiculo VARCHAR (30) NOT NULL,
+    sexo VARCHAR(30) NOT NULL,
+    conf_senha VARCHAR(255) NOT NULL
 );
-	 
+
 CREATE TABLE pagamento(
 	id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
     id_card_pagamento INT,
@@ -68,10 +70,9 @@ CREATE TABLE vaga(
 );
 
 INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
-SELECT * FROM vaga;
 
-INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
-SELECT * FROM vaga;
+INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 2","Normal");
+
 
 CREATE TABLE agendamento(
 	vaga VARCHAR(100) NOT NULL,
@@ -104,6 +105,3 @@ senha VARCHAR (100) NOT NULL
 INSERT INTO administrador(email, senha) 
 VALUES ('adm@adm.com', '123adm');
 
-select * from administrador;
-
-select * from estacionamento;

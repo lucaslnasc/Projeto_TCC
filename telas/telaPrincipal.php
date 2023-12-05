@@ -82,7 +82,7 @@ $local = $query->fetchAll();
             $cont = 0;
             foreach ($local as $l) {
                 echo '<div class="grid-card">';
-                echo '<a href="">';
+                echo '<a href="telaVagas.php">';
                 echo '<h3>' . '<br>' . $l['nome_estacionamento'] . '</b>' . '</h3>';
                 echo '<p>' . $l['localizacao'] . '</p>';
                 echo '<p>' . 'Vagas Disponiveis: ' . $l['vagas_disponiveis'] . '</p>';

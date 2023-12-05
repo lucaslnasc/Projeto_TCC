@@ -19,11 +19,14 @@
           $nome_vaga = "Vaga não encontrada";
       }
   }
+<<<<<<< HEAD
     
   $query = $dbh->prepare('SELECT numero_cartao FROM cartao');
   $query->execute();
   $cartoes = $query->fetchAll();
 
+=======
+>>>>>>> 50bb0a07a0d281dd1fd1928a7e5423bb63228a5f
 
 ?>
 
