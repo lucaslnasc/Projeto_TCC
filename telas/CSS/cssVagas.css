@@ -48,10 +48,10 @@ border-radius: 15px;
 }
 
 .letra-lugar{
-  margin-top: -5px;
+  margin-top: 4px;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
+  font-size: 30px;
   margin-left: 8%;
 }
 
@@ -260,4 +260,20 @@ margin-left: 43.5%;
   border: 1px solid #000;
   margin-left: 25%;
   margin-top: 5%;
+}
+
+.preferencialIcon{
+  color: black;
+  font-size: 1.5rem;
+  position: fixed;
+  margin-left: 20.1%;
+  margin-top: -30px;
+}
+
+.iconVagaPref{
+  color: black;
+  font-size: 3rem;
+  position: fixed;
+  margin-left: 7.6%;
+  margin-top: 25px;
 }

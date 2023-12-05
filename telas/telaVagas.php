@@ -1,6 +1,6 @@
 <?php
    include('../bd/conexao.php');
-    include('../bd/protected.php');
+ 
    $query = $dbh->prepare('SELECT id_vaga FROM vaga');
     $query->execute();
 
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/cssVagas.css">
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>Vaga Certa</title>
 </head>
 <body class="padrao0">
@@ -44,8 +45,7 @@
             </div>
             <div class = "linha-fundo"></div>
             <div>
-                <label class="letra-lugar">Preço:</label>
-                <Label class="preco">R$ X,XX</Label>
+                <label class="letra-lugar">Preço Por Hora: R$10.00</label>
             </div>
         </div>
     </form>
@@ -70,6 +70,7 @@
 <div class="legenda-container">
     <div class="quadrado-preferencial"></div>
     <label class ="pref" >Preferencial</label>
+    <i class="bi bi-person-wheelchair preferencialIcon"></i>
 </div>
 
 <div class = "campoVagas"> 
@@ -80,21 +81,14 @@
 
  <div class = "grid-pai">
     <div class="grid-container1">
-    <?php foreach ($vagas as $vaga) {
+    <?php foreach ($vagas as $key => $vaga) {
         echo '<div class="vagaLivre" data-numero="' . $vaga['id_vaga'] . '"></div>';
-        /*echo '<div class="vagaLivre" data-numero=" ' . $vagas['id_vaga'] . '"</div>';
-        echo '<div class="vagaLivre" data-numero=" ' . $vagas['id_vaga'] . '"</div>';
-        echo '<div class="vagaLivre" data-numero=" ' . $vagas['id_vaga'] . '"</div>';*/
+         if ($key == 1) {
+        echo '<i class="bi bi-person-wheelchair iconVagaPref"></i>';
+    }
     }
     ?>
     </div>
-<!--
-        <div class="grid-container1">
-        <div class = "vagaLivre"></div>
-        <div class = "vagaLivre"></div>
-        <div class = "vagaLivre"></div>
-        <div class = "vagaLivre"></div>
-    </div>-->
  </div>
 
  <div class = "grid-pai1">
