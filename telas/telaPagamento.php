@@ -6,7 +6,6 @@
 
   if (isset($_GET['id'])) {
       $idVaga = $_GET['id'];
-      echo "ID da Vaga: " . $idVaga;
   
       $query = $dbh->prepare('SELECT nome_vaga FROM vaga WHERE id_vaga = :id');
       $query->bindParam(':id', $idVaga, PDO::PARAM_INT);
@@ -20,6 +19,14 @@
           $nome_vaga = "Vaga não encontrada";
       }
   }
+<<<<<<< HEAD
+    
+  $query = $dbh->prepare('SELECT numero_cartao FROM cartao');
+  $query->execute();
+  $cartoes = $query->fetchAll();
+
+=======
+>>>>>>> 50bb0a07a0d281dd1fd1928a7e5423bb63228a5f
 
 ?>
 
@@ -75,25 +82,20 @@
                     <label for="" class="letra-fundinho3">Cartões</label>
                 </div>
                 <div class="linha1"></div>
-                <div>
-                    <label id="cartaoX" for="" class="letra-fundinho1"><?php  ?></label>
-                    <input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                </div>
+                <?php
+                foreach($cartoes as $cartao){
+                    $numeroCartao = $cartao['numero_cartao'];
+                    $ultimosDigitos = substr($numeroCartao, -4);
+                    echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
+                    echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
+                }
+                ?>
             
-                <div>
-                    <label id="cartaoX" for="" class="letra-fundinho">Cartão: XXXX5467</label>
-                    <input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                </div>
-            
-                <div>
-                    <label id="cartaoX" for="" class="letra-fundinho">Cartão: XXXX1234</label>
-                    <input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                </div>
                 <div class="linha1"></div>
                 <div>
-                    <input type="button" class="efetuar-pagamento" value="Efetuar Pagamento">
+                    <input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">
                 </div>
-
+                
             </div>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -104,12 +106,13 @@
 
   $(document).ready(function(){
     $('#cartaoX').mask('Cartão: XXXX');
+    $('#data')
 
   })
 
   
 </script>
-
+        </form>
 </body>
 
 </html>
