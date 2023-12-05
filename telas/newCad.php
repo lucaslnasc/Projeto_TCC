@@ -1,7 +1,7 @@
 <?php
  include('../bd/conexao.php');
 
-$query = $dbh->prepare('SELECT * FROM veiculo');
+$query = $dbh->prepare('SELECT categoria_veiculo FROM veiculo');
 $query->execute();
 
 $veiculo = $query->fetchAll();
@@ -80,8 +80,12 @@ $sexoS = $query->fetchAll();
         <div class="">
             <label class="tipos">Tipo</label><br>
             <select name="tipo_veiculo" id="" class="pequeno">
-              <option value="">Carro</option>
-              <option value="">Moto</option>
+            <?php
+              foreach($veiculo as $linha){
+                
+              }
+            ?>
+
             </select>
         </div>  
         <div class = "ajuste">
