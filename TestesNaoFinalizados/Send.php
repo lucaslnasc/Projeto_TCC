@@ -7,7 +7,7 @@ require '../phpmailer/src/PHPMailer.php';
 require '../phpmailer/src/SMTP.php';
 
 if(isset($_POST["post"])){
-    $mail = new PHPMailer(true);
+  // $mail = new PHPMailer(true);
 
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
