@@ -277,3 +277,17 @@ margin-left: 43.5%;
   margin-left: 7.6%;
   margin-top: 25px;
 }
+
+.btVoltar{
+  position:fixed;
+  color: #0d2a4a;
+  font-size: 4rem;
+  margin-left: 5%;
+  margin-top: 1%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+}
