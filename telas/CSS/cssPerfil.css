@@ -276,8 +276,8 @@ input[name="dtNasc"] {
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-input[name="tipoP"],
-input[name="marcav"] {
+input[name="tipo_veiculo"],
+input[name="marca_veiculo"] {
   padding: 7px;
   margin-left: 250px;
   margin-bottom: 5px;
@@ -288,8 +288,8 @@ input[name="marcav"] {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
-input[name="modelo"],
-input[name="placa"] {
+input[name="modelo_veiculo"],
+input[name="placa_veiculo"] {
   padding: 7px;
   margin-left: 150px;
   margin-bottom: 5px;
@@ -301,7 +301,7 @@ input[name="placa"] {
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-input[name="marca"] {
+input[name="marca_veiculo"] {
   padding: 7px;
   margin-left: 250px;
   margin-bottom: 5px;
