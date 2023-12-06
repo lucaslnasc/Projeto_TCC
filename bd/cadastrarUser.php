@@ -16,24 +16,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $senhaCrip = password_hash($senha, PASSWORD_BCRYPT);
 
-    $query = $dbh->prepare('INSERT INTO usuario (nome, email, cpf, senha, data_nasc, telefone, placa_veiculo, tipo_veiculo, marca_veiculo, modelo_veiculo, sexo)
-    VALUES (:nome, :email, :cpf, :senha, :data_nasc, :telefone, :placa_veiculo, :tipo_veiculo, :marca_veiculo, :modelo_veiculo, :sexo);');
+    try {
+        $query = $dbh->prepare('INSERT INTO usuario (nome, email, cpf, senha, data_nasc, telefone, placa_veiculo, tipo_veiculo, marca_veiculo, modelo_veiculo, sexo)
+            VALUES (:nome, :email, :cpf, :senha, :data_nasc, :telefone, :placa_veiculo, :tipo_veiculo, :marca_veiculo, :modelo_veiculo, :sexo);');
 
-    $query->execute(array(
-        ':nome' => $nome,
-        ':email' => $email,
-        ':cpf' => $cpf,
-        ':senha' => $senhaCrip, 
-        ':data_nasc' => $data_nasc,
-        ':telefone' => $telefone,
-        ':placa_veiculo' => $placa_veiculo,
-        ':tipo_veiculo' => $tipo_veiculo,
-        ':marca_veiculo' => $marca_veiculo,
-        ':modelo_veiculo' => $modelo_veiculo,
-        ':sexo' => $sexo,
-    ));
-    
-    header('Location:../telas/telaPrincipal.php?cadastro_sucesso=true');
-    exit;
+        $query->bindParam(':nome', $nome);
+        $query->bindParam(':email', $email);
+        $query->bindParam(':cpf', $cpf);
+        $query->bindParam(':senha', $senhaCrip);
+        $query->bindParam(':data_nasc', $data_nasc);
+        $query->bindParam(':telefone', $telefone);
+        $query->bindParam(':placa_veiculo', $placa_veiculo);
+        $query->bindParam(':tipo_veiculo', $tipo_veiculo);
+        $query->bindParam(':marca_veiculo', $marca_veiculo);
+        $query->bindParam(':modelo_veiculo', $modelo_veiculo);
+        $query->bindParam(':sexo', $sexo);
+
+        $query->execute();
+
+ 
+        header( "../telas/telaLogin.php?cadastro_sucesso=true"); 
+        exit;
+        
+    } catch (PDOException $e) {
+        die("Erro ao inserir usuário: " . $e->getMessage());
+    }
 }
 ?>
