@@ -1,6 +1,6 @@
 <?php
   include('../bd/conexao.php');
-
+  include('../bd/protected.php');
   $data_atual = date('Y-m-d'); 
   $nome_vaga = ""; 
 
@@ -65,31 +65,16 @@
         </div>
         <form action="../bd/pagamentoVaga.php" method="post" id="formPagamento">
             <label for="" class="letra">Vaga</label>
-            <input type="Vaga" name="Vaga" value="<?php echo $nome_vaga; ?>" aria-describedby="addon-wrapping" readonly required>
+            <input type="Vaga" name="vaga" value="<?php echo $nome_vaga; ?>" aria-describedby="addon-wrapping" readonly required>
 
             <label for="" class="letra">Data</label>
-            <input type="date" aria-describedby="addon-wrapping" id="data" name="data" value="<?php echo $data_atual; ?>" readonly required="required">
+            <input type="date" aria-describedby="addon-wrapping" id="data" name="data_agend" value="<?php echo $data_atual; ?>" readonly required="required">
             <span id="mensagemErro" style="color: red;"></span>
-
-            <label for="" class="letra">Horários disponíveis </label>
-            <div class="littleSpace">
-                <input type="button" class="botoesHorarios" onclick="selecionarHorario(this)" value="06:00" name="horario">
-                <input type="button" class="botoesHorarios" onclick="selecionarHorario(this)" value="09:00" name="horario">
-                <input type="button" class="botoesHorarios" onclick="selecionarHorario(this)" value="12:00" name="horario">
-            </div>
-            <div class="littleSpace">
-                <input type="button" class="botoesHorarios" onclick="selecionarHorario(this)" value="15:00" name="horario">
-                <input type="button" class="botoesHorarios" onclick="selecionarHorario(this)" value="18:00" name="horario">
-                <input type="button" class="botoesHorarios" onclick="selecionarHorario(this)" value="21:00" name="horario">
-            </div>
-
-            <div class="littleSpace"></div>
-                <label for="" class="letra">Carga Horária </label>
-                <div class = " littleSpace">
-                <input type="button" class="carga" onclick="selecionarCarga(this)" value="01 Hora" name="carga_horaria">
-                <input type="button" class="carga" onclick="selecionarCarga(this)" value="02 Horas" name="carga_horaria">
-                <input type="button" class="carga" onclick="selecionarCarga(this)" value="03 Horas" name="carga_horaria">
-            </div>
+            <label for="" class="letra">Horario Inicio</label>
+            <input type="time" name="" id="" class="dataIni">
+            <label for="" class="letra">Quantidade de Horas</label>
+            <input type="range" value="1" min="1" max="3" oninput="this.nextElementSibling.value = this.value">
+            <output>1</output>
             <div class = " littleSpace">
                 <label for="" class="precoFinal">Preço Final: xxxxxx</label>
             </div >
@@ -121,48 +106,6 @@
         ?>  
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-<script>
-    let horarioSelecionado = null;
-    let cargaHorariaSelecionada = null;
-
-    function selecionarHorario(botao) {
-        // Desmarcar todos os outros botões de horário
-        const botoesHorarios = document.querySelectorAll('.botoesHorarios');
-        botoesHorarios.forEach(botao => botao.classList.remove('selecionado'));
-
-        // Marcar o botão de horário clicado
-        botao.classList.add('selecionado');
-
-        // Atualizar a variável com o horário selecionado
-        horarioSelecionado = botao.innerText;
-    }
-
-    function selecionarCarga(botao) {
-        // Desmarcar todos os outros botões de carga horária
-        const botoesCarga = document.querySelectorAll('.carga');
-        botoesCarga.forEach(botao => botao.classList.remove('selecionado'));
-
-        // Marcar o botão de carga horária clicado
-        botao.classList.add('selecionado');
-
-        // Atualizar a variável com a carga horária selecionada
-        cargaHorariaSelecionada = botao.innerText;
-    }
-
-    // Função para validar e enviar o formulário
-    function efetuarPagamento() {
-        if (horarioSelecionado && cargaHorariaSelecionada) {
-            // Atualizar os inputs no formulário antes de enviar
-            document.getElementById('horario').value = horarioSelecionado;
-            document.getElementById('carga_horaria').value = cargaHorariaSelecionada;
-
-            // Enviar o formulário
-            document.getElementById('formPagamento').submit();
-        } else {
-            alert('Por favor, selecione horário e carga horária antes de efetuar o pagamento.');
-        }
-    }
-</script>
 
 </form>
 </body>
