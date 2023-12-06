@@ -1,33 +1,31 @@
-<?php
-include('conexao.php');
+    <?php
+    include('conexao.php');
+    include('protected.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // ... (código existente)
 
-    // Processar os horários e carga horária selecionados
-    $horarioSelecionado = isset($_POST['horario']) ? $_POST['horario'] : null;
-    $cargaHorariaSelecionada = isset($_POST['carga_horaria']) ? $_POST['carga_horaria'] : null;
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $vaga = $_POST['vaga'];
+        $data_agend = $_POST['data_agend'];
+        $horario = $_POST['horario'];
+        $carga_horaria = $_POST['carga_horaria'];
+        $idUser = $_SESSION['id_usuario'];
 
-    if ($horarioSelecionado !== null && $cargaHorariaSelecionada !== null) {
         try {
-            // Certifique-se de substituir $idUsuario pelo identificador do usuário correto
-            $idUsuario = $_SESSION['id_usuario']; // Exemplo: você deve obter o id do usuário da sessão ou de onde quer que esteja armazenado.
-            
-            // Utilize declarações preparadas para evitar SQL injection
-            $stmt = $dbh->prepare('INSERT INTO agendamento (vaga, data_agen, horario, carga_horaria, id_usuario_agend) VALUES (:vaga, :data_agen, :horario, :carga_horaria, :id_usuario)');
-            $stmt->bindParam(':vaga', $nome_vaga, PDO::PARAM_STR);
-            $stmt->bindParam(':data_agen', $data_atual, PDO::PARAM_STR);
-            $stmt->bindParam(':horario', $horarioSelecionado, PDO::PARAM_STR);
-            $stmt->bindParam(':carga_horaria', $cargaHorariaSelecionada, PDO::PARAM_STR);
-            $stmt->bindParam(':id_usuario', $idUsuario, PDO::PARAM_INT);
-            $stmt->execute();
+            $query = $dbh->prepare('INSERT INTO agendamento (vaga, data_agend, horario, carga_horaria, id_usuario)
+                VALUES (:vaga, :data_agend, :horario, :carga_horaria, :id_usuario);');
 
-            echo 'Agendamento realizado com sucesso!';
+            $query->bindParam(':vaga', $vaga);
+            $query->bindParam(':data_agend', $data_agend);
+            $query->bindParam(':horario', $horario);
+            $query->bindParam(':carga_horaria', $carga_horaria);
+            $query->bindParam(':id_usuario', $idUser);
+            $query->execute();
+
+            header('Location: ../telas/telaConfirmaAgend.php?pagamento_sucesso=true');
+
+            exit;    
         } catch (PDOException $e) {
-            echo 'Erro ao realizar o agendamento: ' . $e->getMessage();
+            die("Erro ao realizar pagamento: " . $e->getMessage());
         }
-    } else {
-        echo 'Por favor, selecione horário e carga horária antes de efetuar o pagamento.';
     }
-}
-?>
+    ?>
