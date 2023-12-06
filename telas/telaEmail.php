@@ -1,44 +1,8 @@
-<?php
-/*$dsn = 'mysql:dbname=vaga_certa;host=127.0.0.1;port=3307';
-$user = 'root';
-$password = '';
+<?php 
+include('../bd/conexao.php');
+?>
 
-try {
-    $dbh = new PDO($dsn, $user, $password);
-} catch (PDOException $e) {
-    echo 'erro de conexão';
-}
-*/?>
-<?php
- /* function verifica_dados($dbh) {
-    if (isset($_POST['env']) && $_POST['env'] == "form") {
-        $email = $_POST['email'];
-        $sql = $dbh->prepare("SELECT * FROM teste_senha WHERE email = ?");
-        $sql->bindValue(1, $email, PDO::PARAM_STR);
-        $sql->execute();
-        $total = $sql->rowCount(); 
 
-        if ($total > 0) {
-          if ($sql->execute()) {
-              $dados = $sql->fetch(PDO::FETCH_ASSOC);
-              
-              if ($dados) {
-                  enviar_email($dbh, $dados['email']);
-              } else {
-                  echo "Erro ao obter dados do usuário.";
-              }
-          } else {
-              echo "Erro ao executar a consulta SQL.";
-          }
-      } else {
-          
-      }
-    }
-}
-    function enviar_email($dbh, $email){
-      echo $email;
-    }
-*/?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -47,6 +11,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/cssEmail.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.svg" type="image/x-icon">
     <title>Vaga Certa</title>
 </head>
@@ -66,19 +31,89 @@ try {
         <label class="letra-fundinho2"> Para redefinir sua senha, informe o e-mail <br> cadastrado
             na sua conta e lhe enviaremos uma <br> autorização para a troca de senha.  </label>
       </div>
-      <form method = "post" action="">
+      <form method = "post" action="../TestesNaoFinalizados/Send.php">
       <div>
-        <input type="" class = "email" name ="email" placeholder = "Email" required>
+        <input type="email" class = "email" name ="email" placeholder = "Email" required>
+        <input type="hidden" name="assunto" id="assunto" value="Recuperação de senha">
+        <input type="hidden" name="corpo_email" id="corpo_email" value="Prezado usuário, segue abaixo o link para a recuperação de senha. O link expira em 1 hora. Caso não tenha sido você, ignore este email.<br>Clique no link a seguir para redefinir sua senha: http://localhost/TCC/telas/telaTrocaSenha.php" + token">
       </div>
       <div>
-        <input type="submit" class = "botao" value="ENVIAR"></input>
-        <input type="hidden" name="env" value="form">
-        <?php //echo verifica_dados($dbh);?>
+        <input type="submit" class = "botao" value="ENVIAR" onclick="verificarEEnviarEmail()"></input>
       </div>
       <div class = "divCancelar">
         <label for=""><a href="telaLogin.php">Cancelar</a></label>
       </div>
     </form>
     </div>
+    <script>
+    function verificarEEnviarEmail() {
+        var email = $('.email').val();
+
+        if (!email) {
+            document.getElementById("email_enviado").style.display = "none";
+            $('#mensagem_erro').html("O campo de e-mail não foi preenchido.").show();
+            return;
+        }
+        document.getElementById("mensagem_erro").style.display = "none";
+        verificarEmail();
+    }
+
+    function verificarEmail() {
+        var email = $('.email').val();
+        $.ajax({
+            type: 'POST',
+            url: 'verificarEmail.php', // Corrigido o caminho do arquivo PHP
+            data: {
+                email: email,
+            },
+            success: function(response) {
+                var data = JSON.parse(response);
+                if (Number(data.total) === 1) {
+                    resetPassword(data.id);
+                } else {
+                    document.getElementById("email_enviado").style.display = "none";
+                    $('#mensagem_erro').html("E-mail não cadastrado.").show();
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+
+    function resetPassword(userId) {
+        var email = $('.email').val();
+        var assunto = $('#assunto').val();
+        $.ajax({
+            type: 'POST',
+            url: 'Enviar_Token.php',
+            data: {
+                email: email,
+                userId: userId
+            },
+            success: function(token) {
+                var corpo_email = "Prezado usuário, segue abaixo o link para a recuperação de senha. O link expira em 1 hora. Caso não tenha sido você, ignore este email.<br>Clique no link a seguir para redefinir sua senha: http://localhost/VAGACERTA/telas/telaTrocaSenha.php?token=" + token;
+                $.ajax({
+                    type: 'POST',
+                    url: '../TestesNaoFinalizados/Send.php',
+                    data: {
+                        email: email,
+                        assunto: assunto,
+                        corpo_email: corpo_email
+                    },
+                    success: function(response) {
+                        $('#email_enviado').html(response).show();
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+</script>
 </body>
 </html>

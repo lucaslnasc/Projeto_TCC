@@ -43,7 +43,7 @@
  height: 600px;
  width: 2px;
  margin-left: 950px;
- margin-top: -370px ;
+ margin-top: -560px ;
 }
 
 .linha {
@@ -60,11 +60,14 @@
   margin-top: 10px;
 }
 .input-voltar {
+  position: fixed;
   display: block;
   background-color: #0d2a4a;
   color: #ffffff;
-  width: 125px;
+  width: 500px;
   margin-top: 15px;
+  height: 45px;
+  border-radius: 5px;
 }
 
 a{
@@ -278,4 +281,26 @@ form label.letra-fundinho2 {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;  
+}
+
+.botoesHorarios{
+  height: 40px;
+  width: 110px;
+  color: #000;
+  background-color: white;
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.carga{
+  height: 40px;
+  width: 110px;
+  color: #000;
+  background-color: white;
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.littleSpace{
+  margin-top: 15px;
 }

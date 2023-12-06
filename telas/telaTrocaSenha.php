@@ -1,6 +1,6 @@
 <?php
 
-include('../bd/protected.php');
+//include('../bd/protected.php');
 
 ?>
 
@@ -34,14 +34,14 @@ include('../bd/protected.php');
         <label class="letra-fundinho2"> Preencha os campos </label>
       </div>
       <div class ="divzada">
-        <input type="password" class = "email" placeholder = "Nova senha" id="senha" >
+        <input type="password" class = "email" placeholder = "Nova senha" id="senha" name= "senha" >
         <i class="bi bi-eye-fill" id="btn-senha" onclick="mostrarSenha()"></i>
       </div>
 
       <div class= "espacin"></div>
 
       <div class ="divzada">
-        <input type="password" class = "email" placeholder = "Repetir senha" id="senha-repetir" >
+        <input type="password" class = "email" name = "confirmarNovaSenha" placeholder = "Repetir senha" id="senha-repetir" >
         <i class="bi bi-eye-fill" id="btn-senha1" onclick="mostrarSenha1()"></i>
       </div>
       <div>
@@ -78,5 +78,46 @@ include('../bd/protected.php');
     }
   }
 </script>
+<script>
+            function alterarSenha() {
+                var novaSenha = document.getElementById('formAlterarSenha').elements['senha'].value;
+                var confirmaNovaSenha = document.getElementById('formAlterarSenha').elements['confirmaNovaSenha'].value;
+
+                // Verificar se alguma das caixas de texto está vazia
+                if (novaSenha === '' || confirmaNovaSenha === '') {
+                    document.getElementById('erroPreencherCampos').style.display = 'block';
+                    document.getElementById('erro8caracteres').style.display = 'none';
+                    document.getElementById('erroSenhaNaoCoincide').style.display = 'none';
+                    return;
+                }
+                
+                // Verificar se a nova senha e a confirmação coincidem
+                if (novaSenha !== confirmaNovaSenha) {
+                    document.getElementById('erroPreencherCampos').style.display = 'none';
+                    document.getElementById('erro8caracteres').style.display = 'none';
+                    document.getElementById('erroSenhaNaoCoincide').style.display = 'block';
+                    return;
+                }
+
+                $.ajax({
+                    url: 'alterar_senha.php',
+                    type: 'POST',
+                    data: {
+                        campo: 'senha',
+                        valor: novaSenha,
+                        token: token
+                    },
+                    success: function(responseSenha) {
+                        if (responseSenha.indexOf('sucesso') !== -1) {
+                            document.getElementById('formAlterarSenha').reset();
+                            window.location.href = '../../index.php?mensagem=Senha+alterada+com+sucesso!';
+                        }
+                    },
+                    error: function() {
+                        console.error('Erro ao alterar a senha');
+                    }
+                });
+            }
+        </script>
 </body>
 </html>

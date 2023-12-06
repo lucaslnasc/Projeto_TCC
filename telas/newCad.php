@@ -21,6 +21,7 @@ $sexoS = $teste->fetchAll();
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.svg" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/cssCadastrar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
     <title>Vaga Certa</title>
 </head>
 <body>
@@ -39,7 +40,7 @@ $sexoS = $teste->fetchAll();
         <div class = "espacamento">
             <label class="letrao">Informações Pessoais</label>
         </div>
-        <form action="../bd/cadastrarUser.php" method="post">
+        <form id="formCadastro" action="../bd/cadastrarUser.php" method="post">
         <div class="">
             <label class="tipos">Nome Completo</label><br>
             <input class="grande" required="required" name="nome" id="nome"></input>
@@ -53,17 +54,17 @@ $sexoS = $teste->fetchAll();
             <input class="pequeno" id="telefone" required="required" name="telefone"></input>
         </div>  
         <div class = "ajuste">
-            <label class="tipos1">Data Nasimento</label><br>
+            <label class="tipos1">Data Nascimento</label><br>
             <input class="pequeno1" id="data_nasc" required="required" name="data_nasc"></input>
         </div>
         <div class="">
             <label class="tipos">Senha</label><br>
-            <input class="pequeno" type="password"  id="senha" required="required" name="senha"></input>
+            <input class="pequeno" type="password"  id="senha" required="required" name="senha" onchange="confereSenha()"></input>
             <i class="bi bi-eye-fill olho1" id="btn-senha" onclick="mostrarSenha()"></i>
         </div>  
         <div class = "ajuste">
             <label class="tipos1">Repetir senha</label><br>
-            <input class="pequeno1"  type="password" id="senha-repeti" required="required" name="conf_senha"></input>
+            <input class="pequeno1"  type="password" id="senha-repeti" required="required" name="conf_senha" onchange="confereSenha()"></input>
             <i class="bi bi-eye-fill olho2" id="btn-senha1" onclick="mostrarSenha1()"></i>
         </div>
         <div class = "espacamento">
@@ -110,7 +111,7 @@ $sexoS = $teste->fetchAll();
                 <input type="reset" class = "limapar" value = "Limpar">
             </div>
             <div class= "espaco5">
-            <input type="submit" class = "cadastrar" value = "Cadastrar">
+            <input type="button" class="cadastrar" value="Cadastrar" onclick="validarSenhas();">
             </div>
         </div>
         </div>
@@ -158,7 +159,35 @@ $sexoS = $teste->fetchAll();
       btnShowPass.classList.replace('bi-eye-slash-fill', 'bi-eye-fill')
     }
   }
-  
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+
+<script>
+  function teste(){
+    Swal.fire({
+  title: "Usuário Cadastrado",
+  icon: "success",
+
+});
+  }
+</script>
+
+<script>
+        function validarSenhas() {
+            const senha = document.querySelector('input[name=senha]');
+            const confirma = document.querySelector('input[name=conf_senha]');
+
+            if (confirma.value === senha.value) {
+                // As senhas são iguais, permitir o envio do formulário
+                document.getElementById('formCadastro').submit();
+            } else {
+                // As senhas não são iguais, exibir o alerta
+                Swal.fire({
+                    title: "As senhas não conferem",
+                    icon: "error"
+                });
+            }
+        }
+    </script>
 </body>
 </html>

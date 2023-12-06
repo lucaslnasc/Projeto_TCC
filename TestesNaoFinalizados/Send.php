@@ -1,4 +1,5 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -6,35 +7,34 @@ require '../phpmailer/src/Exception.php';
 require '../phpmailer/src/PHPMailer.php';
 require '../phpmailer/src/SMTP.php';
 
-if(isset($_POST["post"])){
-  // $mail = new PHPMailer(true);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $destinatario_email = $_POST['email'];
+    $assunto = isset($_POST['assunto']) ? $_POST['assunto'] : '';
+    $corpo_email = isset($_POST['corpo_email']) ? $_POST['corpo_email'] : '';
 
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'vagacertasuporte@gmail.com';
-    $mail->Password = 'tccvagacerta01';
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port = 465;
+    $mail = new PHPMailer(true);
+    $mail->CharSet = 'UTF-8';
 
-    $mail->setForm('vagacertasuporte@gmail.com');
+    try {
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'VagaCertaSuporte@gmail.com';
+        $mail->Password   = 'aarssfnaduntylpz';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port       = 465;
 
-    $mail->addAddress($_POST["email"]);
+        $mail->setFrom('VagaCertaSuporte@gmail.com');
+        $mail->addAddress($destinatario_email);
+        $mail->isHTML(true);
+        $mail->Subject = $assunto;
+        $mail->Body    = $corpo_email;
 
-    $mail->isHTML(true);
-
-    $mail->Subject = $_POST["subject"];
-    $mail->Body = $_POST["message"];
-
-    $mail->send();
-
-    echo
-    "
-    <script>
-    alert('Sent Successfully');
-    document.location.href = 'index.php'
-    </script>
-    ";
+        $mail->send();
+        echo "Um link de alteração de senha foi enviado para seu e-mail.";
+    } catch (Exception $e) {
+        echo "Erro no envio do e-mail: {$mail->ErrorInfo}";
+    }
+} else {
+    echo "Acesso não permitido.";
 }
-
-?>
