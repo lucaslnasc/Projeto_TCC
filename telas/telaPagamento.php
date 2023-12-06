@@ -25,6 +25,7 @@
   $cartoes = $query->fetchAll();
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -63,13 +64,13 @@
             <label for="" class="letra">Vaga</label>
             <input type="Vaga" name="Vaga" value="<?php echo $nome_vaga; ?>" aria-describedby="addon-wrapping" readonly required>
             <label for="" class="letra">Data</label>
-            <input type="text" aria-describedby="addon-wrapping" id="data" name="data" required="required" oninput="validarData()">
+            <input type="date" aria-describedby="addon-wrapping" id="data" name="data" required="required"">
             <span id="mensagemErro" style="color: red;"></span>
             <label for="" class="letra">Horário</label>
             <label for="" class="deLabel">De:</label>
-            <input type="Hora" aria-describedby="addon-wrapping" required>
+            <input type="time" id="Hora" name="deHora" onchange="funcaoDif()" aria-describedby="addon-wrapping" required>
             <label for="" class="ateLabel">Até:</label>
-            <input type="HoraAte" aria-describedby="addon-wrapping" required>
+            <input type="time" id="HoraAte" onchange="funcaoDif()" name="ateHora" aria-describedby="addon-wrapping" required>
             <label for="" class="precoFinal">Preço Final: xxxxxx</label>
             <a href="telaVagas.php"><input type="button" class="input-voltar" value="Voltar"></a>
 
@@ -96,7 +97,6 @@
                 echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
                 echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
                 echo '<input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">';
-                echo '<div class="linha1"></div>';
             }
         }
         ?>
@@ -104,25 +104,15 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#data').mask('00/00/0000');
-  });
-
-  function validarData() {
-    var inputData = $('#data').val();
-    var dataAtual = new Date();
-    var dataInserida = new Date(inputData);
-
-    if (dataInserida < dataAtual) {
-      $('#mensagemErro').text('Data Inválida');
-      return false;
-    } else {
-      $('#mensagemErro').text('');
-      return true;
+<script>
+    function funcaoDif() {
+        var data = document.getElementById('data').value;
+        var data1 = document.getElementById('Hora').value.getTime;
+        var data2 = document.getElementById('HoraAte').value.getTime;
+        //var dif = getTimeDiff(data1, data2, 'm');
+        var dif = data1 - data2;
+        console.log(data);
     }
-  }
-
 </script>
 
 </form>

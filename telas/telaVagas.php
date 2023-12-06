@@ -32,6 +32,7 @@
              <div id="rodape"></div>
          </div>
     </header>
+    <a href="telaPrincipal.php"><i class="bi bi-arrow-left-circle-fill btVoltar"></i></a>
     <form action="" method="post">
         <div class = "fundo">
             <div>
