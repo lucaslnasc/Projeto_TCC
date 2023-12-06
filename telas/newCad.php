@@ -178,10 +178,9 @@ $sexoS = $teste->fetchAll();
             const confirma = document.querySelector('input[name=conf_senha]');
 
             if (confirma.value === senha.value) {
-                // As senhas são iguais, permitir o envio do formulário
                 document.getElementById('formCadastro').submit();
+                teste();
             } else {
-                // As senhas não são iguais, exibir o alerta
                 Swal.fire({
                     title: "As senhas não conferem",
                     icon: "error"
@@ -189,5 +188,6 @@ $sexoS = $teste->fetchAll();
             }
         }
     </script>
+
 </body>
 </html>
