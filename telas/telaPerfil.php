@@ -4,8 +4,14 @@ include('../bd/conexao.php');
 
 include('../bd/protected.php');
 
-$query = $dbh->prepare("SELECT * FROM usuario INNER JOIN veiculo ON usuario.tipo_veiculo = veiculo.cod;");
-$query->execute();
+$id_usuario =  $_SESSION['id_usuario'];
+
+$query = $dbh->prepare("SELECT * FROM usuario where id_usuario=:id_usuario");
+$query->execute(
+    array(
+        ':id_usuario' => $id_usuario
+    )
+);
 
 $pessoa = $query->fetch();
 
@@ -20,6 +26,8 @@ $pessoa = $query->fetch();
     <link rel="stylesheet" href="./CSS/cssPerfil.css">
     <link rel="shortcut icon" href="../img/logologominimini-removebg-preview.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
+
     <title>Vaga Certa</title>
 </head>
 
@@ -65,90 +73,77 @@ $pessoa = $query->fetch();
             <div id="rodape"></div>
         </div>
     </header>
-    <form action="../bd/atualizarUser.php">
+    <form action="../bd/atualizarUser.php" method="post">
         <?php
-        //foreach ($dados as $email) {
         echo '<div class="bv">' . $pessoa['email'] . '</div>';
-        //}
         ?>
         <br>
 
         <div class="bv1"><a class="bv2" href="telaTrocaSenha.php">Alterar senha</a></div>
-        <div></div>
-        <div class="inf">SUAS INFORMAÇÕES PESSOAIS</div>
-        <div class="linha1"></div>
-        <div class="element">
-            <div>
-                <?php //foreach ($dados as $nome) {
-                echo '<input type="hidden" name="id_usuario" id="id_usuario" value="' . $pessoa['id_usuario'] . '">';
-                //}
-                ?>
-                <label Class="letraEsq">NOME</label><i class="bi bi-pencil-square pp"></i><br>
-                <?php //foreach ($dados as $nome) {
-                echo '<input type="text" name="nome" id="nome" value="' . $pessoa['nome'] . '">';
-                //}
-                ?>
+        <div>
+            <div class="inf">SUAS INFORMAÇÕES PESSOAIS</div>
+            <div class="linha1"></div>
+            <div class="element">
+                <div>
+                    <?php
+                    echo '<input type="hidden" name="id_usuario" id="id_usuario" value="' . $pessoa['id_usuario'] . '">';
+                    ?>
+                    <label Class="letraEsq">NOME</label><i class="bi bi-pencil-square pp"></i><br>
+                    <?php
+                    echo '<input type="text" name="nome" id="nome" value="' . $pessoa['nome'] . '">';
+                    ?>
+                </div>
+                <div>
+                    <label Class="letraDir">CPF</label><br>
+                    <?php
+                    echo '<input type=text" name="cpf"  disabled id="cpf" value="' . $pessoa['cpf'] . '">';
+                    ?>
+                </div>
+                <br>
+                <div>
+                    <label Class="letraEsq">TELEFONE</label> <i class="bi bi-pencil-square pp"></i><br>
+                    <?php
+                    echo '<input type=text name="telefone" maxlength="16" id="telefone" value="' . $pessoa['telefone'] . '">';
+                    ?>
+                </div>
+                <div>
+                    <label Class="letraDir">DATA DE NASCIMENTO</label><br>
+                    <?php
+                    echo '<input type=text name="dtNasc" disabled id="dtNasc" value="' . $pessoa['data_nasc'] . '">';
+                    ?>
+                </div>
             </div>
-            <div>
-                <label Class="letraDir">CPF</label><br>
-                <?php //foreach ($dados as $cpf) {
-                echo '<input type=text" name="cpf"  disabled id="cpf" value="' . $pessoa['cpf'] . '">';
-                //}
-                ?>
+            <div class="inf">INFORMAÇÕES DO SEU VEÍCULO</div>
+            <div class="linha1"></div>
+            <div class="element">
+                <div>
+                    <label class="letraEsq">TIPO VEÍCULO</label><i class="bi bi-pencil-square pp"></i><br>
+                    <?php
+                    echo '<input type="text" name="tipo_veiculo" id="tipo_veiculo" value="' . $pessoa['tipo_veiculo'] . '">';
+                    ?>
+                </div>
+                <div>
+                    <label Class="letraDir">PLACA</label><i class="bi bi-pencil-square ppp"></i><br>
+                    <?php
+                    echo '<input type="text" name ="placa_veiculo" id="placa_veiculo" value="' . $pessoa['placa_veiculo'] . '">';
+                    ?>
+                </div>
+                <br>
+                <div>
+                    <label Class="letraEsq2">MARCA</label><i class="bi bi-pencil-square pp"></i><br>
+                    <?php
+                    echo '<input type="text" name="marca_veiculo" id="marca_veiculo" value="' . $pessoa['marca_veiculo'] . '">';
+                    ?>
+                </div>
+                <div>
+                    <label Class="letraDir2">MODELO</label><i class="bi bi-pencil-square ppp"></i><br>
+                    <?php
+                    echo '<input type="text" name="modelo_veiculo" id="modelo_veiculo" value="' . $pessoa['modelo_veiculo'] . '">';
+                    ?>
+                </div>
+                <input type="submit" class="salvar" value="Salvar alterações">
             </div>
-            <br>
-            <div>
-                <label Class="letraEsq">TELEFONE</label> <i class="bi bi-pencil-square pp"></i><br>
-                <?php //foreach ($dados as $tel) {
-                echo '<input type=text name="telefone" id="telefone" value="' . $pessoa['telefone'] . '">';
-                //}
-                ?>
-            </div>
-            <div>
-                <label Class="letraDir">DATA DE NASCIMENTO</label><br>
-                <?php //foreach ($dados as $data) {
-                echo '<input type=text name="dtNasc" disabled id="dtNasc" value="' . $pessoa['data_nasc'] . '">';
-                // }
-
-                ?>
-            </div>
-        </div>
-        <div class="inf">INFORMAÇÕES DO SEU VEÍCULO</div>
-        <div class="linha1"></div>
-        <div class="element">
-            <div>
-                <label class="letraEsq">TIPO VEÍCULO</label><i class="bi bi-pencil-square pp"></i><br>
-                <?php
-                // foreach ($dados as $veiculo) {
-                echo '<input type="text" name="tipo_veiculo" id="tipo_veiculo" value="' . $pessoa['tipo_veiculo'] . '">';
-                // }
-                ?>
-            </div>
-            <div>
-                <label Class="letraDir">PLACA</label><i class="bi bi-pencil-square ppp"></i><br>
-                <?php //foreach ($dados as $placa) {
-                echo '<input type="text" name ="placa_veiculo" id="placa_veiculo" value="' . $pessoa['placa_veiculo'] . '">';
-                // }
-                ?>
-            </div>
-            <br>
-            <div>
-                <label Class="letraEsq2">MARCA</label><i class="bi bi-pencil-square pp"></i><br>
-                <?php //foreach ($dados as $marca) {
-                echo '<input type="text" name="marca_veiculo" id="marca_veiculo" value="' . $pessoa['marca_veiculo'] . '">';
-                // }
-                ?>
-            </div>
-            <div>
-                <label Class="letraDir2">MODELO</label><i class="bi bi-pencil-square ppp"></i><br>
-                <?php //foreach ($dados as $modelo) {
-                echo '<input type="text" name="modelo_veiculo" id="modelo_veiculo" value="' . $pessoa['modelo_veiculo'] . '">';
-                // }
-                ?>
-            </div>
-            <input type="submit" class="salvar" value="Salvar alterações">
     </form>
-    </div>
 
 
 
