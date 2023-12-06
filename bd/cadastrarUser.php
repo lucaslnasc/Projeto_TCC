@@ -1,7 +1,6 @@
 <?php
 include('conexao.php');
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -14,18 +13,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $marca_veiculo = $_POST['marca_veiculo'];
     $modelo_veiculo = $_POST['modelo_veiculo'];
     $sexo = $_POST['sexo'];
-    $conf_senha = $_POST['conf_senha'];
 
     $senhaCrip = password_hash($senha, PASSWORD_BCRYPT);
 
-    $query = $dbh->prepare('INSERT INTO usuario (nome, email, cpf, senha, data_nasc, telefone, placa_veiculo, tipo_veiculo, marca_veiculo, modelo_veiculo, sexo, conf_senha)
-    VALUES (:nome, :email, :cpf, :senha, :data_nasc, :telefone, :placa_veiculo, :tipo_veiculo, :marca_veiculo, :modelo_veiculo, :sexo, :conf_senha);');
+    $query = $dbh->prepare('INSERT INTO usuario (nome, email, cpf, senha, data_nasc, telefone, placa_veiculo, tipo_veiculo, marca_veiculo, modelo_veiculo, sexo)
+    VALUES (:nome, :email, :cpf, :senha, :data_nasc, :telefone, :placa_veiculo, :tipo_veiculo, :marca_veiculo, :modelo_veiculo, :sexo);');
 
     $query->execute(array(
         ':nome' => $nome,
         ':email' => $email,
         ':cpf' => $cpf,
-        ':senha' => $senha,
+        ':senha' => $senhaCrip, 
         ':data_nasc' => $data_nasc,
         ':telefone' => $telefone,
         ':placa_veiculo' => $placa_veiculo,
@@ -33,10 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':marca_veiculo' => $marca_veiculo,
         ':modelo_veiculo' => $modelo_veiculo,
         ':sexo' => $sexo,
-        ':conf_senha' => $conf_senha,
-        ':senha' => $senhaCrip
     ));
     
-    header('Location:../telas/telaLogin.php');
+    header('Location:../telas/telaPrincipal.php?cadastro_sucesso=true');
+    exit;
 }
 ?>

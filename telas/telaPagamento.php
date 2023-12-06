@@ -1,5 +1,5 @@
 <?php
-  include('../bd/conexao.php');
+  /*include('../bd/conexao.php');
 
 
   $nome_vaga = ""; 
@@ -24,7 +24,7 @@
   $query->execute();
   $cartoes = $query->fetchAll();
 
-
+*/
 
 ?>
 
@@ -60,18 +60,35 @@
                 <label class="letra-Descriocao">Descrição</label>
             </div>
         </div>
-        <form action="" method="post">
+        <form action="" method="post" class = "">
             <label for="" class="letra">Vaga</label>
             <input type="Vaga" name="Vaga" value="<?php echo $nome_vaga; ?>" aria-describedby="addon-wrapping" readonly required>
+
             <label for="" class="letra">Data</label>
             <input type="date" aria-describedby="addon-wrapping" id="data" name="data" required="required"">
             <span id="mensagemErro" style="color: red;"></span>
-            <label for="" class="letra">Horário</label>
-            <label for="" class="deLabel">De:</label>
-            <input type="time" id="Hora" name="deHora" onchange="funcaoDif()" aria-describedby="addon-wrapping" required>
-            <label for="" class="ateLabel">Até:</label>
-            <input type="time" id="HoraAte" onchange="funcaoDif()" name="ateHora" aria-describedby="addon-wrapping" required>
-            <label for="" class="precoFinal">Preço Final: xxxxxx</label>
+
+            <label for="" class="letra">Horários disponíveis </label>
+            <div class = " littleSpace">
+                <input type="button" class= "botoesHorarios" value = "06:00">
+                <input type="button" class= "botoesHorarios" value = "09:00">
+                <input type="button" class= "botoesHorarios" value = "12:00">
+            </div>
+            <div class = " littleSpace" >
+                <input type="button" class= "botoesHorarios" value = "15:00">
+                <input type="button" class= "botoesHorarios" value = "18:00">
+                <input type="button" class= "botoesHorarios" value = "21:00">
+            </div>
+           <div class = " littleSpace"></div>
+            <label for="" class="letra">Carga Horária </label>
+            <div class = " littleSpace">
+                <input type="button" class= "carga" value = "01 Hora">
+                <input type="button" class= "carga" value = "02 Horas">
+                <input type="button" class= "carga" value = "03 Horas">
+            </div>
+         <div class = " littleSpace">
+                <label for="" class="precoFinal">Preço Final: xxxxxx</label>
+            </div >
             <a href="telaVagas.php"><input type="button" class="input-voltar" value="Voltar"></a>
 
         </form>
