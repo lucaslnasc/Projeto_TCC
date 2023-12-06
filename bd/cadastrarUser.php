@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query->execute();
 
  
-        header( "../telas/telaLogin.php?cadastro_sucesso=true"); 
+        header('Location: ../telas/telaLogin.php?cadastro_sucesso=true');
         exit;
         
     } catch (PDOException $e) {
