@@ -18,6 +18,7 @@ $query->execute(
 );
 
 $local = $query->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -86,8 +87,8 @@ $local = $query->fetchAll();
                 echo '<h3>' . '<br>' . $l['nome_estacionamento'] . '</b>' . '</h3>';
                 echo '<p>' . $l['localizacao'] . '</p>';
                 echo '<p>' . 'Vagas Disponiveis: ' . $l['vagas_disponiveis'] . '</p>';
-                echo '<input onchange="favoritar('.$l['id_local'].','.$sessaoteste.')" type="checkbox" id="heart'.$cont.'" />';
-                echo '<label for="heart'.$cont.'"></label>';
+                echo '<input onchange="favoritar(' . $l['id_local'] . ',' . $sessaoteste . ')" type="checkbox" id="heart' . $cont . '" />';
+                echo '<label for="heart' . $cont . '"></label>';
                 echo '</a>';
                 echo '</div>';
                 $cont++;
@@ -95,10 +96,19 @@ $local = $query->fetchAll();
             ?>
         </div>
     </div>
+
     <script>
-        function favoritar(local,sessao){
-            alert(local+'|'+sessao);
+        function favoritar(id_local, session_var) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "../bd/favoritarLocal.php", false);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                }
+            }
+            xhr.send("id_local=" + id_local + "&session_var=" + session_var);
         }
     </script>
+
 </body>
 </html>
