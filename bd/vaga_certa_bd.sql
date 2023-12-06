@@ -103,6 +103,8 @@ select * from agendamento;
     senha VARCHAR (100) NOT NULL
     );
 
+
+
     INSERT INTO administrador(email, senha) 
     VALUES ('adm@adm.com', '123adm');
 
