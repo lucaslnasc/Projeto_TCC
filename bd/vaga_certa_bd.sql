@@ -17,7 +17,7 @@
         sexo VARCHAR(30) NOT NULL,
         conf_senha VARCHAR(255) NOT NULL
     );
-
+	SELECT email,senha FROM usuario;
     CREATE TABLE pagamento(
         id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
         id_card_pagamento INT,
@@ -76,11 +76,16 @@
 
 
     CREATE TABLE agendamento(
+		id_agendamento INT PRIMARY KEY AUTO_INCREMENT,
         vaga VARCHAR(100) NOT NULL,
         data_agen DATE NOT NULL,
-        horario DATETIME
+        horario TIME,
+        carga_horaria VARCHAR(10),
+        id_usuario_agend INT NOT NULL
     );
-
+ 
+ALTER TABLE agendamento ADD CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario_agend) REFERENCES usuario (id_usuario);
+select * from agendamento;
     CREATE TABLE veiculo(
         cod CHAR(1) PRIMARY KEY,
         categoria_veiculo VARCHAR (15) NOT NULL
@@ -111,6 +116,7 @@
     );
 
     select * from usuario;
-
     ALTER TABLE relatorio_vagas ADD CONSTRAINT fk_id_vaga FOREIGN KEY (id_vaga) REFERENCES vaga (id_vaga); 
     ALTER TABLE relatorio_vagas ADD CONSTRAINT fk_id_veiculo FOREIGN KEY (id_veiculo) REFERENCES veiculo (cod);
+    
+    
