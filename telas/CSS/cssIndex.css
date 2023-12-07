@@ -1,9 +1,19 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #headerCima {
     width: 931px;
     height: 300px;
     background: #0d2a4a;
     padding: 1.6%;
     width: 100%;
+    display: block;
+}
+
+.container{
     display: block;
 }
 
@@ -20,5 +30,52 @@
 .padrao0 {
     display: inline;
     font-family: Arial;
-    background: #0d2a4a;
-  }
+}
+
+.linha {
+    border-left: white;
+    margin-top: 50px;
+}
+
+.loginCliente {
+    margin-top: 30px;
+    margin-left: 110px;
+}
+
+.buttonCliente input[type="button"]{
+    width: 200px;
+    margin-top: 40px;
+    margin-left: 150px;
+    border-radius: 12px;
+    background-color: #0d2a4a;
+    color: white;
+    
+}
+
+.linha-center {
+    border-left: solid #000;
+    height: 40%;
+    left: 50%;
+    position: absolute;
+    margin-top: 80px;
+ }
+
+.area_adm{
+    display: flex;
+    height: 50%;
+}
+
+.loginAdm{
+    margin-left: 800px;
+    margin-top: -110px;
+}
+
+.buttonAdm input{
+    width: 200px;
+    margin-top: -100px;
+    margin-left: -230px;
+    border-radius: 12px;
+    background-color: #0d2a4a;
+    color: white;
+    
+}

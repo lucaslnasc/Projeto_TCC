@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -19,9 +19,20 @@
             </div>
         </div>
     </header>
-    <div class="container row mx-auto">
-        
-    </div>
+    <main>
+        <div class="container">
+            <hr class="linha">
+            <h3 class="loginCliente">Fazer Login como Cliente</h3>
+            <a class="buttonCliente" href="telaLogin.php"><input type="button" value="Entrar"></a>
+            
+        </div>
+        <hr class="linha-center">
+
+        <div class="area_adm">
+            <h3 class="loginAdm">Fazer Login como ADM</h3>
+            <a class="buttonAdm" href="telaLoginAdm.php"><input type="button" value="Entrar"></a>
+        </div>
+    </main>
 </body>
 
 </html>
