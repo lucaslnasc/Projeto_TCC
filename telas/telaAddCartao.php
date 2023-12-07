@@ -228,6 +228,8 @@ include('../bd/protected.php')
             }
         });
         return true;
+
+        
     }
 }
     </script>

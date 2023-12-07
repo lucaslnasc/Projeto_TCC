@@ -14,7 +14,7 @@
     margin-left: 24.5%;
     margin-top: 11%;
     width: 950px;
-    height: 550px;
+    height: 72%;
     position: fixed;
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -177,37 +177,63 @@
 
   .btSair{
     display: inline-flex;
-    background-color: #0d2a4a;
+    background-color: #184c83;
     color: #ffffff;
     width: 125px;
     margin-top: 15px;
     text-transform: uppercase;
     height: 7%;
     position: fixed;
-    margin-top: 27%;
-    margin-left: 14%;
-    border: none;
+    margin-top: 31%;
+    margin-left: 21.2%;
+    border: 0.2px solid #ffffff;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    border-radius: 1.8px;
+    border-radius: 2px;
     align-items: center;
     text-align: center;
     padding: 0 43px;
   }
 
-  .btQR{
-    display: inline-flex;
-    background-color: #0d2a4a;
-    color: #ffffff;
-    width: 125px;
-    margin-top: 15px;
-    text-transform: uppercase;
-    height: 7%;
+  .spanQTDhoras{
     position: fixed;
+    font-size: 2.2vh;
+    margin-top: 25.5%;
+    margin-left: 27%;
+    font-weight: lighter;
+  }
+
+  .inputQTDhoras{
+    width: 19%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    outline: none;
+    color:black;
+    font-size: 1em;
+    position:fixed;
     margin-top: 27%;
     margin-left: 27%;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    border-radius: 1.8px;
-    align-items: center;
-    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 30px -12px inset, rgba(0, 0, 0, 0.3) 0px 12px 19px -18px inset;
+  }
+
+  .spanModel{
+    position: fixed;
+    font-size: 2.2vh;
+    margin-top: 25.5%;
+    margin-left: 3%;
+    font-weight: lighter;
+  }
+
+  .inputModel{
+    width: 19%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    outline: none;
+    color:black;
+    font-size: 1em;
+    position:fixed;
+    margin-top: 27%;
+    margin-left: 3%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 30px -12px inset, rgba(0, 0, 0, 0.3) 0px 12px 19px -18px inset;
   }

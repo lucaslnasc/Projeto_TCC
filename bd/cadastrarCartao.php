@@ -31,7 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $query->bindParam(':validade_ano =', $validade_ano);
             $query->bindParam(':cvv', $cvv);
 
+
             $query->execute();
+
+
 
             header('Location: ../telas/telaCartoes.php?cadastro_sucesso=true');
             exit;
@@ -39,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } catch (PDOException $e) {
             die("Erro ao inserir usuário: " . $e->getMessage());
             }
+            
         }
     }
 ?>

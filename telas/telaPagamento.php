@@ -20,6 +20,15 @@ if (isset($_GET['id'])) {
     } else {
         echo 'alert("Vaga Não Encontrada");';
     }
+
+
+    if (isset($_POST['horas_selecionadas'])) {
+        $horas_selecionadas = intval($_POST['horas_selecionadas']);
+        $preco_por_hora = 10; // Valor inicial por hora
+        $preco_final = $horas_selecionadas * $preco_por_hora;
+    } else {
+        $preco_final = 0; // Se não houver horas selecionadas, o preço final é 0
+    }
 }
 
 $query = $dbh->prepare('SELECT numero_cartao FROM cartao');
@@ -70,12 +79,11 @@ $cartoes = $query->fetch();
             <label for="" class="letra">Horario Inicio</label>
             <input type="time" name="horario_inicio" id="" class="dataIni">
             <label for="" class="letra">Quantidade de Horas</label>
-            <input type="range" name="horas_range" value="1" min="1" max="3" oninput="this.nextElementSibling.value = this.value">
-            <output>1</output>
-            <input type="hidden" name="horario_final" id="horario_final" value="">
-            <div class=" littleSpace">
-                <label for="" class="precoFinal">Preço Final: xxxxxx</label>
-            </div>
+            <input type="range" name="horas_selecionadas" value="1" min="1" max="3" oninput="atualizarPrecoFinal(this.value)">
+            <output id="outputHoras">1</output>
+            <div class="littleSpace">
+            <label for="" class="precoFinal" id="precoFinal">Preço Final: R$<?php echo $preco_final; ?></label>
+        </div>
             <a href="telaVagas.php"><input type="button" class="input-voltar" value="Voltar"></a>
 
     </div>
@@ -104,6 +112,18 @@ $cartoes = $query->fetch();
             ?>
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+            
+            <script>
+    function atualizarPrecoFinal(valor) {
+        document.getElementById('outputHoras').innerHTML = valor;
+        var preco_por_hora = 10;
+        var preco_final = valor * preco_por_hora;
+        document.getElementById('precoFinal').innerHTML = 'Preço Final: R$' + preco_final.toFixed(2);
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        atualizarPrecoFinal(document.querySelector('input[name="horas_selecionadas"]').value);
+    });
+</script>
 
             </form>
 </body>
