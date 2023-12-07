@@ -97,7 +97,7 @@ include('../bd/protected.php')
             </div>
 
         </div>
-        <form action="../bd/cadastrarCartao.php" method="post" id="formCadastro">
+        <form action="../bd/cadastrarCartao.php" method="post" id="formCadastro" onsubmit="return chamarFuncaoDoScript(event)">>
 
             <div class="inputBox">
                 <span>NÚMERO DO CARTÃO</span>
@@ -204,29 +204,32 @@ include('../bd/protected.php')
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
-        function chamarFuncaoDoScript() {
-            const numeroCartao = document.getElementById('nmr_cartao').value;
-        const nomeTitular = document.getElementById('nome_titular').value;
-        const validadeMes = document.getElementById('validade_mes').value;
-        const validadeAno = document.getElementById('validade_ano').value;
-        const cvv = document.getElementById('cvv').value;
+        function chamarFuncaoDoScript(event) {
+    event.preventDefault();
 
-        if (numeroCartao === '' || nomeTitular === '' || validadeMes === 'month' || validadeAno === 'year' || cvv === '') {
-            Swal.fire({
-                title: "Por favor, preencha todos os campos do cartão",
-                icon: "warning"
-            });
-            return;
-        }else{
-            Swal.fire({
-                icon: 'success',
-                title: 'Cartão Cadastrado com Sucesso',
-                preConfirm: () => {
-                    window.location.href = 'telaCartoes.php';
-                }
-            });
-        }
+    const numeroCartao = document.getElementById('nmr_cartao').value;
+    const nomeTitular = document.getElementById('nome_titular').value;
+    const validadeMes = document.getElementById('validade_mes').value;
+    const validadeAno = document.getElementById('validade_ano').value;
+    const cvv = document.getElementById('cvv').value;
+
+    if (numeroCartao === '' || nomeTitular === '' || validadeMes === 'month' || validadeAno === 'year' || cvv === '') {
+        Swal.fire({
+            title: "Por favor, preencha todos os campos",
+            icon: "warning"
+        });
+        return false;
+    } else {
+        Swal.fire({
+            icon: 'success',
+            title: 'Cartão Cadastrado com Sucesso',
+            preConfirm: () => {
+                window.location.href = 'telaCartoes.php';
+            }
+        });
+        return true;
     }
+}
     </script>
     </div>
 </body>
