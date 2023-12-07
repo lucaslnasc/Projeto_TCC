@@ -1,0 +1,237 @@
+.padrao0 {
+    display: inline;
+    font-family: Arial;
+    background-color: #a4bad3;
+    color: white;
+  }
+  
+  #headerCima {
+    width: 931px;
+    height: 92px;
+    background: #0d2a4a;
+    padding: 1.6%;
+    width: auto;
+    z-index: 1;
+    position: relative;
+  }
+  
+  #headerBaixo {
+    background-color: #43627f;
+    display: flex;
+    height: 18px;
+    filter: drop-shadow(0px 7px 2px rgba(0, 0, 0, 0.25));
+    z-index: 0;
+    margin-left: 217px;
+  }
+  
+  .logozada {
+    position: absolute;
+    margin-right: 100px;
+    width: 90%;
+    margin-top: -40px;
+  }
+  
+  .novoMenu {
+    grid-column: 1;
+    position: fixed;
+    width: 217px;
+    height: 100%;
+    background: #d9d9d9;
+    background-color: #0d2a4a;
+    box-shadow: 7px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  .linha {
+    border-top: solid #ffffff;
+  }
+  
+  .menuLateral hr {
+    border: solid #ffffff;
+    width: 100%;
+  }
+  
+  span a il {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .menuLateral ul li {
+    text-decoration: none;
+  }
+  
+  .menuLateral {
+    color: #ffffff;
+    list-style-type: none;
+    text-align: left;
+  }
+  
+  .meioCentral {
+    background-color: #a4bad3;
+    width: 100%;
+  }
+  
+  .menuLateral a {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  
+  .inferiorLateral {
+    margin-top: 210%;
+    margin-left: 35px;
+  }
+  
+  .inferiorLateral a {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  
+  .inferiorLateral i {
+    font-size: 30px;
+    padding: 2%;
+  }
+  
+  .grid-container {
+    display: grid;
+    width: 600px;
+    height: 220px;
+    grid-template-columns: auto;
+    padding: 18px;
+    column-gap: 2px;
+  }
+  
+  .card {
+    display: inline;
+    text-decoration: none;
+    width: 430px;
+    margin-top: 30px;
+    margin-left: 240px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  
+  .card span {
+    color: black;
+    text-transform: uppercase;
+  }
+  
+  .infCartao {
+    margin-left: 10px;
+  }
+  
+  .infCartao input {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: 1px solid rgb(202, 202, 202);
+    padding: 5px;
+    width: 300px;
+  }
+  
+  .infCartao label {
+    color: black;
+  }
+  
+  .icon {
+    color: black;
+    font-size: 30px;
+    margin-left: 355px;
+    position: fixed;
+    cursor: pointer;
+  }
+  
+  .icon span > ul > il {
+    text-decoration: none;
+  }
+  
+  .revBt {
+    display: none;
+    margin-left: 350px;
+  }
+  
+  .revBt a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .nav.active .revBt {
+    display: block;
+  }
+  
+  .nav {
+    position: fixed;
+    text-decoration: none;
+  }
+  
+  .nav > ul > li{
+    list-style-type: none;
+    text-decoration: none;
+  }
+  
+  .revBt {
+    border: none;
+    height: 50px;
+    width: 100px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  
+  .botaoAdicionarCartao {
+    display: none;
+    position: absolute;
+    top: -9.9px;
+    left: 150px;
+    background-color: #0d2a4a;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  
+  .menuLateral:hover .botaoAdicionarCartao {
+    display: inline-block;
+  }
+  
+  .menuLateral i {
+    font-size: 30px;
+    padding: 2%;
+  }
+  
+  * {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  }
+  
+  .bCartao {
+    margin-left: 15%;
+  }
+  .menuLateral {
+    position: relative;
+  }

@@ -78,9 +78,7 @@ $cartao = $query->fetchAll();
             echo '<span class="icon"><i class="bi bi-three-dots-vertical"></i></span>';
             echo '<ul>';
             echo '<li>';
-            echo '<button class="revBt">
-            <a href="../bd/removerCartao.php?id_cartao=' . $infor['id_cartao'] . '">Remover</a>
-            </button>';
+            echo '<button class="revBt" onclick="confirmarRemocao(' . $infor['id_cartao'] . ')">Remover</button>';
             echo '</li>';
             echo '</ul>';
             echo '</nav>';
@@ -109,6 +107,27 @@ $cartao = $query->fetchAll();
         });
     });
 </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    function confirmarRemocao(id_cartao) {
+        Swal.fire({
+            title: "Confirmação",
+            text: "Tem certeza que deseja remover o cartão?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sim, Delete"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = `../bd/removerCartao.php?id_cartao=${id_cartao}`;
+            }
+        });
+    }
+</script>
+
 
 </body>
 

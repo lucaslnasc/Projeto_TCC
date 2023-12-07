@@ -58,7 +58,7 @@ $local = $query->fetchAll();
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href="telaAgendados"><i class="bi bi-calendar2-check"></i>Agendadas</a></li>
+                    <li><a href="visualizarAgend.php"><i class="bi bi-calendar2-check"></i>Agendadas</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
