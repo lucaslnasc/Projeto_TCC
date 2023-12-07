@@ -8,7 +8,10 @@
         $vaga = $_POST['vaga'];
         $data_agend = $_POST['data_agend'];
         $horario = $_POST['horario_inicio'];
+        //$qtdHoras = $_POST['horas_range'];
+        //$horario_final = $
         $horario_final = $_POST['horario_final'];
+
         $idUser = $_SESSION['id_usuario'];
 
         try {
