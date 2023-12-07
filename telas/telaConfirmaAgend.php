@@ -35,8 +35,11 @@
             <input type="text" class="inputPV"  placeholder="placa do veículo">
             <span class="spanHorario">Horário</span>
             <input type="text" class="inputHorario"  placeholder="Horário">
-            <button class="btSair">sair</button>
-            <button class="btQR" name="qr" id="qr" type="submit">gerar qr code</button>
+            <span class="spanQTDhoras">Quantidade de Horas</span>
+            <input type="text" class="inputQTDhoras" placeholder="Quantidade de Horas">
+            <span class="spanModel">Modelo Carro</span>
+            <input type="text" class="inputModel" placeholder="Modelo Carro">
+            <a href="telaPrincipal.php"><button class="btSair">sair</button></a>
         </div>
     </form>
 </body>

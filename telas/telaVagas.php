@@ -83,12 +83,13 @@
  <div class = "grid-pai">
     <div class="grid-container1">
     <?php foreach ($vagas as $key => $vaga) {
-        echo '<div class="vagaLivre" data-numero="' . $vaga['id_vaga'] . '"></div>';
-         if ($key == 1) {
-        echo '<i class="bi bi-person-wheelchair iconVagaPref"></i>';
-    }
-    }
-    ?>
+                $statusClass = ($vaga['ocupado'] == 1) ? 'vagaOcupada' : 'vagaLivre';
+                echo '<div class="' . $statusClass . '" data-numero="' . $vaga['id_vaga'] . '"></div>';
+                
+                if ($key == 1 && $vaga['ocupado'] == 1) {
+                    echo '<i class="bi bi-person-wheelchair iconVagaPref"></i>';
+                }
+            } ?>
     </div>
  </div>
 
@@ -123,6 +124,17 @@
         });
     </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var vagas = document.querySelectorAll('.vagaLivre');
+        vagas.forEach(function (vaga) {
+            vaga.addEventListener('click', function () {
+                var numeroVaga = this.dataset.numero;
+                window.location.href = '../telas/telaPagamento.php?id=' + numeroVaga;
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
