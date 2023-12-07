@@ -14,6 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $modelo_veiculo = $_POST['modelo_veiculo'];
     $sexo = $_POST['sexo'];
 
+    $emailExists = checkIfExists('email', $email);
+
+    if ($emailExists) {
+        echo json_encode(array('status' => 'error', 'message' => 'O e-mail já está cadastrado no sistema.'));
+        exit;
+    }
+
     $senhaCrip = password_hash($senha, PASSWORD_BCRYPT);
 
     try {
@@ -33,8 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query->bindParam(':sexo', $sexo);
 
         $query->execute();
-
- 
+        
+        
         header('Location: ../telas/telaLogin.php?cadastro_sucesso=true');
         exit;
         
@@ -42,4 +49,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Erro ao inserir usuário: " . $e->getMessage());
     }
 }
+
+function checkIfExists($column, $value)
+{
+    global $dbh;
+
+    $query = $dbh->prepare("SELECT COUNT(*) as count FROM usuario WHERE $column = :value");
+    $query->bindParam(':value', $value);
+    $query->execute();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+
+    return $result['count'] > 0;
+}
+?>
 ?>

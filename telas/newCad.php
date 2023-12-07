@@ -129,8 +129,6 @@ $sexoS = $teste->fetchAll();
     $('#cpf').mask('000.000.000-00');
     $('#telefone').mask('(00) 0 0000-0000');
   })
-
-  
 </script>
 
 <!-- SCRIPT DO OLHO SENHA -->
@@ -162,32 +160,40 @@ $sexoS = $teste->fetchAll();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
 
-<script>
-  function teste(){
-    Swal.fire({
-  title: "Usuário Cadastrado",
-  icon: "success",
-
-});
-  }
-</script>
 
 <script>
-        function validarSenhas() {
-            const senha = document.querySelector('input[name=senha]');
-            const confirma = document.querySelector('input[name=conf_senha]');
+    function validarSenhas() {
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const telefone = document.getElementById('telefone').value;
+    const dataNasc = document.getElementById('data_nasc').value;
+    const senha = document.querySelector('input[name=senha]').value;
+    const confirma = document.querySelector('input[name=conf_senha]').value;
 
-            if (confirma.value === senha.value) {
-                document.getElementById('formCadastro').submit();
-                teste();
-            } else {
-                Swal.fire({
-                    title: "As senhas não conferem",
-                    icon: "error"
-                });
-            }
+    if (nome === '' || email === '' || telefone === '' || dataNasc === '') {
+        Swal.fire({
+            title: "Por favor, preencha todos os campos",
+            icon: "warning"
+        });
+        return;
+    }
+
+        if (confirma.value === senha.value) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Usuário Cadastrado com Sucesso',
+                preConfirm: () => {
+                    document.getElementById('formCadastro').submit();
+                }
+            });
+        } else {
+            Swal.fire({
+                title: "As senhas não conferem",
+                icon: "error"
+            });
         }
-    </script>
+    }
+</script>
 
 </body>
 </html>

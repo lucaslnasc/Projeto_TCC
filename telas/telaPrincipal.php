@@ -39,6 +39,7 @@ $local = $query->fetchAll();
         <div id="headerCima">
             <div class="logozada">
                 <img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt="">
+                <a href="telaFaq.php"><i class="bi bi-question-circle faq "></i></i></a>
             </div>
         </div>
         <div id="headerMeio">
@@ -54,6 +55,10 @@ $local = $query->fetchAll();
                 <hr class="linha">
                 <ul class="menuLateral">
                     <li><a href="telaFavorito.php"><i class="bi bi-bookmark-heart"></i>Favoritos</a></li>
+                </ul>
+                <hr class="linha">
+                <ul class="menuLateral">
+                    <li><a href="telaAgendados"><i class="bi bi-calendar2-check"></i>Agendadas</a></li>
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
