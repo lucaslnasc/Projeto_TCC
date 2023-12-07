@@ -69,7 +69,7 @@
         valor DECIMAL (9,2),
         ocupado BOOLEAN
     );
-
+select * from vaga;
     INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
 
     INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 2","Normal");
@@ -102,8 +102,6 @@ select * from agendamento;
     email VARCHAR (100) NOT NULL,
     senha VARCHAR (100) NOT NULL
     );
-
-
 
     INSERT INTO administrador(email, senha) 
     VALUES ('adm@adm.com', '123adm');
