@@ -177,6 +177,7 @@ input[id="HoraAte"]{
 }
 
 input[type="radio"]{
+  margin-top: 25px;
   margin-left: 170px;
   
 }

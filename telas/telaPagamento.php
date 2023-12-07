@@ -102,12 +102,12 @@ $cartoes = $query->fetch();
                 echo '<a href="telaAddCartao.php"><button type="button" class="btCadCard">Cadastrar Cartão</button></a>';
             } else {
                 //foreach ($cartoes as $cartao) {
-                    $numeroCartao = $cartoes['numero_cartao'];
-                    $ultimosDigitos = substr($numeroCartao, -4);
-                    echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
-                    echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
-                    echo '<input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">';
-                }
+                $numeroCartao = $cartoes['numero_cartao'];
+                $ultimosDigitos = substr($numeroCartao, -4);
+                echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
+                echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
+                echo '<input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">';
+            }
             //}
             ?>
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -127,4 +127,5 @@ $cartoes = $query->fetch();
 
             </form>
 </body>
+
 </html>

@@ -44,6 +44,10 @@ include('../bd/conexao.php');
                         <li><a href="telaFavorito.php"><i class="bi bi-bookmark-heart"></i>Favoritos</a></li>
                     </ul>
                     <hr class="linha">
+                <ul class="menuLateral">
+                    <li><a href="visualizarAgend.php"><i class="bi bi-calendar2-check"></i>Agendadas</a></li>
+                </ul>
+                    <hr class="linha">
                     <div class="menuLateral bCartao">
                         <li onmouseover="mostrarBotaoAdicionarCartao()" onmouseout="esconderBotaoAdicionarCartao()">
                             <a href="telaCartoes.php">

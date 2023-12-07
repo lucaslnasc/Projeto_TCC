@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } catch (PDOException $e) {
             die("Erro ao inserir usuário: " . $e->getMessage());
             }
+            
         }
     }
 ?>
