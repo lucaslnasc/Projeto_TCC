@@ -70,8 +70,9 @@ $cartoes = $query->fetch();
             <label for="" class="letra">Horario Inicio</label>
             <input type="time" name="horario_inicio" id="" class="dataIni">
             <label for="" class="letra">Quantidade de Horas</label>
-            <input type="range" value="1" min="1" max="3" oninput="this.nextElementSibling.value = this.value">
+            <input type="range" name="horas_range" value="1" min="1" max="3" oninput="this.nextElementSibling.value = this.value">
             <output>1</output>
+            <input type="hidden" name="horario_final" id="horario_final" value="">
             <div class=" littleSpace">
                 <label for="" class="precoFinal">Preço Final: xxxxxx</label>
             </div>
@@ -93,12 +94,12 @@ $cartoes = $query->fetch();
                 echo '<a href="telaAddCartao.php"><button type="button" class="btCadCard">Cadastrar Cartão</button></a>';
             } else {
                 //foreach ($cartoes as $cartao) {
-                    $numeroCartao = $cartoes['numero_cartao'];
-                    $ultimosDigitos = substr($numeroCartao, -4);
-                    echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
-                    echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
-                    echo '<input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">';
-                }
+                $numeroCartao = $cartoes['numero_cartao'];
+                $ultimosDigitos = substr($numeroCartao, -4);
+                echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
+                echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
+                echo '<input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">';
+            }
             //}
             ?>
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -106,4 +107,5 @@ $cartoes = $query->fetch();
 
             </form>
 </body>
+
 </html>

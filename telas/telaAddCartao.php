@@ -144,7 +144,7 @@ include('../bd/protected.php')
                     <input type="text" maxlength="3" class="cvv-input" id="cvv" name="cvv">
                 </div>
             </div>
-            <input type="button" value="Cadastrar" class="submit-btn" onclick="chamarFuncaoDoScript()"> 
+            <input type="submit" value="Cadastrar" class="submit-btn" onclick="chamarFuncaoDoScript()"> 
         </form>
     </div>
 
