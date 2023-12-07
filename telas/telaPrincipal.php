@@ -62,7 +62,7 @@ $local = $query->fetchAll();
                 </ul>
                 <hr class="linha">
                 <ul class="menuLateral">
-                    <li><a href="telaCartoes.php"><i class="bi bi-credit-card-2-front-fill"></i>Cartão</a></li>
+                    <li><a href="telaCartoes.php"><i class="bi bi-credit-card-2-front-fill"></i>Cartões ></a></li>
                 </ul>
                 <hr class="linha">
 
