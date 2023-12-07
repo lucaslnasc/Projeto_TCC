@@ -1,29 +1,30 @@
 <?php
-  include('../bd/conexao.php');
-  include('../bd/protected.php');
-  $data_atual = date('Y-m-d'); 
-  $nome_vaga = ""; 
+include('../bd/conexao.php');
 
-  if (isset($_GET['id'])) {
-      $idVaga = $_GET['id'];
-  
-      $query = $dbh->prepare('SELECT nome_vaga FROM vaga WHERE id_vaga = :id');
-      $query->bindParam(':id', $idVaga, PDO::PARAM_INT);
-      $query->execute();
-  
-      $vaga = $query->fetch(PDO::FETCH_ASSOC);
-  
-      if ($vaga) {
-          $nome_vaga = $vaga['nome_vaga'];
-      } else {
-          echo 'alert("Vaga Não Encontrada");';
-      }
-  }
-    
-  $query = $dbh->prepare('SELECT numero_cartao FROM cartao');
-  $query->execute();
-  $cartoes = $query->fetchAll();
+include('../bd/protected.php');
 
+$data_atual = date('Y-m-d');
+$nome_vaga = "";
+
+if (isset($_GET['id'])) {
+    $idVaga = $_GET['id'];
+
+    $query = $dbh->prepare('SELECT nome_vaga FROM vaga WHERE id_vaga = :id');
+    $query->bindParam(':id', $idVaga, PDO::PARAM_INT);
+    $query->execute();
+
+    $vaga = $query->fetch(PDO::FETCH_ASSOC);
+
+    if ($vaga) {
+        $nome_vaga = $vaga['nome_vaga'];
+    } else {
+        echo 'alert("Vaga Não Encontrada");';
+    }
+}
+
+$query = $dbh->prepare('SELECT numero_cartao FROM cartao');
+$query->execute();
+$cartoes = $query->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -71,9 +72,9 @@
             <label for="" class="letra">Quantidade de Horas</label>
             <input type="range" value="1" min="1" max="3" oninput="this.nextElementSibling.value = this.value">
             <output>1</output>
-            <div class = " littleSpace">
+            <div class=" littleSpace">
                 <label for="" class="precoFinal">Preço Final: xxxxxx</label>
-            </div >
+            </div>
             <a href="telaVagas.php"><input type="button" class="input-voltar" value="Voltar"></a>
 
     </div>
@@ -81,29 +82,28 @@
     <div class="linha-vertical"></div>
 
     <div class="container row mx-auto">
-            <div class="fundinho">
-                 <div>
-                    <label for="" class="letra-fundinho3">Cartões</label>
-                </div>
-                <div class="linha1"></div>
-                <?php
-        if (empty($cartoes)) {
-            echo '<label for="" class="labelNenhum">Nenhum Cartão Cadastrado</label>';
-            echo '<a href="telaAddCartao.php"><button type="button" class="btCadCard">Cadastrar Cartão</button></a>';
-        } else {
-            foreach ($cartoes as $cartao) {
-                $numeroCartao = $cartao['numero_cartao'];
-                $ultimosDigitos = substr($numeroCartao, -4);
-                echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
-                echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
-                echo '<input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">';
-            }
-        }
-        ?>  
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+        <div class="fundinho">
+            <div>
+                <label for="" class="letra-fundinho3">Cartões</label>
+            </div>
+            <div class="linha1"></div>
+            <?php
+            if (empty($cartoes)) {
+                echo '<label for="" class="labelNenhum">Nenhum Cartão Cadastrado</label>';
+                echo '<a href="telaAddCartao.php"><button type="button" class="btCadCard">Cadastrar Cartão</button></a>';
+            } else {
+                //foreach ($cartoes as $cartao) {
+                    $numeroCartao = $cartoes['numero_cartao'];
+                    $ultimosDigitos = substr($numeroCartao, -4);
+                    echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
+                    echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
+                    echo '<input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">';
+                }
+            //}
+            ?>
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-</form>
+            </form>
 </body>
-
 </html>
