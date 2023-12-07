@@ -24,8 +24,6 @@
   $query->execute();
   $cartoes = $query->fetchAll();
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +49,6 @@
             <div id="rodape"></div>
         </div>
 
-
-        
     </header>
     <div class="container row mx-auto">
         <div class="area-agendamento">
@@ -71,7 +67,7 @@
             <input type="date" aria-describedby="addon-wrapping" id="data" name="data_agend" value="<?php echo $data_atual; ?>" readonly required="required">
             <span id="mensagemErro" style="color: red;"></span>
             <label for="" class="letra">Horario Inicio</label>
-            <input type="time" name="" id="" class="dataIni">
+            <input type="time" name="horario_inicio" id="" class="dataIni">
             <label for="" class="letra">Quantidade de Horas</label>
             <input type="range" value="1" min="1" max="3" oninput="this.nextElementSibling.value = this.value">
             <output>1</output>
