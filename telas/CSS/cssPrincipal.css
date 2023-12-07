@@ -145,18 +145,28 @@ span a {
 .search-input {
   width: 290px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .primary {
   position: absolute;
-  height: 30px;
+  height: 40px;
+  width: 150px;
   border: none;
-  margin-top: 5px;
+
   margin-left: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   float: left;
   cursor: pointer;
+  background-color: #0d2a4a;
+  color: white;  
+}
+
+.faq{
+  margin-top: 25px;
+  margin-left:1300px;
+  font-size: 35px;
+  color: white
 }
 
 .grid-container{
