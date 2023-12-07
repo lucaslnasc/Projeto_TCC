@@ -79,11 +79,9 @@ select * from usuario;
 		id_agendamento INT PRIMARY KEY AUTO_INCREMENT,
         vaga VARCHAR(100) NOT NULL,
         data_agend DATE NOT NULL,
-        horario VARCHAR(10),
-        carga_horaria VARCHAR(10),
         id_usuario INT,
         horario_inicio TIME,
-			horario_final TIME
+		horario_final TIME
     );
 ALTER TABLE agendamento ADD CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario);
 select * from agendamento;
