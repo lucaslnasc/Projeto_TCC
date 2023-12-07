@@ -25,7 +25,6 @@ if (isset($_GET['id'])) {
 $query = $dbh->prepare('SELECT numero_cartao FROM cartao');
 $query->execute();
 $cartoes = $query->fetch();
-
 ?>
 
 <!DOCTYPE html>

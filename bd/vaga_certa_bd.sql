@@ -70,9 +70,10 @@
         ocupado BOOLEAN
     );
 select * from vaga;
-    INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
 
-    INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 2","Normal");
+INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 1","Normal");
+
+INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 2","Normal");
 
 select * from usuario;
 
