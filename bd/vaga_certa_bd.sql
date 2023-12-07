@@ -75,19 +75,22 @@ select * from vaga;
     INSERT INTO vaga (nome_vaga, tipo_vaga) VALUES ("VAGA - 2","Normal");
 
 select * from usuario;
-    CREATE TABLE agendamento(
-		id_agendamento INT PRIMARY KEY AUTO_INCREMENT,
-        vaga VARCHAR(100) NOT NULL,
-        data_agend DATE NOT NULL,
-        id_usuario INT,
-        horario_inicio TIME,
-		horario_final TIME
+
+CREATE TABLE agendamento(
+	id_agendamento INT PRIMARY KEY AUTO_INCREMENT,
+	vaga VARCHAR(100) NOT NULL,
+	data_agend DATE NOT NULL,
+	id_usuario INT,
+	horario_inicio TIME,
+	horario_final TIME
     );
 ALTER TABLE agendamento ADD CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario);
-select * from agendamento;
+
+select * from agendamento;	
+
     CREATE TABLE veiculo(
-        cod CHAR(1) PRIMARY KEY,
-        categoria_veiculo VARCHAR (15) NOT NULL
+	cod CHAR(1) PRIMARY KEY,
+	categoria_veiculo VARCHAR (15) NOT NULL
     );
 
     INSERT INTO veiculo(cod, categoria_veiculo)
@@ -115,7 +118,6 @@ select * from agendamento;
     );
 
     select * from usuario;
+    
     ALTER TABLE relatorio_vagas ADD CONSTRAINT fk_id_vaga FOREIGN KEY (id_vaga) REFERENCES vaga (id_vaga); 
     ALTER TABLE relatorio_vagas ADD CONSTRAINT fk_id_veiculo FOREIGN KEY (id_veiculo) REFERENCES veiculo (cod);
-    
-    
