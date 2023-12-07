@@ -97,19 +97,19 @@ include('../bd/protected.php')
             </div>
 
         </div>
-        <form action="../bd/cadastrarCartao.php" method="post">
+        <form action="../bd/cadastrarCartao.php" method="post" id="formCadastro">
 
             <div class="inputBox">
-                <span>número do cartão</span>
+                <span>NÚMERO DO CARTÃO</span>
                 <input type="text" maxlength="20" class="card-number-input" id="nmr_cartao" name="numero_cartao">
             </div>
             <div class="inputBox">
-                <span>nome do titular</span>
+                <span>NOME DO TITULAR</span>
                 <input type="text" class="card-holder-input" id="nome_titular" name="nome_cartao">
             </div>
             <div class="flexbox">
                 <div class="inputBox">
-                    <span>Validade Mês</span>
+                    <span>VALIDADE MÊS</span>
                     <select name="validade_mes" id="validade_mes" class="month-input">
                         <option value="month" selected disabled>Mês</option>
                         <option value="01">01</option>
@@ -127,7 +127,7 @@ include('../bd/protected.php')
                     </select>
                 </div>
                 <div class="inputBox">
-                    <span>Validade Ano</span>
+                    <span>VALIDADE ANO</span>
                     <select name="validade_ano" id="validade_ano" class="year-input">
                         <option value="year" selected disabled>Ano</option>
                         <option value="2024">2024</option>
@@ -140,11 +140,11 @@ include('../bd/protected.php')
                     </select>
                 </div>
                 <div class="inputBox">
-                    <span>cvv</span>
+                    <span>CVV</span>
                     <input type="text" maxlength="3" class="cvv-input" id="cvv" name="cvv">
                 </div>
             </div>
-            <input type="submit" value="Cadastrar" class="submit-btn">
+            <input type="button" value="Cadastrar" class="submit-btn" onclick="chamarFuncaoDoScript()"> 
         </form>
     </div>
 
@@ -182,7 +182,7 @@ include('../bd/protected.php')
         }
 
     </script>
-
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const icon = document.querySelector(".icon");
@@ -201,5 +201,33 @@ include('../bd/protected.php')
             $('#nmr_cartao').mask('0000 0000 0000 0000');
         })
     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+        function chamarFuncaoDoScript() {
+            const numeroCartao = document.getElementById('nmr_cartao').value;
+        const nomeTitular = document.getElementById('nome_titular').value;
+        const validadeMes = document.getElementById('validade_mes').value;
+        const validadeAno = document.getElementById('validade_ano').value;
+        const cvv = document.getElementById('cvv').value;
+
+        if (numeroCartao === '' || nomeTitular === '' || validadeMes === 'month' || validadeAno === 'year' || cvv === '') {
+            Swal.fire({
+                title: "Por favor, preencha todos os campos do cartão",
+                icon: "warning"
+            });
+            return;
+        }else{
+            Swal.fire({
+                icon: 'success',
+                title: 'Cartão Cadastrado com Sucesso',
+                preConfirm: () => {
+                    window.location.href = 'telaCartoes.php';
+                }
+            });
+        }
+    }
+    </script>
     </div>
 </body>
+</html>
