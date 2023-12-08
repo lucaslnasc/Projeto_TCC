@@ -24,6 +24,22 @@
   z-index: 1;
   position: relative;
 }
+.botaoAdicionarCartao {
+  display: none;
+  position: absolute;
+  top: -9.9px;
+  left: 150px;
+  background-color: #0d2a4a;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 
 #headerBaixo {
   background-color: #43627f;
@@ -146,6 +162,9 @@ span a {
   width: 290px;
   height: 40px;
   border-radius: 5px;
+}
+.bCartao {
+  margin-left: 15%;
 }
 
 .primary {

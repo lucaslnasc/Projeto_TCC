@@ -61,9 +61,14 @@ $local = $query->fetchAll();
                     <li><a href="visualizarAgend.php"><i class="bi bi-calendar2-check"></i>Agendadas</a></li>
                 </ul>
                 <hr class="linha">
-                <ul class="menuLateral">
-                    <li><a href="telaCartoes.php"><i class="bi bi-credit-card-2-front-fill"></i>Cartões ></a></li>
-                </ul>
+                <div class="menuLateral bCartao">
+                    <li onmouseover="mostrarBotaoAdicionarCartao()" onmouseout="esconderBotaoAdicionarCartao()">
+                        <a href="telaCartoes.php">
+                            <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
+                        </a>
+                        <a href="telaAddCartao.php"><button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button></a>
+                    </li>
+                </div>
                 <hr class="linha">
 
                 <footer class="inferiorLateral">
@@ -114,6 +119,20 @@ $local = $query->fetchAll();
             xhr.send("id_local=" + id_local + "&session_var=" + session_var);
         }
     </script>
+ <script>
+        function mostrarBotaoAdicionarCartao() {
+            const botaoAdicionar = document.querySelector('.botaoAdicionarCartao');
+            botaoAdicionar.style.display = 'inline-block';
+        }
 
+        function esconderBotaoAdicionarCartao() {
+            const botaoAdicionar = document.querySelector('.botaoAdicionarCartao');
+            botaoAdicionar.style.display = 'none';
+        }
+
+        function adicionarCartao() {
+
+        }
+    </script>
 </body>
 </html>
