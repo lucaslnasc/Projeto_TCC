@@ -1,3 +1,20 @@
+<?php
+
+include('../bd/protected.php');
+
+include('../bd/conexao.php');
+
+$query = $dbh->prepare("SELECT * FROM estacionamento");
+$query->execute();
+$info = $query->fetch();
+
+
+$cont = $dbh->prepare("SELECT * FROM agendamento");
+$cont->execute();
+$dado = $cont->fetch();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -42,8 +59,7 @@
                         <a href="">
                             <i class="bi bi-credit-card-2-front-fill"></i>Cartões >
                         </a>
-                        <a href="telaAddCartao.php"><button class="botaoAdicionarCartao"
-                                onclick="adicionarCartao()">Adicionar Cartão</button></a>
+                        <a href="telaAddCartao.php"><button class="botaoAdicionarCartao" onclick="adicionarCartao()">Adicionar Cartão</button></a>
                     </li>
                 </div>
                 <hr class="linha">
@@ -58,11 +74,25 @@
         </div>
     </header>
     <div class="grid-container">
-     
+        <?php
+        //foreach ($info as $infor) {
+            echo '<div class = "card" >';
+
+            echo '<div class="infCartao">';
+            echo '<span>' . 'Local' . '</span>' . '<br>';
+            echo '<label for = "" ' . '<span>' . $info['nome_estacionamento'] . '</span>' . '</label>';
+            echo '<p>' . '</p>';
+            echo '<span>' . 'Dia' . '</span>' . '<br>';
+            echo '<label for = "" ' . '<span>' . $dado['data_agend'] . '</span>';
+            echo '</div>';
+            echo '</div>';
+        //}
+        ?>
+    </div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const icon = document.querySelector(".icon");
             const nav = document.querySelector(".nav");
 
