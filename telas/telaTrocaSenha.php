@@ -1,6 +1,6 @@
 <?php
 
-//include('../bd/protected.php');
+include('../bd/protected.php');
 
 ?>
 

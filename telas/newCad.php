@@ -47,7 +47,7 @@ $sexoS = $teste->fetchAll();
         </div>  
         <div class="">
             <label class="tipos">Endereço de Email</label><br>
-            <input class="grande" type="email" required="required" name="email" id="email"></input>
+            <input class="grande" type="email" required="required" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></input>
         </div>  
         <div class="">
             <label class="tipos">Telefone</label><br>
