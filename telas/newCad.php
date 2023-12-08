@@ -83,6 +83,8 @@ $sexoS = $teste->fetchAll();
         <div class="">
           <label class="tipos">Tipo</label><br>
           <select name="tipo_veiculo" id="" class="pequeno">
+          <option value="masculino">Carro</option>
+                <option value="feminino">Moto</option>
             <?php
             foreach ($veiculo as $linha) {
               echo '<option value ="' . $linha['cod'] . '">' . $linha['categoria_veiculo'] . '</option>';
@@ -171,6 +173,33 @@ $sexoS = $teste->fetchAll();
       const senha = document.querySelector('input[name=senha]').value;
       const confirma = document.querySelector('input[name=conf_senha]').value;
 
+      const atIndex = email.indexOf('@');
+    if (atIndex === -1) {
+      Swal.fire({
+        title: "Por favor, coloque '@' no endereço de e-mail",
+        icon: "warning"
+      });
+      return;
+    }
+
+    // Verifica se o email contém '.com'
+    const dotIndex = email.lastIndexOf('.com');
+    if (dotIndex === -1) {
+      Swal.fire({
+        title: "Por favor, coloque '.com' no endereço de e-mail",
+        icon: "warning"
+      });
+      return;
+    }
+
+    // Verifica se há algo entre '@' e '.com'
+    if (atIndex >= dotIndex - 1) {
+      Swal.fire({
+        title: "Por favor, insira um e-mail válido",
+        icon: "warning"
+      });
+      return;
+    }
       if (nome === '' || email === '' || telefone === '' || dataNasc === '') {
         Swal.fire({
           title: "Por favor, preencha todos os campos",
@@ -178,6 +207,16 @@ $sexoS = $teste->fetchAll();
         });
         return;
       }
+
+         // Verifica se a data de nascimento está entre 1940 e 2005
+    const birthYear = parseInt(dataNasc.split('/')[2]);
+    if (birthYear < 1930 || birthYear > 2005) {
+      Swal.fire({
+        title: "Por favor, insira uma data de nascimento válida",
+        icon: "warning"
+      });
+      return;
+    }
 
       if (confirma.value === senha.value) {
         Swal.fire({
