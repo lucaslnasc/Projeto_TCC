@@ -72,6 +72,9 @@
   margin-top: 30px;
   margin-left: 4px;
   transition: .2s linear;
+  padding: 14px;
+  border-radius: 3px;
+  width: 27%;
 }
 
 .input-entrar {
@@ -81,15 +84,18 @@
   width: 125px;
   margin-top: 35px;
   transition: .2s linear;
+  padding: 14px;
+  border-radius: 3px;
+  width: 27%;
 }
 
-.input-cadastrar :hover{
-  letter-spacing: 2px;
+.input-cadastrar:hover{
+  letter-spacing: 0.5px;
   opacity: .8;
 }
 
-.input-entrar :hover{
-  letter-spacing: 2px;
+.input-entrar:hover{
+  letter-spacing: 0.5px;
   opacity: .8;
 }
 
@@ -157,3 +163,23 @@ p a{
  .inputBox input:valid, .inputBox input:focus{
   border: 1px solid #0000;
  }
+
+ .btn-adm{
+  display: block;
+  background-color:rgb(211, 140, 10);
+  color: #000000;
+  margin-top: -53px;
+  position: fixed;
+  transition: .2s linear;
+  display: inline-block;
+  padding: 14px;
+  border-radius: 3px;
+  width: 12%;
+  border: none;
+  margin-left: 215px;
+ }
+
+ .btn-adm:hover{
+  letter-spacing: 0.5px;
+  opacity: .8;
+}

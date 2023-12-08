@@ -3,7 +3,7 @@ include('../back-adm/protectedADM.php')
     ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@ include('../back-adm/protectedADM.php')
             <div class="logozada">
                 <img src="../img/LOGOFIMSEM-removebg-preview (1) (1).svg" alt="Logo do sistema">
                 <ul>
-                    <button><a href="telaLoginAdm.php">Sair</a></button>
+                    <button><a href="../back-adm/logoutADM.php">Sair</a></button>
                 </ul>
             </div>
         </div>
@@ -33,10 +33,12 @@ include('../back-adm/protectedADM.php')
                     <thead>
                         <tr>
                             <th>Vaga</th>
+                            <th>Nome</th>
                             <th>Placa</th>
                             <th>Modelo</th>
                             <th>Data</th>
                             <th>Horário</th>
+                            <th>QTD Horas</th>
                         </tr>
                     </thead>
                 </table>

@@ -3,7 +3,7 @@
         session_start();
     }
 
-    if (!isset($_SESSION['id'])) {
+    if (!isset($_SESSION['id_adm'])) {
         echo '<style>
                 body {
                     display: flex;
