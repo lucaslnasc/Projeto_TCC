@@ -1,11 +1,32 @@
 <?php
-   include('../bd/conexao.php');
- 
-   $query = $dbh->prepare('SELECT id_vaga FROM vaga');
-    $query->execute();
+include('../bd/conexao.php');
 
+try {
+    $ocupadoPadrao = 1;
+
+    $query = $dbh->prepare('SELECT id_vaga, ocupado FROM vaga');
+    $query->execute();
     $vagas = $query->fetchAll();
 
+    if (empty($vagas)) {
+        for ($i = 1; $i <= 10; $i++) {
+            $query = $dbh->prepare('INSERT INTO vaga (id_vaga, ocupado) VALUES (:id_vaga, :ocupado)');
+            $query->execute(
+                array(
+                    ':id_vaga' => $i,
+                    ':ocupado' => $ocupadoPadrao
+                )
+            );
+        }
+
+        // Atualize a lista de vagas após a inserção
+        $query = $dbh->prepare('SELECT id_vaga, ocupado FROM vaga');
+        $query->execute();
+        $vagas = $query->fetchAll();
+    }
+} catch (PDOException $e) {
+    die('Erro na consulta SQL: ' . $e->getMessage());
+}
 ?>
 
 <!DOCTYPE html>
@@ -82,14 +103,15 @@
 
  <div class = "grid-pai">
     <div class="grid-container1">
-    <?php foreach ($vagas as $key => $vaga) {
-                $statusClass = ($vaga['ocupado'] == 1) ? 'vagaOcupada' : 'vagaLivre';
-                echo '<div class="' . $statusClass . '" data-numero="' . $vaga['id_vaga'] . '"></div>';
-                
-                if ($key == 1 && $vaga['ocupado'] == 1) {
-                    echo '<i class="bi bi-person-wheelchair iconVagaPref"></i>';
-                }
-            } ?>
+    <?php foreach ($vagas as $vaga) {
+            $statusClass = ($vaga['ocupado'] == 1) ? 'vagaOcupada' : 'vagaLivre';
+            echo '<div class="' . $statusClass . '" data-numero="' . $vaga['id_vaga'] . '"></div>';
+
+            // Adicione a lógica para exibir o ícone de cadeira de rodas preferencial
+            if ($vaga['ocupado'] == 1) {
+                echo '<i class="bi bi-person-wheelchair iconVagaPref"></i>';
+            }
+        } ?>
     </div>
  </div>
 
@@ -123,18 +145,6 @@
             });
         });
     </script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var vagas = document.querySelectorAll('.vagaLivre');
-        vagas.forEach(function (vaga) {
-            vaga.addEventListener('click', function () {
-                var numeroVaga = this.dataset.numero;
-                window.location.href = '../telas/telaPagamento.php?id=' + numeroVaga;
-            });
-        });
-    });
-</script>
 
 </body>
 </html>
