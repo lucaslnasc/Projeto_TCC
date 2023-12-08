@@ -98,6 +98,8 @@ try {
     </div>
 
     <div class="campoVagas">
+
+    
         <div>
             <label class="letra-vaga">Escolha sua vaga</label>
             <label class="letra-vaga2">Andar:</label>
