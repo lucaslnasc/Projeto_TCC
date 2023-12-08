@@ -97,7 +97,7 @@ include('../bd/protected.php')
             </div>
 
         </div>
-        <form action="../bd/cadastrarCartao.php" method="post" id="formCadastro" onsubmit="return chamarFuncaoDoScript(event)">>
+        <form action="../bd/cadastrarCartao.php" method="post" id="formCadastro">
 
             <div class="inputBox">
                 <span>NÚMERO DO CARTÃO</span>
@@ -204,7 +204,7 @@ include('../bd/protected.php')
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
-        function chamarFuncaoDoScript(event) {
+    function chamarFuncaoDoScript(event) {
     event.preventDefault();
 
     const numeroCartao = document.getElementById('nmr_cartao').value;

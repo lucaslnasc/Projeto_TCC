@@ -72,7 +72,7 @@ $sexoS = $teste->fetchAll();
         </div>
         <div class="">
             <label class="tipos">Placa</label><br>
-            <input class="pequeno" required="required" name="placa_veiculo"></input>
+            <input class="pequeno" maxlength="7" required="required" name="placa_veiculo"></input>
         </div>  
         <div class = "ajuste">
             <label class="tipos1">Marca</label><br>
