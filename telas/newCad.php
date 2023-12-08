@@ -1,5 +1,5 @@
 <?php
-/*include('../bd/conexao.php');
+include('../bd/conexao.php');
 
 $query = $dbh->prepare('SELECT * FROM veiculo');
 $query->execute();
@@ -9,7 +9,7 @@ $veiculo = $query->fetchAll();
 $teste = $dbh->prepare('SELECT sexo FROM usuario');
 $teste->execute();
 
-$sexoS = $teste->fetchAll();*/
+$sexoS = $teste->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -74,11 +74,11 @@ $sexoS = $teste->fetchAll();*/
         </div>
         <div class="">
           <label class="tipos">Placa</label><br>
-          <input class="pequeno" maxlength="7" required="required" name="placa_veiculo"></input>
+          <input class="pequeno" maxlength="7" required="required" name="placa_veiculo" id="placa_veiculo"></input>
         </div>
         <div class="ajuste">
           <label class="tipos1">Marca</label><br>
-          <input class="pequeno1" required="required" name="marca_veiculo"></input>
+          <input class="pequeno1" required="required" name="marca_veiculo" id="marca_veiculo"></input>
         </div>
         <div class="">
           <label class="tipos">Tipo</label><br>
@@ -95,7 +95,7 @@ $sexoS = $teste->fetchAll();*/
         </div>
         <div class="ajuste">
           <label class="tipos1">Modelo</label><br>
-          <input class="pequeno1" required="required" name="modelo_veiculo"></input>
+          <input class="pequeno1" required="required" name="modelo_veiculo" id = "modelo_veiculo"></input>
         </div>
 
         <div class="espaaco">
@@ -166,67 +166,73 @@ $sexoS = $teste->fetchAll();*/
 
   <script>
     function validarSenhas() {
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const telefone = document.getElementById('telefone').value;
-      const dataNasc = document.getElementById('data_nasc').value;
-      const senha = document.querySelector('input[name=senha]').value;
-      const confirma = document.querySelector('input[name=conf_senha]').value;
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const telefone = document.getElementById('telefone').value;
+        const dataNasc = document.getElementById('data_nasc').value;
+        const senha = document.getElementById('senha').value;
+        const confirma = document.getElementById('senha-repeti').value;
+        const placa_veiculo = document.getElementById('placa_veiculo').value;
+        const marca_veiculo = document.getElementById('marca_veiculo').value;
+        const cpf = document.getElementById('cpf').value;
+        const modelo_veiculo = document.getElementById('modelo_veiculo').value;
 
-      const atIndex = email.indexOf('@');
-    if (atIndex === -1) {
-      Swal.fire({
-        title: "Por favor, coloque '@' no endereço de e-mail",
-        icon: "warning"
-      });
-      return;
-    }
+        console.log("Valores obtidos:", nome, email, telefone, dataNasc, senha, confirma, placa_veiculo, marca_veiculo, cpf, modelo_veiculo);
+        // Verifica se algum campo obrigatório está vazio 
+        if (nome === '' || email === '' || telefone === '' || dataNasc === '' || senha === '' || modelo_veiculo === '' || cpf === '' || marca_veiculo === '' || placa_veiculo === '') {
+            Swal.fire({
+                title: "Por favor, preencha todos os campos obrigatórios",
+                icon: "warning"
+            });
+            return;
+        }
 
-    // Verifica se o email contém '.com'
-    const dotIndex = email.lastIndexOf('.com');
-    if (dotIndex === -1) {
-      Swal.fire({
-        title: "Por favor, coloque '.com' no endereço de e-mail",
-        icon: "warning"
-      });
-      return;
-    }
+        // Validação da data de nascimento
+        const regexDataNasc = /^\d{2}\/\d{2}\/\d{4}$/;
+        if (!regexDataNasc.test(dataNasc)) {
+            Swal.fire({
+                title: "Por favor, coloque uma data de nascimento válida ",
+                icon: "warning"
+            });
+            return;
+        }
 
-    // Verifica se há algo entre '@' e '.com'
-    if (atIndex >= dotIndex - 1) {
-      Swal.fire({
-        title: "Por favor, insira um e-mail válido",
-        icon: "warning"
-      });
-      return;
-    }
-    if (nome === '' || email === '' || telefone === '' || data_nasc === '' || senha === '' || cpf === '' ||
-    modelo_veiculo === '' || marca_veiculo === '' || placa_veiculo === '') {
-        Swal.fire({
-            title: "Por favor, preencha todos os campos obrigatórios",
-            icon: "warning"
-        });
-        return;
-    }
+        const dataNascArray = dataNasc.split('/');
+        const dia = parseInt(dataNascArray[0]);
+        const mes = parseInt(dataNascArray[1]);
+        const ano = parseInt(dataNascArray[2]);
 
-         // Verifica se a data de nascimento está entre 1940 e 2005
-    const birthYear = parseInt(dataNasc.split('/')[2]);
-    if (birthYear < 1930 || birthYear > 2005) {
-      Swal.fire({
-        title: "Por favor, insira uma data de nascimento válida",
-        icon: "warning"
-      });
-      return;
-    }
-    if (dia < 1 || dia > 31 || mes < 1 || mes > 12) {
-        Swal.fire({
-            title: "Por favor, coloque uma data de nascimento válida",
-            icon: "warning"
-        });
-        return;
-    }
+        // Verificação se o usuário tem pelo menos 18 anos
+        const idadeMinima = 18;
+        const dataAtual = new Date();
+        const anoAtual = dataAtual.getFullYear();
+        const idadeUsuario = anoAtual - ano;
 
-    if (confirma === senha) {
+        if (idadeUsuario < idadeMinima) {
+            Swal.fire({
+                title: "Você deve ter pelo menos 18 anos para se cadastrar",
+                icon: "warning"
+            });
+            return;
+        }
+
+        if (dia < 1 || dia > 31 || mes < 1 || mes > 12) {
+            Swal.fire({
+                title: "Por favor, coloque uma data de nascimento válida",
+                icon: "warning"
+            });
+            return;
+        }
+
+        // Verificação de senhas
+        if (confirma !== senha) {
+            Swal.fire({
+                title: "As senhas não conferem",
+                icon: "error"
+            });
+            return;
+        }
+
         Swal.fire({
             icon: 'success',
             title: 'Usuário Cadastrado com Sucesso',
@@ -234,14 +240,10 @@ $sexoS = $teste->fetchAll();*/
                 document.getElementById('formCadastro').submit();
             }
         });
-    } else {
-        Swal.fire({
-            title: "As senhas não conferem",
-            icon: "error"
-        });
     }
-}
-  </script>
+</script>
+
 
 </body>
+
 </html>

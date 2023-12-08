@@ -26,10 +26,10 @@ if (isset($_GET['id'])) {
 
     if (isset($_POST['horas_selecionadas'])) {
         $horas_selecionadas = intval($_POST['horas_selecionadas']);
-        $preco_por_hora = 10; // Valor inicial por hora
+        $preco_por_hora = 10;
         $preco_final = $horas_selecionadas * $preco_por_hora;
     } else {
-        $preco_final = 0; // Se não houver horas selecionadas, o preço final é 0
+        $preco_final = 0; 
     }
 }
 
