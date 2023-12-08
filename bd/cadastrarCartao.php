@@ -25,24 +25,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $query = $dbh->prepare('INSERT INTO cartao (numero_cartao, nome_cartao, validade_mes, validade_ano, cvv)
                 VALUES (:numero_cartao, :nome_cartao, :validade_mes, :validade_ano, :cvv);');
 
-            $query->bindParam(':numero_cartao', $numero_cartao);
-            $query->bindParam(':nome_cartao', $nome_cartao);
-            $query->bindParam(':validade_mes', $validade_mes);
-            $query->bindParam(':validade_ano =', $validade_ano);
-            $query->bindParam(':cvv', $cvv);
+            $query->execute(
+                array(
+                    ':numero_cartao' => $numero_cartao,
+                    ':nome_cartao' => $nome_cartao,
+                    ':validade_mes' => $validade_mes,
+                    ':validade_ano' => $validade_ano,
+                    ':cvv' => $cvv
 
-
-            $query->execute();
-
-
+                )
+            );
 
             header('Location: ../telas/telaCartoes.php?cadastro_sucesso=true');
             exit;
-
-            } catch (PDOException $e) {
+        } catch (PDOException $e) {
             die("Erro ao inserir usuário: " . $e->getMessage());
-            }
-            
         }
     }
-?>
+}
