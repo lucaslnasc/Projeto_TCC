@@ -98,6 +98,10 @@ try {
     </div>
 
     <div class="campoVagas">
+
+
+
+    
         <div>
             <label class="letra-vaga">Escolha sua vaga</label>
             <label class="letra-vaga2">Andar:</label>
@@ -107,11 +111,13 @@ try {
                 <div class="grid-container1">
                     <?php foreach ($vagas as $vaga) {
                         $statusClass = ($vaga['ocupado'] == 1) ? 'vagaOcupada' : 'vagaLivre';
-                        echo '<div class="' . $statusClass . '" data-numero="' . $vaga['id_vaga'] . '"></div>';
+                        //echo '<div class="' . $statusClass . ' vagaOcupada" data-numero="' . $vaga['id_vaga'] . '"></div>';
 
                         // Adicione a lógica para exibir o ícone de cadeira de rodas preferencial
                         if ($vaga['ocupado'] == 1) {
-                            echo '<i class="bi bi-person-wheelchair iconVagaPref"></i>';
+                            echo '<div class="' . $statusClass . ' vagaOcupada" data-numero="' . $vaga['id_vaga'] . '"></div>';
+                        }else{
+                            echo '<div class="' . $statusClass . '" data-numero="' . $vaga['id_vaga'] . '"></div>';
                         }
                     } ?>
                 </div>
