@@ -41,14 +41,18 @@
         id_local INT PRIMARY KEY AUTO_INCREMENT,
         nome_estacionamento VARCHAR (50),
         localizacao VARCHAR (50),
-        vagas_disponiveis INT (3)
+        vagas_disponiveis INT (3),
+        id_usuario INT
     );
+
+	ALTER TABLE estacionamento ADD CONSTRAINT fk_id_estacionamento_user FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario);
 
     CREATE TABLE estacionamento_cliente(
         id_cliente INT NOT NULL,
         id_estacionamento INT NOT NULL,
         save BOOLEAN
     );
+    
     
     SELECT * FROM usuario;
 
@@ -92,7 +96,7 @@ describe agendamento;
 
 ALTER TABLE agendamento ADD CONSTRAINT fk_agenda_user FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario);
 
-select * from agendamento;	
+select * from agendamento;
 
     CREATE TABLE veiculo(
 	cod CHAR(1) PRIMARY KEY,
