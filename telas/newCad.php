@@ -47,7 +47,7 @@ $sexoS = $teste->fetchAll();
         </div>  
         <div class="">
             <label class="tipos">Endereço de Email</label><br>
-            <input class="grande" type="email" required="required" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></input>
+            <input class="grande" type="email" required="required" name="email" id="email"></input>
         </div>  
         <div class="">
             <label class="tipos">Telefone</label><br>
@@ -96,7 +96,7 @@ $sexoS = $teste->fetchAll();
 
         <div class = "espaaco">
         <div class = "outroLado">
-        <div class="">
+        <div class="espacinho">
             <label class="tipos2">Sexo</label><br>
             <select name="sexo" id="" class="pequeno2">
             <option value="">Masculino</option>
@@ -107,11 +107,10 @@ $sexoS = $teste->fetchAll();
             <label class="tipos3">CPF</label><br>
             <input class="pequeno2" id="cpf" required="required" name="cpf"></input>
         </div >  
-            <div class="espaco3"> 
-                <input type="reset" class = "limapar" value = "Limpar">
+            <div class="espaco5"> 
+            <input type="button" class="cadastrar" value="Cadastrar" onclick="validarSenhas();">  
+            <a href="telaLogin.php"><input type="button" class = "limapar" value = "Voltar"></a>
             </div>
-            <div class= "espaco5">
-            <input type="button" class="cadastrar" value="Cadastrar" onclick="validarSenhas();">
             </div>
         </div>
         </div>
