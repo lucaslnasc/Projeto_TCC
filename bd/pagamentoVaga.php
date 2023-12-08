@@ -1,35 +1,35 @@
-    <?php
+<?php
 
-    session_start();
+session_start();
 
-    include('conexao.php');
+include('conexao.php');
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $vaga = $_POST['vaga'];
-        $data_agend = $_POST['data_agend'];
-        $horario = $_POST['horario_inicio'];
-        //$qtdHoras = $_POST['horas_range'];
-        //$horario_final = $
-        $horario_final = $_POST['horario_final'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $vaga = $_POST['vaga'];
+    $data_agend = $_POST['data_agend'];
+    $horario_inicio = $_POST['horario_inicio'];
+    $horas_selecionadas = intval($_POST['horas_selecionadas']);
 
-        $idUser = $_SESSION['id_usuario'];
+    // Calcular o horário final
+    $horario_final = date('H:i', strtotime($horario_inicio) + $horas_selecionadas * 60 * 60);
 
-        try {
-            $query = $dbh->prepare('INSERT INTO agendamento (vaga, data_agend, horario_inicio, horario_final ,id_usuario) 
-            VALUES (:vaga, :data_agend, :horario_inicio, :horario_final ,:id_usuario);');
+    $idUser = $_SESSION['id_usuario'];
 
-            $query->bindParam(':vaga', $vaga);
-            $query->bindParam(':data_agend', $data_agend);
-            $query->bindParam(':horario_inicio', $horario);
-            $query->bindParam(':horario_final', $horario_final);
-            $query->bindParam(':id_usuario', $idUser);
-            $query->execute();
+    try {
+        $query = $dbh->prepare('INSERT INTO agendamento (vaga, data_agend, horario_inicio, horario_final, id_usuario) 
+        VALUES (:vaga, :data_agend, :horario_inicio, :horario_final, :id_usuario);');
 
-            header('Location: ../telas/telaConfirmaAgend.php?pagamento_sucesso=true');
+        $query->bindParam(':vaga', $vaga);
+        $query->bindParam(':data_agend', $data_agend);
+        $query->bindParam(':horario_inicio', $horario_inicio);
+        $query->bindParam(':horario_final', $horario_final);
+        $query->bindParam(':id_usuario', $idUser);
+        $query->execute();
 
-            exit;
-        } catch (PDOException $e) {
-            die("Erro ao realizar pagamento: " . $e->getMessage());
-        }
+        header('Location: ../telas/telaConfirmaAgend.php?pagamento_sucesso=true');
+        exit;
+    } catch (PDOException $e) {
+        die("Erro ao realizar agendamento: " . $e->getMessage());
     }
-    ?>
+}
+?>

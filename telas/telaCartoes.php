@@ -4,16 +4,9 @@ include('../bd/protected.php');
 include('../bd/conexao.php');
 
 
-$query = $dbh->prepare("SELECT * FROM cartao");
-$query->execute();
-
+$query = $dbh->prepare("SELECT * FROM cartao WHERE id_usuario = :id_usuario");
+$query->execute(array(':id_usuario' => $_SESSION['id_usuario']));
 $info = $query->fetchAll();
-
-$query = $dbh->prepare("SELECT id_cartao FROM cartao");
-$query->execute();
-
-$cartao = $query->fetchAll();
-
 ?>
 
 <!DOCTYPE html>

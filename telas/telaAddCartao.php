@@ -98,7 +98,7 @@ include('../bd/protected.php')
 
         </div>
         <form action="../bd/cadastrarCartao.php" method="post" id="formCadastro">
-
+        <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario']; ?>">
             <div class="inputBox">
                 <span>NÚMERO DO CARTÃO</span>
                 <input type="text" maxlength="20" class="card-number-input" id="nmr_cartao" name="numero_cartao">
