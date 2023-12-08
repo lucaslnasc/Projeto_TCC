@@ -1,5 +1,5 @@
 <?php
-include('../bd/conexao.php');
+/*include('../bd/conexao.php');
 
 $query = $dbh->prepare('SELECT * FROM veiculo');
 $query->execute();
@@ -9,7 +9,7 @@ $veiculo = $query->fetchAll();
 $teste = $dbh->prepare('SELECT sexo FROM usuario');
 $teste->execute();
 
-$sexoS = $teste->fetchAll();
+$sexoS = $teste->fetchAll();*/
 ?>
 
 <!DOCTYPE html>
@@ -200,13 +200,14 @@ $sexoS = $teste->fetchAll();
       });
       return;
     }
-      if (nome === '' || email === '' || telefone === '' || dataNasc === '') {
+    if (nome === '' || email === '' || telefone === '' || data_nasc === '' || senha === '' || cpf === '' ||
+    modelo_veiculo === '' || marca_veiculo === '' || placa_veiculo === '') {
         Swal.fire({
-          title: "Por favor, preencha todos os campos",
-          icon: "warning"
+            title: "Por favor, preencha todos os campos obrigatórios",
+            icon: "warning"
         });
         return;
-      }
+    }
 
          // Verifica se a data de nascimento está entre 1940 e 2005
     const birthYear = parseInt(dataNasc.split('/')[2]);
@@ -217,24 +218,30 @@ $sexoS = $teste->fetchAll();
       });
       return;
     }
-
-      if (confirma.value === senha.value) {
+    if (dia < 1 || dia > 31 || mes < 1 || mes > 12) {
         Swal.fire({
-          icon: 'success',
-          title: 'Usuário Cadastrado com Sucesso',
-          preConfirm: () => {
-            document.getElementById('formCadastro').submit();
-          }
+            title: "Por favor, coloque uma data de nascimento válida",
+            icon: "warning"
         });
-      } else {
-        Swal.fire({
-          title: "As senhas não conferem",
-          icon: "error"
-        });
-      }
+        return;
     }
+
+    if (confirma === senha) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Usuário Cadastrado com Sucesso',
+            preConfirm: () => {
+                document.getElementById('formCadastro').submit();
+            }
+        });
+    } else {
+        Swal.fire({
+            title: "As senhas não conferem",
+            icon: "error"
+        });
+    }
+}
   </script>
 
 </body>
-
 </html>

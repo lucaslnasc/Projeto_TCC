@@ -33,13 +33,9 @@ if (isset($_GET['id'])) {
     }
 }
 
-$query = $dbh->prepare('SELECT numero_cartao FROM cartao where id_usuario=:id_usuario');
-$query->execute(
-    array(
-        ':id_usuario' => $id_usuario
-    )
-);
-$cartoes = $query->fetch();
+$query = $dbh->prepare('SELECT numero_cartao FROM cartao WHERE id_usuario = :id_usuario');
+$query->execute(array(':id_usuario' => $_SESSION['id_usuario']));
+$cartoes = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -107,14 +103,17 @@ $cartoes = $query->fetch();
                 echo '<label for="" class="labelNenhum">Nenhum Cartão Cadastrado</label>';
                 echo '<a href="telaAddCartao.php"><button type="button" class="btCadCard">Cadastrar Cartão</button></a>';
             } else {
-                //foreach ($cartoes as $cartao) {
-                $numeroCartao = $cartoes['numero_cartao'];
-                $ultimosDigitos = substr($numeroCartao, -4);
-                echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
-                echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
-                echo '<input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">';
+                foreach ($cartoes as $cartao) {
+                    if (empty($cartao)) {
+                        continue;
+                    }
+                    $numeroCartao = $cartao['numero_cartao'];
+                    $ultimosDigitos = substr($numeroCartao, -4);
+                    echo '<label for="" class="letra-fundinho1">Cartão: XXXX' . $ultimosDigitos . '</label>';
+                    echo '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">';
+                    echo '<input type="submit" class="efetuar-pagamento" value="Efetuar Pagamento">';
+                }
             }
-            //}
             ?>
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
@@ -129,6 +128,31 @@ $cartoes = $query->fetch();
                 document.addEventListener('DOMContentLoaded', function() {
                     atualizarPrecoFinal(document.querySelector('input[name="horas_selecionadas"]').value);
                 });
+            </script>
+
+            <script>
+                function atualizarHorarioFinal(valor) {
+                    var horario_inicio = document.getElementById('horario_inicio').value;
+                    var horas_selecionadas = parseInt(valor);
+
+                    // Converta o horário de início para minutos
+                    var partesHorario = horario_inicio.split(":");
+                    var minutos_inicio = parseInt(partesHorario[0]) * 60 + parseInt(partesHorario[1]);
+
+                    // Calcule o horário final em minutos
+                    var minutos_final = minutos_inicio + horas_selecionadas * 60;
+
+                    // Converta os minutos finais de volta para o formato de hora
+                    var horas_final = Math.floor(minutos_final / 60);
+                    var minutos_final_residuais = minutos_final % 60;
+
+                    // Atualize o campo de horário final
+                    document.getElementById('horario_final').value = pad(horas_final) + ":" + pad(minutos_final_residuais);
+                }
+
+                function pad(numero) {
+                    return numero < 10 ? "0" + numero : numero;
+                }
             </script>
 
             </form>

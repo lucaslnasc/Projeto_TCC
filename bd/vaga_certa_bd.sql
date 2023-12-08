@@ -49,6 +49,8 @@
         id_estacionamento INT NOT NULL,
         save BOOLEAN
     );
+    
+    SELECT * FROM usuario;
 
     ALTER TABLE estacionamento_cliente ADD CONSTRAINT fk_cliente FOREIGN KEY (id_cliente) REFERENCES usuario (id_usuario);
     ALTER TABLE estacionamento_cliente ADD CONSTRAINT fk_estacionamento FOREIGN KEY (id_estacionamento) REFERENCES estacionamento (id_local);
@@ -60,9 +62,7 @@
 
     INSERT INTO estacionamento(nome_estacionamento, localizacao, vagas_disponiveis)
     VALUES
-    ('Baratie', 'East - Blue', 23),
-    ('Wano', 'Grand - Line', 30),
-    ('Tech Vitoria', 'Vitoria', 50);
+    ('Baratie', 'East - Blue', 23);
 
     CREATE TABLE vaga(
         id_vaga INT PRIMARY KEY AUTO_INCREMENT,
@@ -122,6 +122,9 @@ select * from agendamento;
     data_agendamento DATE, 
     hora_agendamento TIME 
     );
+    
+    select * from usuario;
+    select * from cartao;
     
     ALTER TABLE relatorio_vagas ADD CONSTRAINT fk_id_vaga FOREIGN KEY (id_vaga) REFERENCES vaga (id_vaga); 
     ALTER TABLE relatorio_vagas ADD CONSTRAINT fk_id_veiculo FOREIGN KEY (id_veiculo) REFERENCES veiculo (cod);
